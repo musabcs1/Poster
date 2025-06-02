@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stok Yönetimi - Poster Sitesi Admin</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        /* Admin Panel Styles */
+        .admin-header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .admin-header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        .admin-nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .admin-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .admin-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s;
+        }
+        
+        .admin-nav a:hover::after,
+        .admin-nav a.active::after {
+            width: 100%;
+        }
+        
+        .admin-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .admin-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .admin-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .admin-card-header h2 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .stat-card h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .stat-card .stat-value {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .stat-card .stat-change {
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+        
+        .stat-card .stat-change.positive {
+            color: #27ae60;
+        }
+        
+        .stat-card .stat-change.negative {
+            color: #e74c3c;
+        }
+        
+        .inventory-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .inventory-table th,
+        .inventory-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .inventory-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .inventory-table tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .stock-input,
+        .threshold-input {
+            width: 80px;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .stock-status {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .stock-status.low-stock {
+            background-color: #fff8e1;
+            color: #f57f17;
+        }
+        
+        .stock-status.out-of-stock {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        
+        .admin-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .admin-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .admin-btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .admin-btn-primary:hover {
+            background-color: #2980b9;
+        }
+        
+        .admin-btn-secondary {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+        
+        .admin-btn-secondary:hover {
+            background-color: #bdc3c7;
+        }
+        
+        .admin-btn-danger {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .admin-btn-danger:hover {
+            background-color: #c0392b;
+        }
+        
+        .admin-btn-success {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .admin-btn-success:hover {
+            background-color: #27ae60;
+        }
+        
+        .filter-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .filter-group label {
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .filter-select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+        }
+        
+        .search-box {
+            flex-grow: 1;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.5rem 1rem 0.5rem 2.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .pagination-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .pagination-btn:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .pagination-btn.active {
+            background-color: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        
+        .inventory-message {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(100%);
+            opacity: 0;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        
+        .inventory-message.success {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .inventory-message.error {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .inventory-message.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .low-stock-alert {
+            background-color: #fff8e1;
+            border-left: 4px solid #f57f17;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .low-stock-alert i {
+            color: #f57f17;
+            font-size: 1.5rem;
+        }
+        
+        .low-stock-alert-content {
+            flex-grow: 1;
+        }
+        
+        .low-stock-alert h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+        
+        .low-stock-alert p {
+            margin: 0;
+            font-size: 0.875rem;
+        }
+        
+        .low-stock-alert .admin-btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+        
+        @media (max-width: 768px) {
+            .admin-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .inventory-table {
+                font-size: 0.875rem;
+            }
+            
+            .inventory-table th,
+            .inventory-table td {
+                padding: 0.75rem 0.5rem;
+            }
+            
+            .stock-input,
+            .threshold-input {
+                width: 60px;
+                padding: 0.375rem;
+            }
+            
+            .admin-actions {
+                flex-direction: column;
+            }
+            
+            .admin-btn {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .admin-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-row {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .search-box {
+                width: 100%;
+            }
+            
+            .admin-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .admin-nav {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <h1>Poster Sitesi Admin</h1>
+        <nav class="admin-nav">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="admin-products.html">Ürünler</a>
+            <a href="admin-orders.html">Siparişler</a>
+            <a href="admin-inventory.html" class="active">Stok Yönetimi</a>
+            <a href="admin-customers.html">Müşteriler</a>
+            <a href="index.html" target="_blank">Siteyi Görüntüle</a>
+        </nav>
+    </header>
+
+    <!-- Admin Container -->
+    <div class="admin-container">
+        <!-- Stats Cards -->
+        <div class="admin-stats">
+            <div class="stat-card">
+                <h3>Toplam Ürün</h3>
+                <div class="stat-value">24</div>
+                <div class="stat-change positive">+3 son 30 günde</div>
+            </div>
+            <div class="stat-card">
+                <h3>Stokta Olan Ürün</h3>
+                <div class="stat-value">20</div>
+                <div class="stat-change negative">-2 son 30 günde</div>
+            </div>
+            <div class="stat-card">
+                <h3>Düşük Stok Uyarısı</h3>
+                <div class="stat-value">4</div>
+                <div class="stat-change negative">+1 son 7 günde</div>
+            </div>
+            <div class="stat-card">
+                <h3>Tükenen Ürün</h3>
+                <div class="stat-value">2</div>
+                <div class="stat-change">Değişim yok</div>
+            </div>
+        </div>
+
+        <!-- Low Stock Alert -->
+        <div class="low-stock-alert">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div class="low-stock-alert-content">
+                <h3>Düşük Stok Uyarısı</h3>
+                <p>4 ürün düşük stok seviyesinde. Stok güncellemesi yapmanız önerilir.</p>
+            </div>
+            <button class="admin-btn admin-btn-primary">Tümünü Görüntüle</button>
+        </div>
+
+        <!-- Inventory Management -->
+        <div class="admin-card admin-inventory-panel">
+            <div class="admin-card-header">
+                <h2>Stok Yönetimi</h2>
+                <div>
+                    <button class="admin-btn admin-btn-secondary">Dışa Aktar</button>
+                    <button class="admin-btn admin-btn-primary">Yeni Ürün Ekle</button>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filter-row">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Ürün ara..." id="inventory-search">
+                </div>
+                <div class="filter-group">
+                    <label for="category-filter">Kategori:</label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="all">Tümü</option>
+                        <option value="art">Sanat</option>
+                        <option value="movie">Film</option>
+                        <option value="music">Müzik</option>
+                        <option value="history">Tarih</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="stock-filter">Stok Durumu:</label>
+                    <select id="stock-filter" class="filter-select">
+                        <option value="all">Tümü</option>
+                        <option value="in-stock">Stokta</option>
+                        <option value="low-stock">Düşük Stok</option>
+                        <option value="out-of-stock">Stokta Yok</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Inventory Table -->
+            <div class="table-responsive">
+                <table class="inventory-table">
+                    <thead>
+                        <tr>
+                            <th>Ürün Adı</th>
+                            <th>Varyant</th>
+                            <th>SKU</th>
+                            <th>Stok</th>
+                            <th>Düşük Stok Eşiği</th>
+                            <th>Durum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Actions -->
+            <div class="admin-actions">
+                <button class="admin-btn admin-btn-secondary">İptal</button>
+                <button class="admin-btn admin-btn-primary save-inventory-btn">Değişiklikleri Kaydet</button>
+            </div>
+        </div>
+
+        <!-- Stock History -->
+        <div class="admin-card">
+            <div class="admin-card-header">
+                <h2>Stok Geçmişi</h2>
+                <div>
+                    <button class="admin-btn admin-btn-secondary">Filtreleri Temizle</button>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label for="date-filter">Tarih Aralığı:</label>
+                    <select id="date-filter" class="filter-select">
+                        <option value="7">Son 7 Gün</option>
+                        <option value="30" selected>Son 30 Gün</option>
+                        <option value="90">Son 90 Gün</option>
+                        <option value="custom">Özel Aralık</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="action-filter">İşlem Türü:</label>
+                    <select id="action-filter" class="filter-select">
+                        <option value="all">Tümü</option>
+                        <option value="add">Stok Ekleme</option>
+                        <option value="remove">Stok Çıkarma</option>
+                        <option value="adjust">Stok Düzeltme</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- History Table -->
+            <div class="table-responsive">
+                <table class="inventory-table">
+                    <thead>
+                        <tr>
+                            <th>Tarih</th>
+                            <th>Ürün</th>
+                            <th>Varyant</th>
+                            <th>İşlem</th>
+                            <th>Miktar</th>
+                            <th>Kullanıcı</th>
+                            <th>Not</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15.06.2023 14:32</td>
+                            <td>Sinema Tarihi Posteri</td>
+                            <td>Medium - Çerçeveli</td>
+                            <td>Stok Ekleme</td>
+                            <td>+10</td>
+                            <td>admin</td>
+                            <td>Yeni sipariş geldi</td>
+                        </tr>
+                        <tr>
+                            <td>12.06.2023 09:15</td>
+                            <td>Felsefe Akımları Posteri</td>
+                            <td>Large - Çerçevesiz</td>
+                            <td>Stok Çıkarma</td>
+                            <td>-2</td>
+                            <td>admin</td>
+                            <td>Sipariş #1052</td>
+                        </tr>
+                        <tr>
+                            <td>10.06.2023 16:45</td>
+                            <td>Dünya Tarihi Posteri</td>
+                            <td>Small - Çerçeveli</td>
+                            <td>Stok Düzeltme</td>
+                            <td>+3</td>
+                            <td>admin</td>
+                            <td>Envanter sayımı düzeltmesi</td>
+                        </tr>
+                        <tr>
+                            <td>05.06.2023 11:20</td>
+                            <td>Spor Tarihi Posteri</td>
+                            <td>Medium - Çerçevesiz</td>
+                            <td>Stok Çıkarma</td>
+                            <td>-5</td>
+                            <td>admin</td>
+                            <td>Sipariş #1048</td>
+                        </tr>
+                        <tr>
+                            <td>01.06.2023 10:05</td>
+                            <td>Sinema Tarihi Posteri</td>
+                            <td>Small - Çerçevesiz</td>
+                            <td>Stok Ekleme</td>
+                            <td>+15</td>
+                            <td>admin</td>
+                            <td>Yeni üretim</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/inventory.js"></script>
+    <script>
+        // Set admin flag for notifications
+        localStorage.setItem('isAdmin', 'true');
+        
+        // Initialize inventory system when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Search functionality
+            const searchInput = document.getElementById('inventory-search');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const tableRows = document.querySelectorAll('.inventory-table tbody tr');
+                    
+                    tableRows.forEach(row => {
+                        const productName = row.querySelector('td:first-child').textContent.toLowerCase();
+                        const variant = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                        const sku = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+                        
+                        if (productName.includes(searchTerm) || variant.includes(searchTerm) || sku.includes(searchTerm)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            }
+            
+            // Filter functionality
+            const stockFilter = document.getElementById('stock-filter');
+            if (stockFilter) {
+                stockFilter.addEventListener('change', function() {
+                    const filterValue = this.value;
+                    const tableRows = document.querySelectorAll('.inventory-table tbody tr');
+                    
+                    if (filterValue === 'all') {
+                        tableRows.forEach(row => {
+                            row.style.display = '';
+                        });
+                        return;
+                    }
+                    
+                    tableRows.forEach(row => {
+                        const statusCell = row.querySelector('.stock-status');
+                        if (!statusCell) return;
+                        
+                        const isLowStock = statusCell.classList.contains('low-stock');
+                        const isOutOfStock = statusCell.classList.contains('out-of-stock');
+                        
+                        if (filterValue === 'low-stock' && isLowStock) {
+                            row.style.display = '';
+                        } else if (filterValue === 'out-of-stock' && isOutOfStock) {
+                            row.style.display = '';
+                        } else if (filterValue === 'in-stock' && !isLowStock && !isOutOfStock) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            }
+            
+            // Pagination functionality
+            const paginationButtons = document.querySelectorAll('.pagination-btn');
+            paginationButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    paginationButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    if (!this.querySelector('i')) { // Skip arrow buttons
+                        this.classList.add('active');
+                    }
+                    
+                    // In a real application, this would load the appropriate page of data
+                });
+            });
+        });
+    </script>
+</body>
+</html>

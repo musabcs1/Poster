@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme - Poster Mağazası</title>
+    <meta name="description" content="Poster mağazası ödeme sayfası. Güvenli ve kolay ödeme seçenekleri.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.svg" alt="Poster Mağazası">
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+                        <li class="nav-item">
+                            <a href="category.html" class="nav-link">Kategoriler</a>
+                            <div class="dropdown-menu">
+                                <ul class="dropdown-list">
+                                    <li><a href="category.html">Doğa</a></li>
+                                    <li><a href="category.html">Mimari</a></li>
+                                    <li><a href="category.html">Soyut</a></li>
+                                    <li><a href="category.html">Portre</a></li>
+                                    <li><a href="category.html">Siyah & Beyaz</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">Hakkımızda</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">İletişim</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <button class="search-toggle">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <a href="checkout.html" class="cart-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <button class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.svg" alt="Poster Mağazası">
+                </a>
+            </div>
+            <button class="mobile-nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav>
+            <ul class="mobile-nav-list">
+                <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Ana Sayfa</a></li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-nav-link mobile-dropdown-toggle">Kategoriler</a>
+                    <ul class="mobile-dropdown">
+                        <li><a href="category.html">Doğa</a></li>
+                        <li><a href="category.html">Mimari</a></li>
+                        <li><a href="category.html">Soyut</a></li>
+                        <li><a href="category.html">Portre</a></li>
+                        <li><a href="category.html">Siyah & Beyaz</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">Hakkımızda</a></li>
+                <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li>Ödeme</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Checkout Section -->
+    <section class="checkout-section">
+        <div class="container">
+            <div class="checkout-wrapper">
+                <div class="checkout-steps">
+                    <div class="checkout-steps-header">
+                        <button class="checkout-step-btn active" data-step="cart">
+                            <span class="step-number">1</span>
+                            <span class="step-title">Sepet</span>
+                        </button>
+                        <button class="checkout-step-btn" data-step="delivery">
+                            <span class="step-number">2</span>
+                            <span class="step-title">Teslimat</span>
+                        </button>
+                        <button class="checkout-step-btn" data-step="payment">
+                            <span class="step-number">3</span>
+                            <span class="step-title">Ödeme</span>
+                        </button>
+                        <button class="checkout-step-btn" data-step="confirmation">
+                            <span class="step-number">4</span>
+                            <span class="step-title">Onay</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Cart Step -->
+                    <div class="checkout-step-content active" id="cart-step">
+                        <h2 class="checkout-step-title">Sepetim</h2>
+                        
+                        <div class="checkout-items">
+                            <!-- Cart items will be loaded here -->
+                        </div>
+                        
+                        <div class="checkout-actions">
+                            <a href="category.html" class="btn btn-outline">Alışverişe Devam Et</a>
+                            <button class="btn btn-primary next-step-btn">Teslimat Bilgileri</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Delivery Step -->
+                    <div class="checkout-step-content" id="delivery-step">
+                        <h2 class="checkout-step-title">Teslimat Bilgileri</h2>
+                        
+                        <form id="delivery-form" class="checkout-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">Ad <span class="required">*</span></label>
+                                    <input type="text" id="first-name" name="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Soyad <span class="required">*</span></label>
+                                    <input type="text" id="last-name" name="last-name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">E-posta <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" data-type="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Telefon <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" data-type="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Adres <span class="required">*</span></label>
+                                <textarea id="address" name="address" rows="3" required></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">Şehir <span class="required">*</span></label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="postal-code">Posta Kodu <span class="required">*</span></label>
+                                    <input type="text" id="postal-code" name="postal-code" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="country">Ülke <span class="required">*</span></label>
+                                <select id="country" name="country" required>
+                                    <option value="">Seçiniz</option>
+                                    <option value="TR" selected>Türkiye</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="notes">Sipariş Notu</label>
+                                <textarea id="notes" name="notes" rows="3"></textarea>
+                            </div>
+                        </form>
+                        
+                        <div class="checkout-actions">
+                            <button class="btn btn-outline prev-step-btn">Sepete Dön</button>
+                            <button class="btn btn-primary next-step-btn">Ödeme Bilgileri</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Step -->
+                    <div class="checkout-step-content" id="payment-step">
+                        <h2 class="checkout-step-title">Ödeme Bilgileri</h2>
+                        
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+                                <label for="credit-card">
+                                    <span class="payment-method-title">Kredi Kartı</span>
+                                    <span class="payment-method-icons">
+                                        <i class="fab fa-cc-visa"></i>
+                                        <i class="fab fa-cc-mastercard"></i>
+                                        <i class="fab fa-cc-amex"></i>
+                                    </span>
+                                </label>
+                            </div>
+                            
+                            <div class="payment-method">
+                                <input type="radio" id="bank-transfer" name="payment-method" value="bank-transfer">
+                                <label for="bank-transfer">
+                                    <span class="payment-method-title">Banka Havalesi</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <!-- Credit Card Form -->
+                        <div class="payment-method-form active" id="credit-card-form">
+                            <form id="cc-form" class="checkout-form">
+                                <div class="form-group">
+                                    <label for="cc-name">Kart Üzerindeki İsim <span class="required">*</span></label>
+                                    <input type="text" id="cc-name" name="cc-name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cc-number">Kart Numarası <span class="required">*</span></label>
+                                    <input type="text" id="cc-number" name="cc-number" data-type="creditcard" required>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="cc-expiry">Son Kullanma Tarihi <span class="required">*</span></label>
+                                        <input type="text" id="cc-expiry" name="cc-expiry" placeholder="AA/YY" data-type="expiry" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cc-cvv">CVV <span class="required">*</span></label>
+                                        <input type="text" id="cc-cvv" name="cc-cvv" data-type="cvv" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="installment-options">
+                                    <h4>Taksit Seçenekleri</h4>
+                                    <div class="installment-option">
+                                        <input type="radio" id="installment-1" name="installment" value="1" checked>
+                                        <label for="installment-1">Tek Çekim</label>
+                                    </div>
+                                    <div class="installment-option">
+                                        <input type="radio" id="installment-3" name="installment" value="3">
+                                        <label for="installment-3">3 Taksit</label>
+                                    </div>
+                                    <div class="installment-option">
+                                        <input type="radio" id="installment-6" name="installment" value="6">
+                                        <label for="installment-6">6 Taksit</label>
+                                    </div>
+                                    <div class="installment-option">
+                                        <input type="radio" id="installment-9" name="installment" value="9">
+                                        <label for="installment-9">9 Taksit</label>
+                                    </div>
+                                    <div class="installment-total">
+                                        <span>Toplam:</span>
+                                        <span class="installment-total-value">0.00 TL</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <!-- Bank Transfer Form -->
+                        <div class="payment-method-form" id="bank-transfer-form">
+                            <form id="bank-form" class="checkout-form">
+                                <div class="form-group">
+                                    <label for="bank-select">Banka Seçiniz <span class="required">*</span></label>
+                                    <select id="bank-select" name="bank-select" required>
+                                        <option value="">Seçiniz</option>
+                                        <option value="garanti">Garanti Bankası</option>
+                                        <option value="isbank">İş Bankası</option>
+                                        <option value="akbank">Akbank</option>
+                                        <option value="ziraat">Ziraat Bankası</option>
+                                        <option value="halkbank">Halkbank</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="bank-info">
+                                    <h4>Banka Hesap Bilgileri</h4>
+                                    <p>Siparişinizi tamamladıktan sonra, ödeme bilgileri e-posta adresinize gönderilecektir. Ödemenizi yaptıktan sonra, sipariş numaranızı açıklama kısmına yazmanız gerekmektedir.</p>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="checkout-terms">
+                            <div class="form-check">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">Satış sözleşmesini ve gizlilik politikasını okudum ve kabul ediyorum. <span class="required">*</span></label>
+                            </div>
+                        </div>
+                        
+                        <div class="checkout-actions">
+                            <button class="btn btn-outline prev-step-btn">Teslimat Bilgilerine Dön</button>
+                            <button class="btn btn-primary place-order-btn">Siparişi Tamamla</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-summary-toggle">
+                    <span>Sipariş Özeti</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                
+                <div class="order-summary">
+                    <h3 class="order-summary-title">Sipariş Özeti</h3>
+                    
+                    <div class="order-summary-items">
+                        <!-- Order summary items will be loaded here -->
+                    </div>
+                    
+                    <div class="order-summary-totals">
+                        <div class="order-summary-row">
+                            <span>Ara Toplam</span>
+                            <span class="subtotal-value">0.00 TL</span>
+                        </div>
+                        <div class="order-summary-row">
+                            <span>Kargo</span>
+                            <span class="shipping-value">0.00 TL</span>
+                        </div>
+                        <div class="order-summary-row total">
+                            <span>Toplam</span>
+                            <span class="total-value">0.00 TL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Order Confirmation Modal -->
+    <div class="order-confirmation">
+        <div class="order-confirmation-content">
+            <div class="order-confirmation-header">
+                <i class="fas fa-check-circle"></i>
+                <h2>Siparişiniz Alındı!</h2>
+                <p>Sipariş numaranız: <span class="order-number">ORD-123456</span></p>
+            </div>
+            
+            <div class="order-confirmation-message">
+                <p>Siparişiniz için teşekkür ederiz. Siparişinizle ilgili detaylar e-posta adresinize gönderilmiştir.</p>
+                <p>Siparişiniz en kısa sürede hazırlanıp kargoya verilecektir.</p>
+            </div>
+            
+            <div class="order-confirmation-actions">
+                <button class="btn btn-primary continue-shopping-btn">Alışverişe Devam Et</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-content">
+                    <h2 class="newsletter-title">Bültenimize Abone Olun</h2>
+                    <p class="newsletter-text">Yeni ürünler, indirimler ve daha fazlası hakkında bilgi almak için abone olun.</p>
+                </div>
+                
+                <form class="newsletter-form">
+                    <input type="email" placeholder="E-posta adresiniz" required>
+                    <button type="submit" class="btn btn-primary">Abone Ol</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="img/logo-white.svg" alt="Poster Mağazası">
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-middle">
+                <div class="footer-column">
+                    <h3 class="footer-title">Hızlı Linkler</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="category.html">Posterler</a></li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Kategoriler</h3>
+                    <ul class="footer-links">
+                        <li><a href="category.html">Doğa</a></li>
+                        <li><a href="category.html">Mimari</a></li>
+                        <li><a href="category.html">Soyut</a></li>
+                        <li><a href="category.html">Portre</a></li>
+                        <li><a href="category.html">Siyah & Beyaz</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">Yardım</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Sıkça Sorulan Sorular</a></li>
+                        <li><a href="#">Kargo ve Teslimat</a></li>
+                        <li><a href="#">İade ve Değişim</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                        <li><a href="#">Kullanım Koşulları</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="footer-title">İletişim</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Bağdat Caddesi No:123, Kadıköy, İstanbul</li>
+                        <li><i class="fas fa-phone"></i> +90 (212) 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> info@postersitesi.com</li>
+                        <li><i class="fas fa-clock"></i> Pazartesi - Cuma: 09:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2023 Poster Mağazası. Tüm hakları saklıdır.</p>
+                </div>
+                
+                <div class="footer-payment">
+                    <img src="img/payment-methods.svg" alt="Ödeme Yöntemleri">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-overlay-close">
+            <i class="fas fa-times"></i>
+        </div>
+        <div class="search-form-wrapper">
+            <form class="search-form">
+                <input type="text" placeholder="Ara..." required>
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h3>Sepetim</h3>
+            <button class="cart-sidebar-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-sidebar-items">
+            <!-- Cart items will be loaded here -->
+        </div>
+        
+        <div class="cart-sidebar-footer">
+            <div class="cart-total">
+                <span>Toplam:</span>
+                <span class="cart-total-value">0.00 TL</span>
+            </div>
+            
+            <div class="cart-actions">
+                <a href="checkout.html" class="btn btn-primary">Ödeme</a>
+                <button class="btn btn-outline cart-clear">Sepeti Temizle</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Inventory System JS -->
+    <script src="js/inventory.js"></script>
+    
+    <!-- Checkout with Inventory JS -->
+    <script src="js/checkout-with-inventory.js"></script>
+    <script src="js/cart-sidebar.js"></script>
+</body>
+</html>
