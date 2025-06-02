@@ -12,6 +12,27 @@
     <link rel="stylesheet" href="css/cart-sidebar.css">
     <link rel="stylesheet" href="css/notifications.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Added support for SVG icons -->
+    <style>
+        .fas.fa-shopping-cart {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url('images/cart-icon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            font-size: 0;
+        }
+        .fas.fa-times {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url('images/close-icon.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            font-size: 0;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -30,9 +51,9 @@
                     </ul>
                 </nav>
                 <div class="header-actions">
-                    <button class="search-toggle"><i class="fas fa-search"></i></button>
+                    <button class="search-toggle"><img src="images/search-icon.svg" alt="Ara"></button>
                     <div class="cart">
-                        <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></a>
+                        <a href="#" class="cart-icon"><img src="images/cart-icon.svg" alt="Sepet"><span class="cart-count">0</span></a>
                     </div>
                     <button class="mobile-menu-toggle">
                         <span></span>
@@ -48,9 +69,9 @@
         <div class="container">
             <form class="search-form">
                 <input type="text" placeholder="Ne arıyorsunuz?">
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <button type="submit"><img src="images/search-icon.svg" alt="Ara"></button>
             </form>
-            <button class="search-close"><i class="fas fa-times"></i></button>
+            <button class="search-close"><img src="images/close-icon.png" alt="Kapat"></button>
         </div>
     </div>
 
@@ -322,12 +343,13 @@
     <div class="lightbox">
         <div class="lightbox-content">
             <img src="" alt="Büyütülmüş Poster">
-            <button class="lightbox-close"><i class="fas fa-times"></i></button>
+            <button class="lightbox-close"><img src="images/close-icon.png" alt="Kapat"></button>
         </div>
     </div>
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav">
+        <button class="mobile-nav-close"><img src="images/close-icon.png" alt="Kapat"></button>
         <nav>
             <ul>
                 <li><a href="#"><i class="fas fa-home"></i> Ana Sayfa</a></li>
@@ -343,7 +365,7 @@
     <div class="cart-sidebar">
         <div class="cart-header">
             <h3>Alışveriş Sepeti</h3>
-            <button class="cart-close"><i class="fas fa-times"></i></button>
+            <button class="cart-close"><img src="images/close-icon.png" alt="Kapat"></button>
         </div>
         <div class="cart-items">
             <!-- Cart items will be dynamically added here -->

@@ -1,5 +1,11 @@
 /* Main Stylesheet for PosterSanatı */
 
+/* SVG Icons */
+img[src$=".svg"] {
+    width: 24px;
+    height: 24px;
+}
+
 /* Reset & Base Styles */
 * {
     margin: 0;

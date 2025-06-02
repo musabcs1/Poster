@@ -1,5 +1,17 @@
 /* Cart Sidebar - Modern Design */
 
+/* SVG Icons */
+img[src$=".svg"] {
+    width: 24px;
+    height: 24px;
+}
+
+.cart-close img, #close-cart img {
+    width: 20px;
+    height: 20px;
+    filter: invert(1); /* Makes the SVG white */
+}
+
 /* Cart Sidebar Container */
 .cart-sidebar {
     position: fixed;
@@ -22,7 +34,7 @@
 }
 
 /* Cart Header */
-.cart-header {
+.cart-header, .cart-sidebar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,14 +44,14 @@
     color: white;
 }
 
-.cart-header h3 {
+.cart-header h3, .cart-sidebar-header h3 {
     margin: 0;
     font-size: 2rem;
     font-weight: 600;
     font-family: 'Playfair Display', serif;
 }
 
-.cart-close {
+.cart-close, #close-cart {
     background: transparent;
     border: none;
     color: white;
@@ -54,7 +66,7 @@
     border-radius: 50%;
 }
 
-.cart-close:hover {
+.cart-close:hover, #close-cart:hover {
     transform: rotate(90deg);
     background-color: rgba(255, 255, 255, 0.1);
 }

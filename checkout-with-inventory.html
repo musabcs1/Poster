@@ -7,7 +7,7 @@
     <meta name="description" content="Poster mağazası ödeme sayfası. Güvenli ve kolay ödeme seçenekleri.">
     
     <!-- Favicon -->
-    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="img/favicon.png" type="image/svg+xml">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,6 +20,39 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/checkout.css">
+    
+    <!-- Additional CSS for success toast -->
+    <style>
+        .success-toast {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background-color: var(--success-color, #28a745);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: var(--border-radius, 0.4rem);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            z-index: 2000;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .success-toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        
+        .success-toast-content {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .success-toast i {
+            font-size: 2rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -475,12 +508,12 @@
         </div>
     </div>
     
-    <!-- Cart Sidebar -->
-    <div class="cart-sidebar">
+    <!-- Cart Sidebar -->    
+    <div id="cart-sidebar" class="cart-sidebar">
         <div class="cart-sidebar-header">
-            <h3>Sepetim</h3>
-            <button class="cart-sidebar-close">
-                <i class="fas fa-times"></i>
+            <h3>Sepetiniz</h3>
+            <button id="close-cart" class="close-cart">
+                <img src="images/close-icon.png" alt="Kapat">
             </button>
         </div>
         
@@ -510,5 +543,6 @@
     <!-- Checkout with Inventory JS -->
     <script src="js/checkout-with-inventory.js"></script>
     <script src="js/cart-sidebar.js"></script>
+    <script src="js/checkout-enhancements.js"></script>
 </body>
 </html>

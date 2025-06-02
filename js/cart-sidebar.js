@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initModernCartSidebar() {
     // Elements
     const cartIcon = document.querySelector('.cart-icon, .cart-btn');
-    const cartClose = document.querySelector('.cart-close');
+    const cartClose = document.querySelector('.cart-close, #close-cart');
     const cartSidebar = document.querySelector('.cart-sidebar');
     const overlay = document.querySelector('.overlay');
     const cartItemsContainer = document.querySelector('.cart-items');
