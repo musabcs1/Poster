@@ -3,11 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yüksek kaliteli film, felsefe, tarih, spor ve sanat posterleri. Evinizin duvarlarını sanatla buluşturun.">
+    <meta name="keywords" content="poster, film posteri, sanat posteri, duvar dekorasyonu, çerçeveli poster">
+    <meta name="author" content="Poster Sanatı">
+    <meta property="og:title" content="PosterSanatı - Ürün Detayı">
+    <meta property="og:description" content="Yüksek kaliteli film, felsefe, tarih, spor ve sanat posterleri. Evinizin duvarlarını sanatla buluşturun.">
+    <meta property="og:image" content="images/poster1.svg">
+    <meta property="og:url" content="https://www.postersanati.com/product.html">
+    <meta name="twitter:card" content="summary_large_image">
     <title>PosterSanatı - Ürün Detayı</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -73,30 +84,75 @@
 
             <div class="product-container">
                 <div class="product-gallery">
-                    <div class="product-main-image">
-                        <img src="images/poster1.svg" alt="Yüzüklerin Efendisi film posteri" id="main-image">
+                    <!-- Ana Görsel Slider -->
+                    <div class="swiper product-main-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="images/poster1.svg" data-fancybox="gallery" class="product-image-zoom">
+                                    <img src="images/poster1.svg" alt="Yüzüklerin Efendisi film posteri 1">
+                                    <span class="zoom-hint"><i class="fas fa-search-plus"></i> Büyütmek için tıklayın</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="images/poster2.svg" data-fancybox="gallery" class="product-image-zoom">
+                                    <img src="images/poster2.svg" alt="Yüzüklerin Efendisi film posteri 2">
+                                    <span class="zoom-hint"><i class="fas fa-search-plus"></i> Büyütmek için tıklayın</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="images/poster3.svg" data-fancybox="gallery" class="product-image-zoom">
+                                    <img src="images/poster3.svg" alt="Yüzüklerin Efendisi film posteri 3">
+                                    <span class="zoom-hint"><i class="fas fa-search-plus"></i> Büyütmek için tıklayın</span>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="images/poster4.svg" data-fancybox="gallery" class="product-image-zoom">
+                                    <img src="images/poster4.svg" alt="Yüzüklerin Efendisi film posteri 4">
+                                    <span class="zoom-hint"><i class="fas fa-search-plus"></i> Büyütmek için tıklayın</span>
+                                </a>
+                            </div>
+                        </div>
                         <div class="product-badges">
-                            <div class="product-badge">Yeni</div>
+                            <div class="product-badge new">Yeni</div>
                         </div>
-                        <a href="#" class="image-zoom"><i class="fas fa-search-plus"></i></a>
+                        <!-- Slider Navigasyon -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
-                    <div class="product-thumbnails">
-                        <div class="thumbnail active" data-image="images/poster1.svg">
-                            <img src="images/poster1.svg" alt="Yüzüklerin Efendisi film posteri 1">
-                        </div>
-                        <div class="thumbnail" data-image="images/poster2.svg">
-                            <img src="images/poster2.svg" alt="Yüzüklerin Efendisi film posteri 2">
-                        </div>
-                        <div class="thumbnail" data-image="images/poster3.svg">
-                            <img src="images/poster3.svg" alt="Yüzüklerin Efendisi film posteri 3">
+                    
+                    <!-- Küçük Resimler Slider -->
+                    <div class="swiper product-thumbs-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/poster1.svg" alt="Yüzüklerin Efendisi film posteri 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/poster2.svg" alt="Yüzüklerin Efendisi film posteri 2">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/poster3.svg" alt="Yüzüklerin Efendisi film posteri 3">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/poster4.svg" alt="Yüzüklerin Efendisi film posteri 4">
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="product-info">
-                    <h1>Yüzüklerin Efendisi film posteri</h1>
-                    <div class="product-meta">
-                        <div class="product-category">Kategori: <a href="category.html?category=film">Film</a></div>
+                    <div class="product-header">
+                        <div class="product-category-badge"><a href="category.html?category=film">Film</a></div>
+                        <div class="product-tags">
+                            <span class="tag new">Yeni</span>
+                            <span class="tag bestseller">Çok Satan</span>
+                        </div>
+                    </div>
+                    
+                    <h1 class="product-title">Yüzüklerin Efendisi Film Posteri</h1>
+                    
+                    <div class="product-subtitle">J.R.R. Tolkien'in Efsanevi Eserinden Uyarlanan Kült Film Serisi</div>
+                    
+                    <div class="product-rating-row">
                         <div class="product-rating">
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -104,45 +160,88 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
+                                <span class="rating-value">4.5</span>
                             </div>
-                            <span class="rating-count">(24 değerlendirme)</span>
                         </div>
+                        <a href="#reviews" class="rating-count">24 değerlendirme</a>
+                        <span class="product-sold">| 120+ satıldı</span>
                     </div>
 
-                    <div class="product-price">
-                        <span class="price">₺149.90</span>
+                    <div class="product-price-container">
+                        <div class="product-price">
+                            <span class="current-price">₺149.90</span>
+                            <span class="old-price">₺179.90</span>
+                            <span class="discount-badge">%17 İndirim</span>
+                        </div>
+                        <div class="price-installment">veya <strong>3 x ₺49.97</strong> taksitle</div>
                     </div>
 
                     <div class="product-description">
-                        <p>Quentin Tarantino'nun kült filmi Pulp Fiction'ın yüksek kaliteli posteri. Evinizin duvarlarına film tutkunuzu yansıtın.</p>
+                        <p>Quentin Tarantino'nun kült filmi Pulp Fiction'ın yüksek kaliteli posteri. Evinizin duvarlarına film tutkunuzu yansıtın. Premium mat kağıt üzerine yüksek çözünürlüklü baskı ile uzun yıllar solmadan duvarınızda kalacak şekilde tasarlanmıştır.</p>
+                    </div>
+                    
+                    <div class="stock-status">
+                        <div class="stock-indicator">
+                            <div class="stock-bar">
+                                <div class="stock-level" style="width: 65%;"></div>
+                            </div>
+                            <div class="stock-text">
+                                <i class="fas fa-fire"></i> <strong>Sınırlı stok!</strong> Sadece 15 adet kaldı
+                            </div>
+                        </div>
                     </div>
 
                     <div class="product-options">
                         <div class="option-group">
-                            <label>Boyut:</label>
-                            <div class="option-values size-options">
-                                <div class="option-value size-option active" data-size="30x40">30x40 cm</div>
-                                <div class="option-value size-option" data-size="50x70">50x70 cm</div>
-                                <div class="option-value size-option" data-size="70x100">70x100 cm</div>
+                            <label>Boyut Seçin:</label>
+                            <div class="option-values size-options" id="sizeOptions">
+                                <div class="option-value size-option active" data-size="30x40" data-price="149.90" data-image="images/poster1.svg">
+                                    <span class="option-name">30x40 cm</span>
+                                    <span class="option-price">₺149.90</span>
+                                </div>
+                                <div class="option-value size-option" data-size="50x70" data-price="199.90" data-image="images/poster2.svg">
+                                    <span class="option-name">50x70 cm</span>
+                                    <span class="option-price">₺199.90</span>
+                                </div>
+                                <div class="option-value size-option" data-size="70x100" data-price="249.90" data-image="images/poster3.svg">
+                                    <span class="option-name">70x100 cm</span>
+                                    <span class="option-price">₺249.90</span>
+                                </div>
                             </div>
                         </div>
 
                         <div class="option-group">
-                            <label>Çerçeve:</label>
-                            <div class="option-values frame-options">
-                                <div class="option-value frame-option active" data-frame="Çerçevesiz">Çerçevesiz</div>
-                                <div class="option-value frame-option" data-frame="Siyah">Siyah</div>
-                                <div class="option-value frame-option" data-frame="Beyaz">Beyaz</div>
-                                <div class="option-value frame-option" data-frame="Ahşap">Ahşap</div>
+                            <label>Çerçeve Seçin:</label>
+                            <div class="option-values frame-options" id="frameOptions">
+                                <div class="option-value frame-option active" data-frame="Çerçevesiz" data-price="0" data-image="images/frame-none.svg">
+                                    <img src="images/frame-none.svg" alt="Çerçevesiz" class="frame-preview">
+                                    <span class="option-name">Çerçevesiz</span>
+                                    <span class="option-price">+₺0</span>
+                                </div>
+                                <div class="option-value frame-option" data-frame="Siyah" data-price="49.90" data-image="images/frame-black.svg">
+                                    <img src="images/frame-black.svg" alt="Siyah Çerçeve" class="frame-preview">
+                                    <span class="option-name">Siyah</span>
+                                    <span class="option-price">+₺49.90</span>
+                                </div>
+                                <div class="option-value frame-option" data-frame="Beyaz" data-price="49.90" data-image="images/frame-white.svg">
+                                    <img src="images/frame-white.svg" alt="Beyaz Çerçeve" class="frame-preview">
+                                    <span class="option-name">Beyaz</span>
+                                    <span class="option-price">+₺49.90</span>
+                                </div>
+                                <div class="option-value frame-option" data-frame="Ahşap" data-price="69.90" data-image="images/frame-wood.svg">
+                                    <img src="images/frame-wood.svg" alt="Ahşap Çerçeve" class="frame-preview">
+                                    <span class="option-name">Ahşap</span>
+                                    <span class="option-price">+₺69.90</span>
+                                </div>
                             </div>
                         </div>
 
                         <div class="option-group quantity-group">
                             <label>Adet:</label>
                             <div class="quantity-selector">
-                                <button class="quantity-btn decrease">-</button>
+                                <button class="quantity-btn decrease"><i class="fas fa-minus"></i></button>
                                 <input type="number" class="quantity-input" value="1" min="1" max="15">
-                                <button class="quantity-btn increase">+</button>
+                                <button class="quantity-btn increase"><i class="fas fa-plus"></i></button>
                             </div>
                         </div>
                     </div>
@@ -153,6 +252,9 @@
                         </button>
                         <button class="btn btn-outline add-to-favorites-btn" data-id="1">
                             <i class="far fa-heart"></i> Favorilere Ekle
+                        </button>
+                        <button class="btn btn-outline buy-now-btn" data-id="1">
+                            <i class="fas fa-bolt"></i> Hemen Al
                         </button>
                     </div>
 
@@ -166,18 +268,37 @@
                             <span>Kargo: <strong>Ücretsiz Kargo</strong> (₺250 ve üzeri siparişlerde)</span>
                         </div>
                         <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Teslimat: <strong>1-3 iş günü</strong> içinde kargoya verilir</span>
+                        </div>
+                        <div class="meta-item">
                             <i class="fas fa-undo"></i>
                             <span>İade: <strong>14 gün içinde ücretsiz iade</strong></span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Garanti: <strong>2 yıl renk solmazlık garantisi</strong></span>
                         </div>
                     </div>
 
                     <div class="product-share">
-                        <span>Paylaş:</span>
+                        <span>Bu ürünü paylaş:</span>
                         <div class="social-share">
-                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.postersanati.com/product.html" target="_blank" class="facebook" aria-label="Facebook'ta Paylaş">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url=https://www.postersanati.com/product.html&text=Yüzüklerin Efendisi Film Posteri" target="_blank" class="twitter" aria-label="Twitter'da Paylaş">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://pinterest.com/pin/create/button/?url=https://www.postersanati.com/product.html&media=https://www.postersanati.com/images/poster1.svg&description=Yüzüklerin Efendisi Film Posteri" target="_blank" class="pinterest" aria-label="Pinterest'te Paylaş">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                            <a href="https://api.whatsapp.com/send?text=Yüzüklerin Efendisi Film Posteri https://www.postersanati.com/product.html" target="_blank" class="whatsapp" aria-label="WhatsApp'ta Paylaş">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="mailto:?subject=Yüzüklerin Efendisi Film Posteri&body=Bu ürüne göz at: https://www.postersanati.com/product.html" class="email" aria-label="E-posta ile Paylaş">
+                                <i class="fas fa-envelope"></i>
+                            </a>
                         </div>
                     </div>
                 </div>

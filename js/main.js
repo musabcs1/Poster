@@ -1136,6 +1136,59 @@ function renderFavorites() {
         // Bu fonksiyon ürün detay sayfası için gerektiğinde eklenebilir
     }
     
+    // Ürün detaylarını render et
+    function renderProductDetails(product) {
+        const mainProductImage = document.querySelector('.product-main-slider .swiper-slide img');
+        const productThumbs = document.querySelector('.product-thumbs-slider .swiper-wrapper');
+        const sizeOptionsContainer = document.getElementById('sizeOptions');
+        const frameOptionsContainer = document.getElementById('frameOptions');
+
+        if (!mainProductImage || !sizeOptionsContainer || !frameOptionsContainer) return;
+
+        function updateProductImage() {
+            const selectedSizeOption = sizeOptionsContainer.querySelector('.option-value.active');
+            const selectedFrameOption = frameOptionsContainer.querySelector('.option-value.active');
+
+            let newImageSrc = '';
+
+            if (selectedSizeOption && selectedSizeOption.dataset.image) {
+                newImageSrc = selectedSizeOption.dataset.image;
+            } else if (selectedFrameOption && selectedFrameOption.dataset.image) {
+                newImageSrc = selectedFrameOption.dataset.image;
+            }
+
+            if (newImageSrc) {
+                mainProductImage.src = newImageSrc;
+                mainProductImage.alt = product.title + ' ' + (selectedSizeOption ? selectedSizeOption.dataset.size : '') + ' ' + (selectedFrameOption ? selectedFrameOption.dataset.frame : '');
+
+                // Update thumbnails as well if needed, or reinitialize swiper
+                // For simplicity, we'll just update the main image for now.
+                // A more robust solution would involve updating the swiper instance.
+            }
+        }
+
+        sizeOptionsContainer.addEventListener('click', function(e) {
+            const target = e.target.closest('.option-value.size-option');
+            if (target) {
+                sizeOptionsContainer.querySelectorAll('.option-value.size-option').forEach(option => option.classList.remove('active'));
+                target.classList.add('active');
+                updateProductImage();
+            }
+        });
+
+        frameOptionsContainer.addEventListener('click', function(e) {
+            const target = e.target.closest('.option-value.frame-option');
+            if (target) {
+                frameOptionsContainer.querySelectorAll('.option-value.frame-option').forEach(option => option.classList.remove('active'));
+                target.classList.add('active');
+                updateProductImage();
+            }
+        });
+
+        // Initial image update on page load
+        updateProductImage();
+    }
+
     // Sayfa yüklendiğinde ilgili sayfanın başlatma fonksiyonunu çağır
     const currentPath = window.location.pathname;
     

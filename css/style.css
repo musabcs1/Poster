@@ -458,14 +458,331 @@ section {
     margin: 0 10px;
 }
 
-/* ===== KATEGORİLER ===== */
-.categories {
-    background-color: var(--bg-cream);
-    transition: background-color 0.3s ease;
+/* ===== KATEGORİ BANNER ===== */
+.category-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/hero-bg.svg'); /* Örnek bir arka plan görseli */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 80px 0 40px;
+    text-align: center;
+    margin-top: 80px; /* Header yüksekliği kadar boşluk */
 }
 
-.dark-mode .categories {
+.category-banner .breadcrumb {
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.category-banner .breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.category-banner .breadcrumb a:hover {
+    color: var(--primary-color);
+}
+
+.category-banner .breadcrumb span {
+    color: #fff;
+}
+
+.category-banner h1 {
+    font-size: 3rem;
+    margin-top: 15px;
+    color: #fff;
+}
+
+/* ===== KATEGORİ İÇERİĞİ ===== */
+.category-content {
+    padding: 60px 0;
+}
+
+.category-container {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Sabit sidebar genişliği */
+    gap: 40px;
+}
+
+.category-sidebar {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    height: fit-content; /* İçeriğe göre yükseklik */
+    position: sticky;
+    top: 100px; /* Header'ın altında başla */
+}
+
+.dark-mode .category-sidebar {
+    background-color: var(--dark-secondary-bg);
+    box-shadow: var(--dark-box-shadow);
+}
+
+.filter-widget {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--light-gray-color);
+}
+
+.filter-widget:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.filter-widget h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+}
+
+/* Fiyat Filtresi */
+.price-filter .price-range {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.price-filter .price-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: var(--light-gray-color);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+.price-filter .price-slider:hover {
+    opacity: 1;
+}
+
+.price-filter .price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.price-filter .price-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.price-filter .price-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.price-filter .price-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-filter .price-input label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.price-filter .price-input input {
+    width: 80px;
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.dark-mode .price-filter .price-input input {
     background-color: var(--dark-bg);
+    border-color: var(--dark-border-color);
+}
+
+.price-filter-btn {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Filtre Seçenekleri (Boyut, Çerçeve, Değerlendirme) */
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-option input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.filter-option input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.filter-option input[type="checkbox"]:checked::before {
+    content: '\f00c'; /* FontAwesome check icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.filter-option label {
+    font-size: 1rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.filter-option .stars {
+    color: var(--warning-color);
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
+
+.filter-option .stars span {
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.filter-reset-btn {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+.filter-reset-btn:hover {
+    background-color: var(--primary-color);
+}
+
+/* KATEGORİ ÜRÜNLERİ */
+.category-products {
+    /* Ürün gridi ve araç çubuğu için stiller */
+}
+
+.category-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: var(--white-color);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.dark-mode .category-toolbar {
+    background-color: var(--dark-secondary-bg);
+    box-shadow: var(--dark-box-shadow);
+}
+
+.category-result .result-count {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.category-sort label {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-right: 10px;
+}
+
+.category-sort .sort-select {
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.dark-mode .category-sort .sort-select {
+    background-color: var(--dark-bg);
+    border-color: var(--dark-border-color);
+}
+
+.category-sort .sort-select:focus {
+    border-color: var(--primary-color);
+}
+
+.view-options {
+    display: flex;
+    gap: 10px;
+}
+
+.view-button {
+    background-color: var(--light-gray-color);
+    color: var(--text-color);
+    border: none;
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dark-mode .view-button {
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+}
+
+.view-button:hover,
+.view-button.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* ÜRÜNLER */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.dark-mode .product-card {
+    background-color: var(--dark-secondary-bg);
+    box-shadow: var(--dark-box-shadow);
 }
 
 .category-grid {
