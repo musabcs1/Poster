@@ -40,8 +40,8 @@
                         <i class="fas fa-moon"></i>
                     </div>
                     <a href="#" class="search-toggle"><i class="fas fa-search"></i></a>
-                    <a href="#" class="favorites-toggle"><i class="fas fa-heart"></i> <span class="count">0</span></a>
-                    <a href="#" class="cart-toggle"><i class="fas fa-shopping-cart"></i> <span class="count">0</span></a>
+                    <a href="#" class="favorites-toggle"><i class="far fa-heart"></i> <span class="count favorites-count">0</span></a>
+                    <a href="#" class="cart-toggle"><i class="fas fa-shopping-cart"></i> <span class="count cart-count">0</span></a>
                     <a href="#" class="mobile-menu-toggle"><i class="fas fa-bars"></i></a>
                 </div>
             </div>
@@ -68,33 +68,33 @@
                 <span>/</span>
                 <a href="#" class="product-category">Film</a>
                 <span>/</span>
-                <span class="current product-title">Pulp Fiction Film Posteri</span>
+                <span class="current product-title">Yüzüklerin Efendisi film posteri</span>
             </div>
 
             <div class="product-container">
                 <div class="product-gallery">
                     <div class="product-main-image">
-                        <img src="images/products/product1.jpg" alt="Pulp Fiction Film Posteri" id="main-image">
+                        <img src="images/poster1.svg" alt="Yüzüklerin Efendisi film posteri" id="main-image">
                         <div class="product-badges">
                             <div class="product-badge">Yeni</div>
                         </div>
                         <a href="#" class="image-zoom"><i class="fas fa-search-plus"></i></a>
                     </div>
                     <div class="product-thumbnails">
-                        <div class="thumbnail active" data-image="images/products/product1.jpg">
-                            <img src="images/products/product1.jpg" alt="Pulp Fiction Film Posteri 1">
+                        <div class="thumbnail active" data-image="images/poster1.svg">
+                            <img src="images/poster1.svg" alt="Yüzüklerin Efendisi film posteri 1">
                         </div>
-                        <div class="thumbnail" data-image="images/products/product1-2.jpg">
-                            <img src="images/products/product1-2.jpg" alt="Pulp Fiction Film Posteri 2">
+                        <div class="thumbnail" data-image="images/poster2.svg">
+                            <img src="images/poster2.svg" alt="Yüzüklerin Efendisi film posteri 2">
                         </div>
-                        <div class="thumbnail" data-image="images/products/product1-3.jpg">
-                            <img src="images/products/product1-3.jpg" alt="Pulp Fiction Film Posteri 3">
+                        <div class="thumbnail" data-image="images/poster3.svg">
+                            <img src="images/poster3.svg" alt="Yüzüklerin Efendisi film posteri 3">
                         </div>
                     </div>
                 </div>
 
                 <div class="product-info">
-                    <h1>Pulp Fiction Film Posteri</h1>
+                    <h1>Yüzüklerin Efendisi film posteri</h1>
                     <div class="product-meta">
                         <div class="product-category">Kategori: <a href="category.html?category=film">Film</a></div>
                         <div class="product-rating">
@@ -385,7 +385,7 @@
                     <!-- Ürün 1 -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/collections/collection3.jpg" alt="The Godfather">
+                            <img src="images/favorite3.png" alt="The Godfather">
                             <div class="product-actions">
                                 <a href="#" class="add-to-favorites" data-id="7"><i class="far fa-heart"></i></a>
                                 <a href="#" class="quick-view" data-id="7"><i class="fas fa-eye"></i></a>
@@ -413,7 +413,7 @@
                     <div class="product-card">
                         <div class="product-badge">Yeni</div>
                         <div class="product-image">
-                            <img src="images/products/product5.jpg" alt="Fight Club Film Posteri">
+                            <img src="images/poster5.svg" alt="Fight Club Film Posteri">
                             <div class="product-actions">
                                 <a href="#" class="add-to-favorites" data-id="8"><i class="far fa-heart"></i></a>
                                 <a href="#" class="quick-view" data-id="8"><i class="fas fa-eye"></i></a>
@@ -441,7 +441,7 @@
                     <div class="product-card">
                         <div class="product-badge bestseller">Çok Satan</div>
                         <div class="product-image">
-                            <img src="images/products/product6.jpg" alt="Inception Film Posteri">
+                            <img src="images/poster6.svg" alt="Inception Film Posteri">
                             <div class="product-actions">
                                 <a href="#" class="add-to-favorites" data-id="9"><i class="far fa-heart"></i></a>
                                 <a href="#" class="quick-view" data-id="9"><i class="fas fa-eye"></i></a>
@@ -469,7 +469,7 @@
                     <div class="product-card">
                         <div class="product-badge sale">İndirim</div>
                         <div class="product-image">
-                            <img src="images/products/product7.jpg" alt="The Shining Film Posteri">
+                            <img src="images/poster7.svg" alt="The Shining Film Posteri">
                             <div class="product-actions">
                                 <a href="#" class="add-to-favorites" data-id="10"><i class="far fa-heart"></i></a>
                                 <a href="#" class="quick-view" data-id="10"><i class="fas fa-eye"></i></a>
@@ -587,6 +587,24 @@
             <div class="cart-buttons">
                 <a href="cart.html" class="btn btn-outline">Sepeti Görüntüle</a>
                 <a href="checkout.html" class="btn btn-primary">Ödemeye Geç</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Favoriler Kenar Çubuğu -->
+    <div class="favorites-sidebar">
+        <div class="favorites-header">
+            <h3>Favorilerim</h3>
+            <a href="#" class="favorites-close"><i class="fas fa-times"></i></a>
+        </div>
+        <div class="favorites-body">
+            <div class="favorites-empty">
+                <i class="fas fa-heart"></i>
+                <p>Henüz favori ürününüz yok</p>
+                <a href="category.html" class="btn btn-primary">Ürünleri Keşfet</a>
+            </div>
+            <div class="favorites-items">
+                <!-- Favori öğeleri JavaScript ile eklenecek -->
             </div>
         </div>
     </div>

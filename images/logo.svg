@@ -1,0 +1,26 @@
+<svg width="200" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo for Poster Shop -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d72638" />
+      <stop offset="100%" stop-color="#c5a880" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Stylized frame -->
+  <rect x="5" y="5" width="50" height="50" fill="none" stroke="url(#logoGradient)" stroke-width="2" rx="2" ry="2" />
+  
+  <!-- Abstract poster inside frame -->
+  <rect x="10" y="10" width="40" height="40" fill="#fdf6e3" opacity="0.8" />
+  <path d="M 15,35 L 25,15 L 35,25 L 45,20" stroke="#1a1a1a" stroke-width="1.5" fill="none" />
+  <circle cx="25" cy="15" r="3" fill="#d72638" />
+  
+  <!-- Text part of logo -->
+  <g transform="translate(65, 30)">
+    <text font-family="'Playfair Display', serif" font-size="24" fill="#1a1a1a" font-weight="bold">POSTER</text>
+    <text x="0" y="20" font-family="'Inter', sans-serif" font-size="12" fill="#1a1a1a" letter-spacing="2">SANATI</text>
+  </g>
+  
+  <!-- Decorative dot -->
+  <circle cx="180" cy="30" r="4" fill="url(#logoGradient)" />
+</svg>

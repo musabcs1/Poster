@@ -1,0 +1,19 @@
+<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- New Badge -->
+  <defs>
+    <linearGradient id="badgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d72638" />
+      <stop offset="100%" stop-color="#b01e2d" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Badge circle -->
+  <circle cx="30" cy="30" r="28" fill="url(#badgeGradient)" />
+  <circle cx="30" cy="30" r="25" fill="url(#badgeGradient)" stroke="#ffffff" stroke-width="0.5" opacity="0.9" />
+  
+  <!-- Text -->
+  <text x="30" y="35" font-family="'Inter', sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">YENİ</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="30" cy="30" r="22" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.3" />
+</svg>

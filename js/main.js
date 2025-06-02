@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const cartToggle = document.querySelector('.cart-toggle');
     const cartSidebar = document.querySelector('.cart-sidebar');
     const cartClose = document.querySelector('.cart-close');
+    const favoritesToggle = document.querySelector('.favorites-toggle');
+    const favoritesSidebar = document.querySelector('.favorites-sidebar');
+    const favoritesClose = document.querySelector('.favorites-close');
     const overlay = document.querySelector('.overlay');
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -19,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Sepet ve Favoriler için localStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    
+    // Sayfa yüklendiğinde favorileri render et
+    renderFavorites();
     
     // Sayfa yüklendiğinde sepet ve favorileri güncelle
     updateCartCount();
@@ -86,10 +92,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Favoriler Kenar Çubuğu Göster/Gizle
+    if (favoritesToggle) {
+        favoritesToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            favoritesSidebar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    if (favoritesClose) {
+        favoritesClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            favoritesSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+    
     // Overlay Tıklama
     if (overlay) {
         overlay.addEventListener('click', function() {
             cartSidebar.classList.remove('active');
+            favoritesSidebar.classList.remove('active');
             quickViewModal.classList.remove('active');
             overlay.classList.remove('active');
             document.body.style.overflow = '';
@@ -155,16 +181,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const products = [
         {
             id: 1,
-            title: "Pulp Fiction Film Posteri",
+            title: "Yüzüklerin Efendisi film posteri",
             category: "Film",
             price: 149.90,
             rating: 4.5,
             reviewCount: 24,
-            image: "images/products/product1.jpg",
+            image: "images/poster1.svg",
             images: [
-                "images/products/product1.jpg",
-                "images/products/product1-2.jpg",
-                "images/products/product1-3.jpg"
+                "images/poster1.svg",
+                "images/poster2.svg",
+                "images/poster3.svg"
             ],
             description: "Quentin Tarantino'nun kült filmi Pulp Fiction'ın yüksek kaliteli posteri. Evinizin duvarlarına film tutkunuzu yansıtın.",
             sizes: ["30x40", "50x70", "70x100"],
@@ -181,11 +207,11 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 129.90,
             rating: 5,
             reviewCount: 42,
-            image: "images/products/product2.jpg",
+            image: "images/poster2.svg",
             images: [
-                "images/products/product2.jpg",
-                "images/products/product2-2.jpg",
-                "images/products/product2-3.jpg"
+                "images/poster2.svg",
+                "images/poster3.svg",
+                "images/poster4.svg"
             ],
             description: "Antik Yunan filozofu Sokrates'in portresi ve ünlü sözleriyle tasarlanmış poster. Felsefe tutkunları için ideal.",
             sizes: ["30x40", "50x70", "70x100"],
@@ -202,11 +228,11 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 179.90,
             rating: 4,
             reviewCount: 18,
-            image: "images/products/product3.jpg",
+            image: "images/poster3.svg",
             images: [
-                "images/products/product3.jpg",
-                "images/products/product3-2.jpg",
-                "images/products/product3-3.jpg"
+                "images/poster3.svg",
+                "images/poster4.svg",
+                "images/poster5.svg"
             ],
             description: "Osmanlı İmparatorluğu'nun en geniş sınırlarını gösteren detaylı ve estetik harita posteri. Tarih tutkunları için mükemmel bir seçim.",
             sizes: ["30x40", "50x70", "70x100"],
@@ -224,11 +250,11 @@ document.addEventListener('DOMContentLoaded', function() {
             oldPrice: 199.90,
             rating: 4.5,
             reviewCount: 36,
-            image: "images/products/product4.jpg",
+            image: "images/poster4.svg",
             images: [
-                "images/products/product4.jpg",
-                "images/products/product4-2.jpg",
-                "images/products/product4-3.jpg"
+                "images/poster4.svg",
+                "images/poster5.svg",
+                "images/poster6.svg"
             ],
             description: "Efsanevi basketbolcu Kobe Bryant'ın unutulmaz smaç anını ölümsüzleştiren poster. Spor tutkunları için ideal bir duvar dekorasyonu.",
             sizes: ["30x40", "50x70", "70x100"],
@@ -245,11 +271,11 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 139.90,
             rating: 4.8,
             reviewCount: 29,
-            image: "images/collections/collection1.jpg",
+            image: "images/favorite1.png",
             images: [
-                "images/collections/collection1.jpg",
-                "images/collections/collection1-2.jpg",
-                "images/collections/collection1-3.jpg"
+                "images/favorite1.png",
+                "images/poster1.svg",
+                "images/poster2.svg"
             ],
             description: "Friedrich Nietzsche'nin ünlü eseri 'Güç İstenci'nden alıntılar ve filozofun portresiyle tasarlanmış özel poster.",
             sizes: ["30x40", "50x70", "70x100"],
@@ -266,11 +292,11 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 189.90,
             rating: 5,
             reviewCount: 47,
-            image: "images/collections/collection2.jpg",
+            image: "images/favorite2.png",
             images: [
-                "images/collections/collection2.jpg",
-                "images/collections/collection2-2.jpg",
-                "images/collections/collection2-3.jpg"
+                "images/favorite2.png",
+                "images/poster3.svg",
+                "images/poster4.svg"
             ],
             description: "Fatih Sultan Mehmet'in tarihi portresinin modern bir yorumu. Yüksek kaliteli baskı ile evinize tarih ve estetik katın.",
             sizes: ["30x40", "50x70", "70x100"],
@@ -287,11 +313,11 @@ document.addEventListener('DOMContentLoaded', function() {
             price: 169.90,
             rating: 4.9,
             reviewCount: 53,
-            image: "images/collections/collection3.jpg",
+            image: "images/favorite3.png",
             images: [
-                "images/collections/collection3.jpg",
-                "images/collections/collection3-2.jpg",
-                "images/collections/collection3-3.jpg"
+                "images/favorite3.png",
+                "images/poster5.svg",
+                "images/poster6.svg"
             ],
             description: "Sinema tarihinin en ikonik filmlerinden The Godfather'ın minimalist tasarımlı posteri. Film tutkunları için mükemmel bir seçim.",
             sizes: ["30x40", "50x70", "70x100"],
@@ -567,26 +593,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Favorilere Ekle/Çıkar
-    function toggleFavorite(productId) {
-        const id = parseInt(productId);
-        const index = favorites.indexOf(id);
-        
-        if (index === -1) {
-            // Favorilerde yoksa ekle
-            favorites.push(id);
-            showNotification('Ürün favorilere eklendi!');
-        } else {
-            // Favorilerde varsa çıkar
-            favorites.splice(index, 1);
-            showNotification('Ürün favorilerden çıkarıldı!');
-        }
-        
-        // LocalStorage'a kaydet
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-        
-        // Favori sayısını güncelle
-        updateFavoritesCount();
+function toggleFavorite(productId) {
+    const id = parseInt(productId);
+    const index = favorites.indexOf(id);
+    
+    if (index === -1) {
+        // Favorilerde yoksa ekle
+        favorites.push(id);
+        showNotification('Ürün favorilere eklendi!');
+    } else {
+        // Favorilerde varsa çıkar
+        favorites.splice(index, 1);
+        showNotification('Ürün favorilerden çıkarıldı!');
     }
+    
+    // LocalStorage'a kaydet
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    
+    // Favori sayısını güncelle
+    updateFavoritesCount();
+    
+    // Favorileri yeniden render et
+    renderFavorites();
+}
     
     // Favori Butonunu Güncelle
     function updateFavoriteButton(button, productId) {
@@ -637,13 +666,89 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Favori Sayısını Güncelle
-    function updateFavoritesCount() {
-        const favoritesCountElements = document.querySelectorAll('.favorites-toggle .count');
-        
-        favoritesCountElements.forEach(element => {
-            element.textContent = favorites.length;
-        });
+function updateFavoritesCount() {
+    const favoritesCountElements = document.querySelectorAll('.favorites-toggle .count');
+    
+    favoritesCountElements.forEach(element => {
+        element.textContent = favorites.length;
+    });
+}
+
+// Favorileri Render Et
+function renderFavorites() {
+    const favoritesBody = document.querySelector('.favorites-body');
+    if (!favoritesBody) return;
+    
+    if (favorites.length === 0) {
+        favoritesBody.innerHTML = `
+            <div class="favorites-empty">
+                <i class="fas fa-heart"></i>
+                <p>Favoriler listeniz boş.</p>
+                <a href="index.html" class="btn btn-primary">Ürünleri Keşfedin</a>
+            </div>
+        `;
+        return;
     }
+    
+    let favoritesHTML = '';
+    
+    favorites.forEach(id => {
+        const product = getProductById(id);
+        if (!product) return;
+        
+        favoritesHTML += `
+            <div class="favorites-item" data-id="${product.id}">
+                <div class="favorites-item-image">
+                    <img src="${product.image}" alt="${product.title}">
+                </div>
+                <div class="favorites-item-info">
+                    <h4 class="favorites-item-title">${product.title}</h4>
+                    <div class="favorites-item-price">₺${product.price.toFixed(2)}</div>
+                    <div class="favorites-item-category">${product.category}</div>
+                    <div class="favorites-item-actions">
+                        <a href="#" class="btn btn-sm btn-primary quick-view" data-id="${product.id}">İncele</a>
+                        <a href="#" class="btn btn-sm btn-outline-primary add-to-cart" data-id="${product.id}">Sepete Ekle</a>
+                    </div>
+                </div>
+                <div class="favorites-item-remove" data-id="${product.id}">
+                    <i class="fas fa-trash-alt"></i>
+                </div>
+            </div>
+        `;
+    });
+    
+    favoritesBody.innerHTML = favoritesHTML;
+    
+    // Favorilerden kaldırma işlevi
+    const removeButtons = favoritesBody.querySelectorAll('.favorites-item-remove');
+    removeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const id = this.getAttribute('data-id');
+            toggleFavorite(id);
+            renderFavorites();
+        });
+    });
+    
+    // Favorilerdeki ürünleri inceleme işlevi
+    const quickViewButtons = favoritesBody.querySelectorAll('.quick-view');
+    quickViewButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const id = this.getAttribute('data-id');
+            openQuickViewModal(id);
+        });
+    });
+    
+    // Favorilerdeki ürünleri sepete ekleme işlevi
+    const addToCartButtons = favoritesBody.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const id = this.getAttribute('data-id');
+            addToCart(id);
+        });
+    });
+}
     
     // Sepeti Render Et
     function renderCart() {
