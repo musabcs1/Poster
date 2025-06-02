@@ -1,0 +1,91 @@
+<svg width="800" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with parchment texture -->
+  <defs>
+    <pattern id="parchmentTexture" width="200" height="200" patternUnits="userSpaceOnUse">
+      <rect width="200" height="200" fill="#e8d9b5" />
+      <rect width="200" height="200" fill="#c5a880" opacity="0.1" />
+      <circle cx="100" cy="100" r="80" fill="#d9c7a0" opacity="0.3" />
+      <circle cx="0" cy="0" r="50" fill="#d9c7a0" opacity="0.2" />
+      <circle cx="200" cy="200" r="50" fill="#d9c7a0" opacity="0.2" />
+      <circle cx="0" cy="200" r="50" fill="#d9c7a0" opacity="0.2" />
+      <circle cx="200" cy="0" r="50" fill="#d9c7a0" opacity="0.2" />
+    </pattern>
+    <filter id="paperTexture" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+  
+  <!-- Parchment background -->
+  <rect width="100%" height="100%" fill="url(#parchmentTexture)" filter="url(#paperTexture)" />
+  
+  <!-- Aged border -->
+  <rect x="40" y="40" width="720" height="1120" fill="none" stroke="#8b6b3d" stroke-width="5" opacity="0.7" />
+  
+  <!-- Map of Ottoman Empire (simplified outline) -->
+  <g transform="translate(400, 600)" fill="#d72638" fill-opacity="0.2" stroke="#8b6b3d" stroke-width="2">
+    <!-- Anatolia (Turkey) -->
+    <path d="M 0,0 C 50,-20 100,-10 150,-30 C 200,-50 250,-40 300,-60 C 300,0 280,50 250,80 C 200,100 150,90 100,70 C 50,50 0,30 -50,40 C -100,50 -150,40 -200,30 C -150,20 -100,10 -50,0 C 0,-10 -20,-10 0,0 Z" />
+    
+    <!-- Balkans -->
+    <path d="M -200,30 C -220,0 -240,-30 -260,-60 C -220,-70 -180,-60 -140,-50 C -100,-40 -60,-30 -20,-20 C -50,-10 -100,0 -150,10 C -170,20 -190,25 -200,30 Z" />
+    
+    <!-- Middle East -->
+    <path d="M 250,80 C 270,50 290,20 310,-10 C 330,-40 350,-70 370,-100 C 350,-60 330,-20 310,20 C 290,60 270,100 250,140 C 230,120 210,100 190,80 C 210,80 230,80 250,80 Z" />
+    
+    <!-- North Africa -->
+    <path d="M -200,30 C -220,60 -240,90 -260,120 C -280,150 -300,180 -320,210 C -280,190 -240,170 -200,150 C -160,130 -120,110 -80,90 C -120,70 -160,50 -200,30 Z" />
+  </g>
+  
+  <!-- Compass rose -->
+  <g transform="translate(650, 900)">
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#8b6b3d" stroke-width="2" />
+    <circle cx="0" cy="0" r="5" fill="#8b6b3d" />
+    <line x1="0" y1="-60" x2="0" y2="-70" stroke="#8b6b3d" stroke-width="3" />
+    <line x1="0" y1="60" x2="0" y2="70" stroke="#8b6b3d" stroke-width="2" />
+    <line x1="-60" y1="0" x2="-70" y2="0" stroke="#8b6b3d" stroke-width="2" />
+    <line x1="60" y1="0" x2="70" y2="0" stroke="#8b6b3d" stroke-width="2" />
+    <line x1="-42" y1="-42" x2="-50" y2="-50" stroke="#8b6b3d" stroke-width="2" />
+    <line x1="42" y1="-42" x2="50" y2="-50" stroke="#8b6b3d" stroke-width="2" />
+    <line x1="-42" y1="42" x2="-50" y2="50" stroke="#8b6b3d" stroke-width="2" />
+    <line x1="42" y1="42" x2="50" y2="50" stroke="#8b6b3d" stroke-width="2" />
+    <text x="0" y="-75" font-family="serif" font-size="20" fill="#8b6b3d" text-anchor="middle">N</text>
+    <text x="0" y="90" font-family="serif" font-size="20" fill="#8b6b3d" text-anchor="middle">S</text>
+    <text x="-85" y="5" font-family="serif" font-size="20" fill="#8b6b3d" text-anchor="middle">W</text>
+    <text x="85" y="5" font-family="serif" font-size="20" fill="#8b6b3d" text-anchor="middle">E</text>
+  </g>
+  
+  <!-- Ottoman Tughra (stylized signature) -->
+  <g transform="translate(400, 250)" stroke="#d72638" fill="none">
+    <path d="M -100,0 C -80,-50 -40,-70 0,-50 C 40,-70 80,-50 100,0" stroke-width="5" />
+    <path d="M -50,0 C -40,-100 -20,-120 0,-80 C 20,-120 40,-100 50,0" stroke-width="5" />
+    <path d="M -70,0 C -60,50 -30,70 0,50 C 30,70 60,50 70,0" stroke-width="5" />
+    <path d="M 0,-80 L 0,120" stroke-width="3" />
+    <path d="M -20,-60 L -20,100" stroke-width="3" />
+    <path d="M 20,-60 L 20,100" stroke-width="3" />
+  </g>
+  
+  <!-- Title -->
+  <g transform="translate(400, 450)">
+    <text x="0" y="0" font-family="'Times New Roman', serif" font-size="50" fill="#8b6b3d" text-anchor="middle" font-weight="bold">OSMANLI</text>
+    <text x="0" y="60" font-family="'Times New Roman', serif" font-size="50" fill="#8b6b3d" text-anchor="middle" font-weight="bold">İMPARATORLUĞU</text>
+    <text x="0" y="120" font-family="'Times New Roman', serif" font-size="40" fill="#8b6b3d" text-anchor="middle">HARİTASI</text>
+  </g>
+  
+  <!-- Years -->
+  <text x="400" y="600" font-family="'Times New Roman', serif" font-size="30" fill="#8b6b3d" text-anchor="middle">1299 - 1922</text>
+  
+  <!-- Decorative elements -->
+  <g stroke="#d72638" stroke-width="1" opacity="0.5" fill="none">
+    <path d="M 100,100 C 150,80 200,120 250,100 C 300,80 350,120 400,100 C 450,80 500,120 550,100 C 600,80 650,120 700,100" />
+    <path d="M 100,1100 C 150,1080 200,1120 250,1100 C 300,1080 350,1120 400,1100 C 450,1080 500,1120 550,1100 C 600,1080 650,1120 700,1100" />
+  </g>
+  
+  <!-- Aged spots and stains -->
+  <g fill="#8b6b3d" opacity="0.1">
+    <circle cx="200" cy="300" r="50" />
+    <circle cx="600" cy="400" r="70" />
+    <circle cx="150" cy="800" r="60" />
+    <circle cx="700" cy="700" r="40" />
+  </g>
+</svg>

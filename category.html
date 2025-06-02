@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori | Poster Sanatı</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.svg" alt="Poster Sanatı Logo"></a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="index.html#categories">Kategoriler</a></li>
+                        <li><a href="index.html#favorites">Serdar Hoca'nın Favorileri</a></li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="search-toggle"><img src="images/search-icon.svg" alt="Ara"></button>
+                    <div class="cart">
+                        <a href="#" class="cart-icon"><img src="images/cart-icon.svg" alt="Sepet"><span class="cart-count">0</span></a>
+                    </div>
+                    <button class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.svg" alt="Poster Sanatı Logo"></a>
+            </div>
+            <button class="mobile-nav-close"><img src="images/close-icon.svg" alt="Kapat"></button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="index.html#categories">Kategoriler</a></li>
+                <li><a href="index.html#favorites">Serdar Hoca'nın Favorileri</a></li>
+                <li><a href="about.html">Hakkımızda</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-container">
+        <div class="container">
+            <div class="breadcrumb fade-in">
+                <a href="index.html">Ana Sayfa</a> / 
+                <span id="category-name">Kategori</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Header -->
+    <section class="category-header">
+        <div class="container">
+            <div class="category-banner fade-in" id="category-banner">
+                <!-- Category banner image will be set by JavaScript -->
+                <div class="category-overlay">
+                    <h1 id="category-title">Kategori</h1>
+                    <p id="category-description">Kategori açıklaması burada yer alacak.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="category-filters">
+        <div class="container">
+            <div class="filters-container fade-in">
+                <div class="filter-results">
+                    <span id="product-count">0</span> ürün bulundu
+                </div>
+                <div class="filter-actions">
+                    <div class="filter-sort">
+                        <label for="sort-select">Sırala:</label>
+                        <select id="sort-select">
+                            <option value="featured">Öne Çıkanlar</option>
+                            <option value="price-low">Fiyat: Düşükten Yükseğe</option>
+                            <option value="price-high">Fiyat: Yüksekten Düşüğe</option>
+                            <option value="newest">En Yeniler</option>
+                            <option value="bestselling">Çok Satanlar</option>
+                        </select>
+                    </div>
+                    <div class="filter-view">
+                        <button class="view-button grid-view active"><i class="fas fa-th"></i></button>
+                        <button class="view-button list-view"><i class="fas fa-list"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Products -->
+    <section class="category-products">
+        <div class="container">
+            <div class="category-layout">
+                <!-- Sidebar Filters -->
+                <div class="sidebar-filters fade-in">
+                    <div class="filter-group">
+                        <h3>Fiyat Aralığı</h3>
+                        <div class="price-range">
+                            <div class="price-slider">
+                                <div class="slider-track">
+                                    <div class="slider-range"></div>
+                                    <div class="slider-thumb left"></div>
+                                    <div class="slider-thumb right"></div>
+                                </div>
+                            </div>
+                            <div class="price-inputs">
+                                <div class="price-input">
+                                    <label>Min</label>
+                                    <input type="number" id="min-price" value="0" min="0" max="1000">
+                                </div>
+                                <div class="price-input">
+                                    <label>Max</label>
+                                    <input type="number" id="max-price" value="500" min="0" max="1000">
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary btn-sm price-filter-apply">Uygula</button>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Boyut</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="30x40">
+                                <span class="checkmark"></span>
+                                <span class="option-label">30x40 cm</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="50x70">
+                                <span class="checkmark"></span>
+                                <span class="option-label">50x70 cm</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="size" value="70x100">
+                                <span class="checkmark"></span>
+                                <span class="option-label">70x100 cm</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Çerçeve</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" name="frame" value="none">
+                                <span class="checkmark"></span>
+                                <span class="option-label">Çerçevesiz</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="frame" value="black">
+                                <span class="checkmark"></span>
+                                <span class="option-label">Siyah Çerçeve</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="frame" value="white">
+                                <span class="checkmark"></span>
+                                <span class="option-label">Beyaz Çerçeve</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" name="frame" value="wood">
+                                <span class="checkmark"></span>
+                                <span class="option-label">Ahşap Çerçeve</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h3>Değerlendirme</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="5">
+                                <span class="radio-mark"></span>
+                                <span class="option-label">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>ve üzeri</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="4">
+                                <span class="radio-mark"></span>
+                                <span class="option-label">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>ve üzeri</span>
+                                </span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="rating" value="3">
+                                <span class="radio-mark"></span>
+                                <span class="option-label">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>ve üzeri</span>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <button class="btn btn-primary btn-apply-filters">Filtreleri Uygula</button>
+                        <button class="btn btn-secondary btn-reset-filters">Sıfırla</button>
+                    </div>
+                </div>
+                
+                <!-- Products Grid -->
+                <div class="products-container">
+                    <div class="products-grid" id="products-grid">
+                        <!-- Products will be loaded dynamically by JavaScript -->
+                        <!-- Example Product Card -->
+                        <div class="product-card fade-in-up">
+                            <div class="product-image">
+                                <img src="images/poster1.svg" alt="Pulp Fiction">
+                                <div class="product-badges">
+                                    <span class="badge badge-new">Yeni</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product.html">Pulp Fiction</a></h3>
+                                <div class="product-category">Film</div>
+                                <div class="product-price">₺249,99</div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(42)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card fade-in-up" data-delay="0.1">
+                            <div class="product-image">
+                                <img src="images/poster2.svg" alt="Muhammad Ali">
+                                <div class="product-actions">
+                                    <button class="btn-quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product.html">Muhammad Ali</a></h3>
+                                <div class="product-category">Spor</div>
+                                <div class="product-price">₺199,99</div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>(38)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card fade-in-up" data-delay="0.2">
+                            <div class="product-image">
+                                <img src="images/poster3.svg" alt="Nietzsche">
+                                <div class="product-badges">
+                                    <span class="badge badge-sale">İndirim</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn-quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product.html">Böyle Buyurdu Zerdüşt</a></h3>
+                                <div class="product-category">Felsefe</div>
+                                <div class="product-price">
+                                    <span class="current-price">₺179,99</span>
+                                    <span class="old-price">₺229,99</span>
+                                </div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>(27)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-card fade-in-up" data-delay="0.3">
+                            <div class="product-image">
+                                <img src="images/poster4.svg" alt="Osmanlı İmparatorluğu Haritası">
+                                <div class="product-actions">
+                                    <button class="btn-quick-view"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i></button>
+                                    <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <h3><a href="product.html">Osmanlı İmparatorluğu Haritası</a></h3>
+                                <div class="product-category">Tarih</div>
+                                <div class="product-price">₺229,99</div>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>(45)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="pagination fade-in">
+                        <button class="pagination-prev disabled"><i class="fas fa-chevron-left"></i></button>
+                        <div class="pagination-numbers">
+                            <button class="pagination-number active">1</button>
+                            <button class="pagination-number">2</button>
+                            <button class="pagination-number">3</button>
+                            <span class="pagination-dots">...</span>
+                            <button class="pagination-number">10</button>
+                        </div>
+                        <button class="pagination-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section" style="background-image: url('images/newsletter-bg.svg');">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="fade-in">Yeniliklerden Haberdar Olun</h2>
+                <p class="fade-in-up">Yeni posterler, özel teklifler ve indirimler hakkında bilgi almak için abone olun.</p>
+                <form class="newsletter-form fade-in-up">
+                    <input type="email" placeholder="E-posta adresiniz" required>
+                    <button type="submit" class="btn btn-primary">Abone Ol</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.svg" alt="Poster Sanatı Logo">
+                    <p>Premium poster koleksiyonu</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h3>Sayfalar</h3>
+                        <ul>
+                            <li><a href="index.html">Ana Sayfa</a></li>
+                            <li><a href="index.html#categories">Kategoriler</a></li>
+                            <li><a href="index.html#favorites">Serdar Hoca'nın Favorileri</a></li>
+                            <li><a href="about.html">Hakkımızda</a></li>
+                            <li><a href="contact.html">İletişim</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Kategoriler</h3>
+                        <ul>
+                            <li><a href="category.html?category=film">Film</a></li>
+                            <li><a href="category.html?category=spor">Spor</a></li>
+                            <li><a href="category.html?category=felsefe">Felsefe</a></li>
+                            <li><a href="category.html?category=tarih">Tarih</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h3>Yardım</h3>
+                        <ul>
+                            <li><a href="faq.html">Sıkça Sorulan Sorular</a></li>
+                            <li><a href="shipping.html">Kargo Bilgileri</a></li>
+                            <li><a href="returns.html">İade Politikası</a></li>
+                            <li><a href="privacy.html">Gizlilik Politikası</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h3>Bizi Takip Edin</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Poster Sanatı. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-close"><img src="images/close-icon.svg" alt="Kapat"></div>
+        <div class="container">
+            <form class="search-form">
+                <input type="text" placeholder="Ne arıyorsunuz?">
+                <button type="submit"><img src="images/search-icon.svg" alt="Ara"></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Sepetiniz</h3>
+            <button class="cart-close"><img src="images/close-icon.svg" alt="Kapat"></button>
+        </div>
+        <div class="cart-items">
+            <div class="empty-cart-message">Sepetiniz boş.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Toplam:</span>
+                <span class="total-amount">₺0.00</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary btn-checkout">Ödemeye Geç</a>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal">
+        <div class="quick-view-content">
+            <button class="quick-view-close"><img src="images/close-icon.svg" alt="Kapat"></button>
+            <div class="quick-view-product">
+                <div class="quick-view-image">
+                    <img src="" alt="">
+                </div>
+                <div class="quick-view-info">
+                    <h2 class="product-title"></h2>
+                    <div class="product-category"></div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(0)</span>
+                    </div>
+                    <div class="product-price"></div>
+                    <div class="product-description"></div>
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-button minus">-</button>
+                            <input type="number" value="1" min="1" max="10">
+                            <button class="quantity-button plus">+</button>
+                        </div>
+                        <button class="btn btn-primary btn-add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Sepete Ekle
+                        </button>
+                    </div>
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <span>Stok Durumu:</span>
+                            <span class="stock-status">Stokta var</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>Kategori:</span>
+                            <span class="product-category-meta"></span>
+                        </div>
+                    </div>
+                    <a href="" class="view-full-details">Ürün Detaylarını Görüntüle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/category.js"></script>
+</body>
+</html>

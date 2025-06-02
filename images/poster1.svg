@@ -1,0 +1,46 @@
+<svg width="800" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#1a1a1a" />
+  
+  <!-- Pulp Fiction inspired design -->
+  <g>
+    <!-- Yellow background rectangle -->
+    <rect x="100" y="200" width="600" height="800" fill="#f7c61d" />
+    
+    <!-- Black silhouette figures -->
+    <g transform="translate(400, 600)">
+      <!-- Left figure (Uma Thurman) -->
+      <g transform="translate(-150, 0)">
+        <rect x="-60" y="-200" width="120" height="300" rx="10" ry="10" fill="#000000" />
+        <circle cx="0" cy="-230" r="50" fill="#000000" />
+        <rect x="-40" y="100" width="80" height="150" fill="#000000" />
+        <rect x="-60" y="-50" width="30" height="100" fill="#000000" />
+        <rect x="30" y="-50" width="30" height="100" fill="#000000" />
+      </g>
+      
+      <!-- Right figure (John Travolta) -->
+      <g transform="translate(150, 0)">
+        <rect x="-60" y="-200" width="120" height="300" rx="10" ry="10" fill="#000000" />
+        <circle cx="0" cy="-230" r="50" fill="#000000" />
+        <rect x="-40" y="100" width="80" height="150" fill="#000000" />
+        <rect x="-60" y="-50" width="30" height="100" fill="#000000" />
+        <rect x="30" y="-50" width="30" height="100" fill="#000000" />
+        
+        <!-- Gun -->
+        <rect x="-90" y="-50" width="120" height="20" fill="#000000" />
+      </g>
+    </g>
+    
+    <!-- Title -->
+    <g transform="translate(400, 200)">
+      <text x="0" y="0" font-family="Impact, sans-serif" font-size="80" fill="#000000" text-anchor="middle">PULP</text>
+      <text x="0" y="80" font-family="Impact, sans-serif" font-size="80" fill="#000000" text-anchor="middle">FICTION</text>
+    </g>
+    
+    <!-- Tagline -->
+    <text x="400" y="1050" font-family="Arial, sans-serif" font-size="24" fill="#000000" text-anchor="middle">Tarantino'nun Kült Klasiği</text>
+  </g>
+  
+  <!-- Poster frame -->
+  <rect x="80" y="180" width="640" height="840" fill="none" stroke="#ffffff" stroke-width="5" />
+</svg>
