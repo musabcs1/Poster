@@ -3,256 +3,509 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkımızda | Poster Sanatı</title>
+    <title>Poster Sanatı - Hakkımızda</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="icon" href="images/favicon.png" type="image/svg+xml">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Header Bölümü -->
     <header class="header">
         <div class="container">
-            <div class="header-inner">
+            <div class="header-wrapper">
                 <div class="logo">
-                    <a href="index.html"><img src="images/logo.svg" alt="Poster Sanatı Logo"></a>
+                    <a href="index.html">Poster Sanatı</a>
                 </div>
-                <nav class="main-nav">
+                <nav class="nav-menu">
                     <ul>
                         <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="index.html#categories">Kategoriler</a></li>
-                        <li><a href="index.html#favorites">Serdar Hoca'nın Favorileri</a></li>
+                        <li class="dropdown">
+                            <a href="#">Kategoriler</a>
+                            <div class="dropdown-content">
+                                <a href="category.html?category=film">Film</a>
+                                <a href="category.html?category=felsefe">Felsefe</a>
+                                <a href="category.html?category=tarih">Tarih</a>
+                                <a href="category.html?category=spor">Spor</a>
+                                <a href="category.html?category=sanat">Sanat</a>
+                            </div>
+                        </li>
                         <li><a href="about.html" class="active">Hakkımızda</a></li>
                         <li><a href="contact.html">İletişim</a></li>
                     </ul>
                 </nav>
-                <div class="header-actions">
-                    <button class="search-toggle"><img src="images/search-icon.svg" alt="Ara"></button>
-                    <div class="cart">
-                        <a href="#" class="cart-icon"><img src="images/cart-icon.svg" alt="Sepet"><span class="cart-count">0</span></a>
-                    </div>
-                    <button class="mobile-menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
+                <div class="header-icons">
+                    <a href="#" class="search-toggle"><i class="fas fa-search"></i></a>
+                    <a href="#" class="favorites-toggle"><i class="fas fa-heart"></i> <span class="count">0</span></a>
+                    <a href="#" class="cart-toggle"><i class="fas fa-shopping-cart"></i> <span class="count">0</span></a>
+                    <a href="#" class="mobile-menu-toggle"><i class="fas fa-bars"></i></a>
                 </div>
+            </div>
+        </div>
+        <!-- Arama Formu -->
+        <div class="search-form">
+            <div class="container">
+                <form action="#" method="get">
+                    <input type="text" name="search" placeholder="Ne aramıştınız?">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav">
-        <div class="mobile-nav-header">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.svg" alt="Poster Sanatı Logo"></a>
-            </div>
-            <button class="mobile-nav-close"><img src="images/close-icon.png" alt="Kapat"></button>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="index.html#categories">Kategoriler</a></li>
-                <li><a href="index.html#favorites">Serdar Hoca'nın Favorileri</a></li>
-                <li><a href="about.html" class="active">Hakkımızda</a></li>
-                <li><a href="contact.html">İletişim</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- Page Header -->
-    <section class="page-header">
+    <!-- Hakkımızda Banner -->
+    <section class="page-banner about-banner">
         <div class="container">
-            <h1 class="fade-in">Hakkımızda</h1>
-            <div class="breadcrumb fade-in">
-                <a href="index.html">Ana Sayfa</a> / <span>Hakkımızda</span>
+            <div class="banner-content">
+                <h1>Hakkımızda</h1>
+                <div class="breadcrumb">
+                    <a href="index.html">Ana Sayfa</a>
+                    <span>/</span>
+                    <span class="current">Hakkımızda</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Content -->
-    <section class="about-section">
+    <!-- Hikayemiz Bölümü -->
+    <section class="about-story">
         <div class="container">
-            <div class="about-content">
-                <div class="about-image fade-in">
-                    <img src="images/hero-bg.svg" alt="Poster Sanatı" class="tilt">
+            <div class="section-title">
+                <h2>Hikayemiz</h2>
+                <p>Duvarlarınızı sanatla buluşturma serüvenimiz</p>
+            </div>
+            <div class="story-content">
+                <div class="story-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Poster Sanatı Hikayesi">
                 </div>
-                <div class="about-text">
-                    <h2 class="fade-in">Hikayemiz</h2>
-                    <p class="fade-in-up">Poster Sanatı, 2020 yılında sanat ve tasarım tutkunları tarafından kurulmuş, yüksek kaliteli poster ve baskılar sunan bir sanat galerisinden esinlenerek oluşturulmuş bir e-ticaret platformudur.</p>
-                    <p class="fade-in-up">Amacımız, film, spor, felsefe ve tarih gibi farklı kategorilerde, duvarlara asılmaya değer, estetik ve anlamlı posterler sunmaktır. Her bir posterimiz, özenle seçilmiş ve tasarlanmış olup, evinize veya ofisinize karakter katacak niteliktedir.</p>
-                    <p class="fade-in-up">Koleksiyonumuzda yer alan posterler, sadece dekoratif amaçlı değil, aynı zamanda ilham verici ve düşündürücü olmaları için özenle seçilmiştir. Her bir poster, bir hikaye anlatır ve bir duygu uyandırır.</p>
+                <div class="story-text">
+                    <h3>Nasıl Başladık?</h3>
+                    <p>Poster Sanatı, 2018 yılında İstanbul'da, sanat ve tasarıma olan tutkusuyla bilinen Serdar Hoca tarafından kuruldu. Kendisi, uzun yıllar boyunca sanat dünyasında edindiği deneyimlerini, herkesin evine taşıyabilecek bir platform yaratma hayaliyle yola çıktı.</p>
+                    <p>Başlangıçta küçük bir atölyede, sınırlı sayıda film posteri basarak başladığımız yolculuğumuz, kısa sürede büyük bir ilgi gördü. Müşterilerimizin talepleri doğrultusunda koleksiyonumuzu genişlettik ve bugün film, felsefe, tarih, spor ve sanat gibi çeşitli kategorilerde binlerce özgün poster tasarımı sunuyoruz.</p>
+                    <p>Amacımız, sadece duvarları süsleyen posterler üretmek değil, aynı zamanda her bir posterin arkasındaki hikayeyi, felsefeyi ve sanatsal değeri müşterilerimize aktarmaktır. Bu nedenle her bir ürünümüz, titizlikle seçilmiş ve özenle tasarlanmıştır.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="about-values">
-                <h2 class="text-center fade-in">Değerlerimiz</h2>
-                <div class="values-grid">
-                    <div class="value-card fade-in-up">
-                        <div class="value-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3>Sanatsal Kalite</h3>
-                        <p>Her posterimiz, yüksek sanatsal standartlara göre tasarlanmıştır. Kaliteden asla ödün vermiyoruz.</p>
+    <!-- Değerlerimiz Bölümü -->
+    <section class="about-values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Değerlerimiz</h2>
+                <p>Bizi biz yapan prensipler</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-palette"></i>
                     </div>
-                    <div class="value-card fade-in-up" data-delay="0.2">
-                        <div class="value-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>Tutku</h3>
-                        <p>Sanat ve tasarıma olan tutkumuz, her ürünümüze yansır. Sevdiğimiz işi yapıyoruz.</p>
+                    <h3>Sanatsal Kalite</h3>
+                    <p>Her posterimiz, sanatsal değeri ön planda tutularak tasarlanır. Renk seçimlerinden kompozisyona kadar her detay özenle düşünülür.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
                     </div>
-                    <div class="value-card fade-in-up" data-delay="0.4">
-                        <div class="value-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Yaratıcılık</h3>
-                        <p>Sürekli yeni fikirler ve tasarımlar üretmek için çalışıyoruz. Yaratıcılık, DNA'mızda var.</p>
+                    <h3>Sürdürülebilirlik</h3>
+                    <p>Çevreye duyarlı malzemeler kullanarak, doğaya saygılı üretim süreçleri benimseriz. Ambalajlarımız geri dönüştürülebilir malzemelerden üretilir.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
                     </div>
-                    <div class="value-card fade-in-up" data-delay="0.6">
-                        <div class="value-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Müşteri Memnuniyeti</h3>
-                        <p>Müşterilerimizin memnuniyeti, en büyük önceliğimizdir. Her zaman daha iyisini sunmak için çalışıyoruz.</p>
+                    <h3>Müşteri Memnuniyeti</h3>
+                    <p>Müşterilerimizin beklentilerini aşmak için sürekli çalışırız. Satış öncesi ve sonrası destek hizmetlerimizle her zaman yanınızdayız.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
                     </div>
+                    <h3>Yenilikçilik</h3>
+                    <p>Tasarım trendlerini yakından takip eder, sürekli kendimizi yenileriz. Koleksiyonumuza düzenli olarak yeni ve özgün tasarımlar ekleriz.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Dürüstlük</h3>
+                    <p>İş yapış şeklimizde şeffaflık ve dürüstlük en önemli prensibimizdir. Müşterilerimize her zaman doğru ve eksiksiz bilgi sunarız.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Toplumsal Sorumluluk</h3>
+                    <p>Sanatın toplumsal gelişimdeki rolüne inanıyoruz. Bu nedenle çeşitli sosyal sorumluluk projelerine destek veriyor ve sanat eğitimini teşvik ediyoruz.</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="about-team">
-                <h2 class="text-center fade-in">Ekibimiz</h2>
-                <div class="team-grid">
-                    <div class="team-member fade-in-up">
-                        <div class="team-photo">
-                            <img src="images/serdar-hoca.png" alt="Serdar Hoca">
+    <!-- Ekibimiz Bölümü -->
+    <section class="about-team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ekibimiz</h2>
+                <p>Poster Sanatı'nın arkasındaki yetenekli ekip</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/300x300" alt="Serdar Hoca">
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
+                    </div>
+                    <div class="member-info">
                         <h3>Serdar Hoca</h3>
-                        <p class="team-role">Kurucu & Sanat Direktörü</p>
-                        <p>Sanat ve tasarım konusundaki derin bilgisiyle, koleksiyonumuzdaki her posteri özenle seçer.</p>
+                        <span class="position">Kurucu & Kreatif Direktör</span>
+                        <p>Sanat dünyasında 20 yıllık deneyime sahip olan Serdar, Poster Sanatı'nın vizyonunu belirleyen isim. Güzel Sanatlar Fakültesi mezunu olan Serdar, daha önce çeşitli sanat galerilerinde küratörlük yapmıştır.</p>
                     </div>
-                    <div class="team-member fade-in-up" data-delay="0.2">
-                        <div class="team-photo">
-                            <img src="images/serdar-hoca.png" alt="Ahmet Yılmaz">
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/300x300" alt="Ayşe Yılmaz">
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
-                        <h3>Ahmet Yılmaz</h3>
-                        <p class="team-role">Tasarım Uzmanı</p>
-                        <p>Yaratıcı fikirleri ve estetik anlayışıyla, posterlerimize hayat verir.</p>
                     </div>
-                    <div class="team-member fade-in-up" data-delay="0.4">
-                        <div class="team-photo">
-                            <img src="images/serdar-hoca.png" alt="Ayşe Kaya">
+                    <div class="member-info">
+                        <h3>Ayşe Yılmaz</h3>
+                        <span class="position">Tasarım Direktörü</span>
+                        <p>Grafik tasarım alanında uzmanlaşmış olan Ayşe, tüm posterlerimizin tasarım sürecini yönetiyor. Minimalist ve etkileyici tasarımlarıyla tanınan Ayşe, ekibimize 2019 yılında katıldı.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/300x300" alt="Mehmet Kaya">
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
-                        <h3>Ayşe Kaya</h3>
-                        <p class="team-role">Müşteri İlişkileri</p>
-                        <p>Müşterilerimizin her türlü sorusuna ve ihtiyacına cevap vermek için burada.</p>
+                    </div>
+                    <div class="member-info">
+                        <h3>Mehmet Kaya</h3>
+                        <span class="position">Üretim Müdürü</span>
+                        <p>Mehmet, posterlerimizin üretim sürecinden sorumlu. Baskı teknikleri konusundaki uzmanlığı ile her posterin en yüksek kalitede üretilmesini sağlıyor.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://via.placeholder.com/300x300" alt="Zeynep Demir">
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Zeynep Demir</h3>
+                        <span class="position">Müşteri İlişkileri Yöneticisi</span>
+                        <p>Zeynep, müşteri memnuniyetini en üst düzeyde tutmak için çalışıyor. Siparişlerinizle ilgili her türlü sorunuzda size yardımcı olmak için burada.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section" style="background-image: url('images/newsletter-bg.svg');">
+    <!-- Sayılarla Biz Bölümü -->
+    <section class="about-numbers">
         <div class="container">
-            <div class="newsletter-content">
-                <h2 class="fade-in">Yeniliklerden Haberdar Olun</h2>
-                <p class="fade-in-up">Yeni posterler, özel teklifler ve indirimler hakkında bilgi almak için abone olun.</p>
-                <form class="newsletter-form fade-in-up">
-                    <input type="email" placeholder="E-posta adresiniz" required>
-                    <button type="submit" class="btn btn-primary">Abone Ol</button>
-                </form>
+            <div class="numbers-grid">
+                <div class="number-item">
+                    <div class="number">5+</div>
+                    <div class="number-text">Yıllık Deneyim</div>
+                </div>
+                <div class="number-item">
+                    <div class="number">5000+</div>
+                    <div class="number-text">Mutlu Müşteri</div>
+                </div>
+                <div class="number-item">
+                    <div class="number">1000+</div>
+                    <div class="number-text">Özgün Tasarım</div>
+                </div>
+                <div class="number-item">
+                    <div class="number">15+</div>
+                    <div class="number-text">Ödül</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Müşteri Yorumları Bölümü -->
+    <section class="about-testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Müşteri Yorumları</h2>
+                <p>Müşterilerimizin deneyimleri</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Poster Sanatı'ndan aldığım film posterleri evimin havasını tamamen değiştirdi. Kaliteli baskı ve hızlı teslimat için teşekkürler!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/80x80" alt="Ahmet Y.">
+                        <div class="author-info">
+                            <h4>Ahmet Y.</h4>
+                            <span>İstanbul</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Felsefe posterlerinin bu kadar etkileyici olabileceğini düşünmemiştim. Ofisimde harika duruyor ve sık sık sohbetlere konu oluyor."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/80x80" alt="Deniz K.">
+                        <div class="author-info">
+                            <h4>Deniz K.</h4>
+                            <span>Ankara</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p>"Çocuğumun odasını spor posterleriyle dekore ettik ve sonuç muhteşem oldu. Kaliteli malzeme ve canlı renkler için teşekkürler."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/80x80" alt="Elif S.">
+                        <div class="author-info">
+                            <h4>Elif S.</h4>
+                            <span>İzmir</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Markalarımız Bölümü -->
+    <section class="about-brands">
+        <div class="container">
+            <div class="section-title">
+                <h2>İş Ortaklarımız</h2>
+                <p>Birlikte çalıştığımız markalar</p>
+            </div>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <img src="https://via.placeholder.com/150x80" alt="Marka 1">
+                </div>
+                <div class="brand-item">
+                    <img src="https://via.placeholder.com/150x80" alt="Marka 2">
+                </div>
+                <div class="brand-item">
+                    <img src="https://via.placeholder.com/150x80" alt="Marka 3">
+                </div>
+                <div class="brand-item">
+                    <img src="https://via.placeholder.com/150x80" alt="Marka 4">
+                </div>
+                <div class="brand-item">
+                    <img src="https://via.placeholder.com/150x80" alt="Marka 5">
+                </div>
+                <div class="brand-item">
+                    <img src="https://via.placeholder.com/150x80" alt="Marka 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Bölümü -->
+    <section class="about-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Duvarlarınızı Sanatla Buluşturmaya Hazır mısınız?</h2>
+                <p>Geniş poster koleksiyonumuzu keşfedin ve evinize ya da ofisinize sanatsal bir dokunuş katın.</p>
+                <a href="category.html" class="btn btn-primary">Koleksiyonu Keşfet</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Bölümü -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/logo.svg" alt="Poster Sanatı Logo">
-                    <p>Premium poster koleksiyonu</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-links-column">
-                        <h3>Sayfalar</h3>
-                        <ul>
-                            <li><a href="index.html">Ana Sayfa</a></li>
-                            <li><a href="index.html#categories">Kategoriler</a></li>
-                            <li><a href="index.html#favorites">Serdar Hoca'nın Favorileri</a></li>
-                            <li><a href="about.html">Hakkımızda</a></li>
-                            <li><a href="contact.html">İletişim</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-column">
-                        <h3>Kategoriler</h3>
-                        <ul>
-                            <li><a href="category.html?category=film">Film</a></li>
-                            <li><a href="category.html?category=spor">Spor</a></li>
-                            <li><a href="category.html?category=felsefe">Felsefe</a></li>
-                            <li><a href="category.html?category=tarih">Tarih</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-column">
-                        <h3>Yardım</h3>
-                        <ul>
-                            <li><a href="faq.html">Sıkça Sorulan Sorular</a></li>
-                            <li><a href="shipping.html">Kargo Bilgileri</a></li>
-                            <li><a href="returns.html">İade Politikası</a></li>
-                            <li><a href="privacy.html">Gizlilik Politikası</a></li>
-                        </ul>
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">Poster Sanatı</div>
+                    <p>Duvarlarınızı sanatla buluşturan, kaliteli ve özgün posterler sunan online mağazanız.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
-                <div class="footer-social">
-                    <h3>Bizi Takip Edin</h3>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
-                    </div>
+                <div class="footer-column">
+                    <h3>Hızlı Erişim</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="category.html">Ürünler</a></li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kategoriler</h3>
+                    <ul>
+                        <li><a href="category.html?category=film">Film</a></li>
+                        <li><a href="category.html?category=felsefe">Felsefe</a></li>
+                        <li><a href="category.html?category=tarih">Tarih</a></li>
+                        <li><a href="category.html?category=spor">Spor</a></li>
+                        <li><a href="category.html?category=sanat">Sanat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Müşteri Hizmetleri</h3>
+                    <ul>
+                        <li><a href="#">Sipariş Takibi</a></li>
+                        <li><a href="#">İade ve Değişim</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                        <li><a href="#">Kullanım Koşulları</a></li>
+                        <li><a href="#">SSS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>İletişim</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Poster Sokak No:42, Kadıköy/İstanbul</li>
+                        <li><i class="fas fa-phone"></i> +90 (216) 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> info@postersanati.com</li>
+                        <li><i class="fas fa-clock"></i> Pazartesi-Cuma: 09:00-18:00</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Poster Sanatı. Tüm hakları saklıdır.</p>
+                <div class="copyright">
+                    &copy; 2023 Poster Sanatı. Tüm hakları saklıdır.
+                </div>
+                <div class="payment-methods">
+                    <img src="images/payment-methods.png" alt="Ödeme Yöntemleri">
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Search Overlay -->
-    <div class="search-overlay">
-        <div class="search-close"><img src="images/close-icon.png" alt="Kapat"></div>
-        <div class="container">
-            <form class="search-form">
-                <input type="text" placeholder="Ne arıyorsunuz?">
-                <button type="submit"><img src="images/search-icon.svg" alt="Ara"></button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Cart Sidebar -->
+    <!-- Sepet Kenar Çubuğu -->
     <div class="cart-sidebar">
         <div class="cart-header">
-            <h3>Sepetiniz</h3>
-            <button class="cart-close"><img src="images/close-icon.png" alt="Kapat"></button>
+            <h3>Sepetim</h3>
+            <a href="#" class="cart-close"><i class="fas fa-times"></i></a>
         </div>
-        <div class="cart-items">
-            <div class="empty-cart-message">Sepetiniz boş.</div>
+        <div class="cart-body">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Sepetiniz boş</p>
+                <a href="category.html" class="btn btn-primary">Alışverişe Başla</a>
+            </div>
+            <div class="cart-items">
+                <!-- Sepet öğeleri JavaScript ile eklenecek -->
+            </div>
         </div>
         <div class="cart-footer">
             <div class="cart-total">
                 <span>Toplam:</span>
                 <span class="total-amount">₺0.00</span>
             </div>
-            <a href="checkout.html" class="btn btn-primary btn-checkout">Ödemeye Geç</a>
+            <div class="cart-buttons">
+                <a href="cart.html" class="btn btn-outline">Sepeti Görüntüle</a>
+                <a href="checkout.html" class="btn btn-primary">Ödemeye Geç</a>
+            </div>
         </div>
     </div>
 
     <!-- Overlay -->
     <div class="overlay"></div>
 
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sayılarla Biz animasyonu
+            const numberElements = document.querySelectorAll('.number');
+            
+            function animateNumbers() {
+                numberElements.forEach(numberElement => {
+                    const targetNumber = numberElement.textContent;
+                    const isPlus = targetNumber.includes('+');
+                    const number = parseInt(targetNumber.replace('+', ''));
+                    let currentNumber = 0;
+                    const duration = 2000; // 2 saniye
+                    const interval = 20; // 20 milisaniye
+                    const increment = number / (duration / interval);
+                    
+                    const counter = setInterval(() => {
+                        currentNumber += increment;
+                        
+                        if (currentNumber >= number) {
+                            currentNumber = number;
+                            clearInterval(counter);
+                        }
+                        
+                        numberElement.textContent = Math.floor(currentNumber) + (isPlus ? '+' : '');
+                    }, interval);
+                });
+            }
+            
+            // Sayfa yüklendiğinde animasyonu başlat
+            animateNumbers();
+            
+            // Müşteri yorumları slider
+            const testimonials = document.querySelectorAll('.testimonial');
+            let currentTestimonial = 0;
+            
+            function showTestimonial(index) {
+                testimonials.forEach((testimonial, i) => {
+                    if (i === index) {
+                        testimonial.style.opacity = '1';
+                        testimonial.style.transform = 'translateX(0)';
+                    } else {
+                        testimonial.style.opacity = '0';
+                        testimonial.style.transform = i < index ? 'translateX(-100%)' : 'translateX(100%)';
+                    }
+                });
+            }
+            
+            function nextTestimonial() {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                showTestimonial(currentTestimonial);
+            }
+            
+            // İlk yorumu göster
+            showTestimonial(currentTestimonial);
+            
+            // 5 saniyede bir yorumları değiştir
+            setInterval(nextTestimonial, 5000);
+        });
+    </script>
 </body>
 </html>

@@ -3,469 +3,490 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürün Detayı | Poster Sanatı</title>
+    <title>Poster Sanatı - Ürün Detayı</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="icon" href="images/favicon.png" type="image/svg+xml">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Header Bölümü -->
     <header class="header">
         <div class="container">
-            <div class="header-inner">
+            <div class="header-wrapper">
                 <div class="logo">
-                    <a href="index.html"><img src="images/logo.svg" alt="Poster Sanatı Logo"></a>
+                    <a href="index.html">Poster Sanatı</a>
                 </div>
-                <nav class="main-nav">
+                <nav class="nav-menu">
                     <ul>
                         <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="index.html#categories">Kategoriler</a></li>
-                        <li><a href="index.html#favorites">Serdar Hoca'nın Favorileri</a></li>
+                        <li class="dropdown">
+                            <a href="#">Kategoriler</a>
+                            <div class="dropdown-content">
+                                <a href="category.html?category=film">Film</a>
+                                <a href="category.html?category=felsefe">Felsefe</a>
+                                <a href="category.html?category=tarih">Tarih</a>
+                                <a href="category.html?category=spor">Spor</a>
+                                <a href="category.html?category=sanat">Sanat</a>
+                            </div>
+                        </li>
                         <li><a href="about.html">Hakkımızda</a></li>
                         <li><a href="contact.html">İletişim</a></li>
                     </ul>
                 </nav>
-                <div class="header-actions">
-                    <button class="search-toggle"><img src="images/search-icon.svg" alt="Ara"></button>
-                    <div class="cart">
-                        <a href="#" class="cart-icon"><img src="images/cart-icon.svg" alt="Sepet"><span class="cart-count">0</span></a>
-                    </div>
-                    <button class="mobile-menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
+                <div class="header-icons">
+                    <a href="#" class="search-toggle"><i class="fas fa-search"></i></a>
+                    <a href="#" class="favorites-toggle"><i class="fas fa-heart"></i> <span class="count">0</span></a>
+                    <a href="#" class="cart-toggle"><i class="fas fa-shopping-cart"></i> <span class="count">0</span></a>
+                    <a href="#" class="mobile-menu-toggle"><i class="fas fa-bars"></i></a>
                 </div>
+            </div>
+        </div>
+        <!-- Arama Formu -->
+        <div class="search-form">
+            <div class="container">
+                <form action="#" method="get">
+                    <input type="text" name="search" placeholder="Ne aramıştınız?">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
             </div>
         </div>
     </header>
 
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav">
-        <div class="mobile-nav-header">
-            <div class="logo">
-                <a href="index.html"><img src="images/logo.svg" alt="Poster Sanatı Logo"></a>
-            </div>
-            <button class="mobile-nav-close"><img src="images/close-icon.png" alt="Kapat"></button>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="index.html#categories">Kategoriler</a></li>
-                <li><a href="index.html#favorites">Serdar Hoca'nın Favorileri</a></li>
-                <li><a href="about.html">Hakkımızda</a></li>
-                <li><a href="contact.html">İletişim</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- Breadcrumb -->
-    <div class="breadcrumb-container">
+    <!-- Ürün Detay Bölümü -->
+    <section class="product-detail">
         <div class="container">
-            <div class="breadcrumb fade-in">
-                <a href="index.html">Ana Sayfa</a> / 
-                <a href="category.html?category=film" id="product-category-link">Film</a> / 
-                <span id="product-name">Pulp Fiction</span>
+            <div class="breadcrumb">
+                <a href="index.html">Ana Sayfa</a>
+                <span>/</span>
+                <a href="category.html">Kategoriler</a>
+                <span>/</span>
+                <a href="#" class="product-category">Film</a>
+                <span>/</span>
+                <span class="current product-title">Pulp Fiction Film Posteri</span>
             </div>
-        </div>
-    </div>
 
-    <!-- Product Detail -->
-    <section class="product-detail-section">
-        <div class="container">
-            <div class="product-detail">
-                <div class="product-gallery fade-in">
+            <div class="product-container">
+                <div class="product-gallery">
                     <div class="product-main-image">
-                        <img src="images/poster1.svg" alt="Pulp Fiction" id="product-image" class="tilt">
+                        <img src="images/products/product1.jpg" alt="Pulp Fiction Film Posteri" id="main-image">
                         <div class="product-badges">
-                            <span class="badge badge-new">Yeni</span>
-                            <span class="badge badge-sale">İndirim</span>
+                            <div class="product-badge">Yeni</div>
                         </div>
+                        <a href="#" class="image-zoom"><i class="fas fa-search-plus"></i></a>
                     </div>
                     <div class="product-thumbnails">
-                        <div class="thumbnail active" data-image="images/poster1.svg">
-                            <img src="images/poster1.svg" alt="Pulp Fiction Thumbnail 1">
+                        <div class="thumbnail active" data-image="images/products/product1.jpg">
+                            <img src="images/products/product1.jpg" alt="Pulp Fiction Film Posteri 1">
                         </div>
-                        <div class="thumbnail" data-image="images/poster1.svg">
-                            <img src="images/poster1.svg" alt="Pulp Fiction Thumbnail 2">
+                        <div class="thumbnail" data-image="images/products/product1-2.jpg">
+                            <img src="images/products/product1-2.jpg" alt="Pulp Fiction Film Posteri 2">
                         </div>
-                        <div class="thumbnail" data-image="images/poster1.svg">
-                            <img src="images/poster1.svg" alt="Pulp Fiction Thumbnail 3">
+                        <div class="thumbnail" data-image="images/products/product1-3.jpg">
+                            <img src="images/products/product1-3.jpg" alt="Pulp Fiction Film Posteri 3">
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="product-info">
-                    <h1 class="product-title fade-in" id="product-title">Pulp Fiction</h1>
-                    <div class="product-meta fade-in-up">
-                        <div class="product-category" id="product-category">Film</div>
+                    <h1>Pulp Fiction Film Posteri</h1>
+                    <div class="product-meta">
+                        <div class="product-category">Kategori: <a href="category.html?category=film">Film</a></div>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span>(42 değerlendirme)</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(24 değerlendirme)</span>
                         </div>
                     </div>
-                    
-                    <div class="product-price fade-in-up">
-                        <span class="current-price" id="product-price">₺249,99</span>
-                        <span class="old-price">₺299,99</span>
-                        <span class="discount-badge">%17 İndirim</span>
+
+                    <div class="product-price">
+                        <span class="price">₺149.90</span>
                     </div>
-                    
-                    <div class="product-description fade-in-up">
-                        <p id="product-description">Quentin Tarantino'nun kült filmi Pulp Fiction'dan ilham alan bu poster, film tutkunları için mükemmel bir seçim. Minimalist tasarımı ve ikonik silüetleriyle, evinize karakter katacak.</p>
+
+                    <div class="product-description">
+                        <p>Quentin Tarantino'nun kült filmi Pulp Fiction'ın yüksek kaliteli posteri. Evinizin duvarlarına film tutkunuzu yansıtın.</p>
                     </div>
-                    
-                    <div class="product-options fade-in-up">
+
+                    <div class="product-options">
                         <div class="option-group">
-                            <label>Boyut</label>
-                            <div class="option-buttons">
-                                <button class="option-button active">30x40 cm</button>
-                                <button class="option-button">50x70 cm</button>
-                                <button class="option-button">70x100 cm</button>
+                            <label>Boyut:</label>
+                            <div class="option-values size-options">
+                                <div class="option-value size-option active" data-size="30x40">30x40 cm</div>
+                                <div class="option-value size-option" data-size="50x70">50x70 cm</div>
+                                <div class="option-value size-option" data-size="70x100">70x100 cm</div>
                             </div>
                         </div>
-                        
+
                         <div class="option-group">
-                            <label>Çerçeve</label>
-                            <div class="option-buttons">
-                                <button class="option-button active">Çerçevesiz</button>
-                                <button class="option-button">Siyah Çerçeve</button>
-                                <button class="option-button">Beyaz Çerçeve</button>
-                                <button class="option-button">Ahşap Çerçeve</button>
+                            <label>Çerçeve:</label>
+                            <div class="option-values frame-options">
+                                <div class="option-value frame-option active" data-frame="Çerçevesiz">Çerçevesiz</div>
+                                <div class="option-value frame-option" data-frame="Siyah">Siyah</div>
+                                <div class="option-value frame-option" data-frame="Beyaz">Beyaz</div>
+                                <div class="option-value frame-option" data-frame="Ahşap">Ahşap</div>
+                            </div>
+                        </div>
+
+                        <div class="option-group quantity-group">
+                            <label>Adet:</label>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn decrease">-</button>
+                                <input type="number" class="quantity-input" value="1" min="1" max="15">
+                                <button class="quantity-btn increase">+</button>
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="product-actions fade-in-up">
-                        <div class="quantity-selector">
-                            <button class="quantity-button minus">-</button>
-                            <input type="number" value="1" min="1" max="10" id="product-quantity">
-                            <button class="quantity-button plus">+</button>
-                        </div>
-                        
-                        <button class="btn btn-primary btn-add-to-cart" id="add-to-cart-btn">
+
+                    <div class="product-actions">
+                        <button class="btn btn-primary add-to-cart-btn" data-id="1">
                             <i class="fas fa-shopping-cart"></i> Sepete Ekle
                         </button>
-                        
-                        <button class="btn btn-wishlist">
-                            <i class="far fa-heart"></i>
+                        <button class="btn btn-outline add-to-favorites-btn" data-id="1">
+                            <i class="far fa-heart"></i> Favorilere Ekle
                         </button>
                     </div>
-                    
-                    <div class="product-meta-info fade-in-up">
+
+                    <div class="product-meta-info">
                         <div class="meta-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Stokta var</span>
+                            <span>Stok Durumu: <strong class="in-stock">Stokta (15)</strong></span>
                         </div>
                         <div class="meta-item">
                             <i class="fas fa-truck"></i>
-                            <span>2-4 iş günü içinde kargo</span>
+                            <span>Kargo: <strong>Ücretsiz Kargo</strong> (₺250 ve üzeri siparişlerde)</span>
                         </div>
                         <div class="meta-item">
                             <i class="fas fa-undo"></i>
-                            <span>30 gün içinde iade garantisi</span>
-                        </div>
-                        <div class="meta-item">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Güvenli ödeme</span>
+                            <span>İade: <strong>14 gün içinde ücretsiz iade</strong></span>
                         </div>
                     </div>
-                    
-                    <div class="product-share fade-in-up">
+
+                    <div class="product-share">
                         <span>Paylaş:</span>
-                        <div class="social-icons">
-                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <div class="social-share">
+                            <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Ürün Sekmeleri -->
             <div class="product-tabs">
-                <div class="tabs-header">
-                    <button class="tab-button active" data-tab="description">Açıklama</button>
-                    <button class="tab-button" data-tab="details">Detaylar</button>
-                    <button class="tab-button" data-tab="reviews">Değerlendirmeler (42)</button>
-                    <button class="tab-button" data-tab="shipping">Kargo & İade</button>
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-tab="description">Açıklama</button>
+                    <button class="tab-btn" data-tab="details">Detaylar</button>
+                    <button class="tab-btn" data-tab="reviews">Değerlendirmeler (24)</button>
+                    <button class="tab-btn" data-tab="shipping">Kargo ve İade</button>
                 </div>
-                
+
                 <div class="tabs-content">
-                    <div class="tab-panel active" id="description">
-                        <div class="tab-content fade-in-up">
-                            <p>Quentin Tarantino'nun kült filmi Pulp Fiction'dan ilham alan bu poster, film tutkunları için mükemmel bir seçim. Minimalist tasarımı ve ikonik silüetleriyle, evinize karakter katacak.</p>
-                            <p>1994 yapımı bu film, birbirine bağlı birkaç hikayeyi anlatan ve kronolojik olmayan bir anlatım tarzı kullanan bir kara komedi ve suç filmidir. Film, John Travolta, Samuel L. Jackson, Uma Thurman ve Bruce Willis gibi yıldız oyuncuları bir araya getirmiştir.</p>
-                            <p>Bu poster, filmin ikonik sahnelerinden birini minimalist bir tarzda yeniden yorumluyor. Sarı arka plan üzerinde siyah silüetler, filmin atmosferini mükemmel bir şekilde yansıtıyor.</p>
-                        </div>
+                    <div class="tab-pane active" id="description">
+                        <h3>Ürün Açıklaması</h3>
+                        <p>Quentin Tarantino'nun kült filmi Pulp Fiction'ın yüksek kaliteli posteri. Evinizin duvarlarına film tutkunuzu yansıtın.</p>
+                        <p>Bu poster, Pulp Fiction filminin ikonik sahnesini yüksek çözünürlüklü baskı ile sunmaktadır. Özel mat kağıt kullanılarak üretilen bu poster, uzun yıllar solmadan duvarınızda kalacak şekilde tasarlanmıştır.</p>
+                        <p>Farklı boyut seçenekleri ile her türlü alana uyum sağlayabilir, çerçeve seçenekleri ile tarzınıza göre özelleştirebilirsiniz.</p>
                     </div>
-                    
-                    <div class="tab-panel" id="details">
-                        <div class="tab-content fade-in-up">
-                            <h3>Ürün Özellikleri</h3>
-                            <ul>
-                                <li><strong>Malzeme:</strong> 250 gr mat kuşe kağıt</li>
-                                <li><strong>Baskı Tekniği:</strong> Yüksek kaliteli dijital baskı</li>
-                                <li><strong>Boyutlar:</strong> 30x40 cm, 50x70 cm, 70x100 cm</li>
-                                <li><strong>Çerçeve Seçenekleri:</strong> Çerçevesiz, Siyah, Beyaz, Ahşap</li>
-                                <li><strong>Tasarımcı:</strong> Poster Sanatı Tasarım Ekibi</li>
-                                <li><strong>Üretim Yeri:</strong> Türkiye</li>
-                            </ul>
-                            
-                            <h3>Bakım Talimatları</h3>
-                            <ul>
-                                <li>Doğrudan güneş ışığından koruyunuz</li>
-                                <li>Nemli ortamlardan uzak tutunuz</li>
-                                <li>Temizlemek için kuru ve yumuşak bir bez kullanınız</li>
-                            </ul>
-                        </div>
+
+                    <div class="tab-pane" id="details">
+                        <h3>Ürün Detayları</h3>
+                        <ul class="product-details-list">
+                            <li><strong>Materyal:</strong> 250 gr mat kuşe kağıt</li>
+                            <li><strong>Baskı Tekniği:</strong> Dijital baskı</li>
+                            <li><strong>Renk:</strong> Çok renkli</li>
+                            <li><strong>Boyutlar:</strong> 30x40 cm, 50x70 cm, 70x100 cm</li>
+                            <li><strong>Çerçeve Seçenekleri:</strong> Çerçevesiz, Siyah, Beyaz, Ahşap</li>
+                            <li><strong>Üretim Yeri:</strong> Türkiye</li>
+                            <li><strong>Garanti:</strong> 2 yıl renk solmazlık garantisi</li>
+                        </ul>
                     </div>
-                    
-                    <div class="tab-panel" id="reviews">
-                        <div class="tab-content fade-in-up">
-                            <div class="reviews-summary">
-                                <div class="reviews-average">
-                                    <div class="average-rating">4.5</div>
-                                    <div class="rating-stars">
+
+                    <div class="tab-pane" id="reviews">
+                        <h3>Müşteri Değerlendirmeleri</h3>
+                        <div class="reviews-summary">
+                            <div class="average-rating">
+                                <div class="rating-number">4.5</div>
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <div class="rating-count">24 değerlendirme</div>
+                            </div>
+                            <div class="rating-bars">
+                                <div class="rating-bar">
+                                    <div class="rating-label">5 yıldız</div>
+                                    <div class="rating-progress">
+                                        <div class="progress" style="width: 75%"></div>
+                                    </div>
+                                    <div class="rating-percent">75%</div>
+                                </div>
+                                <div class="rating-bar">
+                                    <div class="rating-label">4 yıldız</div>
+                                    <div class="rating-progress">
+                                        <div class="progress" style="width: 15%"></div>
+                                    </div>
+                                    <div class="rating-percent">15%</div>
+                                </div>
+                                <div class="rating-bar">
+                                    <div class="rating-label">3 yıldız</div>
+                                    <div class="rating-progress">
+                                        <div class="progress" style="width: 5%"></div>
+                                    </div>
+                                    <div class="rating-percent">5%</div>
+                                </div>
+                                <div class="rating-bar">
+                                    <div class="rating-label">2 yıldız</div>
+                                    <div class="rating-progress">
+                                        <div class="progress" style="width: 3%"></div>
+                                    </div>
+                                    <div class="rating-percent">3%</div>
+                                </div>
+                                <div class="rating-bar">
+                                    <div class="rating-label">1 yıldız</div>
+                                    <div class="rating-progress">
+                                        <div class="progress" style="width: 2%"></div>
+                                    </div>
+                                    <div class="rating-percent">2%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-author">Ahmet Y.</div>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-date">12.06.2023</div>
+                                </div>
+                                <div class="review-content">
+                                    <p>Harika bir poster! Baskı kalitesi çok iyi ve renkler canlı. Siyah çerçeve ile aldım ve çok şık durdu. Hızlı kargo için de teşekkürler.</p>
+                                </div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-author">Zeynep K.</div>
+                                    <div class="review-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="review-date">28.05.2023</div>
+                                </div>
+                                <div class="review-content">
+                                    <p>Poster kalitesi iyi ancak beklediğimden biraz daha küçük geldi. Yine de film koleksiyonuma güzel bir ekleme oldu.</p>
+                                </div>
+                            </div>
+
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <div class="review-author">Mehmet A.</div>
+                                    <div class="review-rating">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star-half-alt"></i>
                                     </div>
-                                    <div class="total-reviews">42 değerlendirme</div>
+                                    <div class="review-date">15.05.2023</div>
                                 </div>
-                                
-                                <div class="reviews-breakdown">
-                                    <div class="breakdown-item">
-                                        <span class="stars">5 yıldız</span>
-                                        <div class="progress-bar">
-                                            <div class="progress" style="width: 75%;"></div>
-                                        </div>
-                                        <span class="percentage">75%</span>
-                                    </div>
-                                    <div class="breakdown-item">
-                                        <span class="stars">4 yıldız</span>
-                                        <div class="progress-bar">
-                                            <div class="progress" style="width: 15%;"></div>
-                                        </div>
-                                        <span class="percentage">15%</span>
-                                    </div>
-                                    <div class="breakdown-item">
-                                        <span class="stars">3 yıldız</span>
-                                        <div class="progress-bar">
-                                            <div class="progress" style="width: 5%;"></div>
-                                        </div>
-                                        <span class="percentage">5%</span>
-                                    </div>
-                                    <div class="breakdown-item">
-                                        <span class="stars">2 yıldız</span>
-                                        <div class="progress-bar">
-                                            <div class="progress" style="width: 3%;"></div>
-                                        </div>
-                                        <span class="percentage">3%</span>
-                                    </div>
-                                    <div class="breakdown-item">
-                                        <span class="stars">1 yıldız</span>
-                                        <div class="progress-bar">
-                                            <div class="progress" style="width: 2%;"></div>
-                                        </div>
-                                        <span class="percentage">2%</span>
-                                    </div>
+                                <div class="review-content">
+                                    <p>Tarantino hayranı olarak bu posteri almak zorundaydım. Kalitesi beklediğimden daha iyi çıktı. Ahşap çerçeve seçeneği de çok şık duruyor.</p>
                                 </div>
-                            </div>
-                            
-                            <div class="reviews-list">
-                                <div class="review-item">
-                                    <div class="review-header">
-                                        <div class="reviewer-info">
-                                            <div class="reviewer-avatar">AY</div>
-                                            <div class="reviewer-name">Ahmet Y.</div>
-                                        </div>
-                                        <div class="review-rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="review-date">15 Mayıs 2023</div>
-                                    <div class="review-content">
-                                        <p>Harika bir poster! Baskı kalitesi çok iyi ve renkler canlı. Çerçevelettikten sonra oturma odama astım, herkes çok beğeniyor. Kesinlikle tavsiye ederim.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="review-item">
-                                    <div class="review-header">
-                                        <div class="reviewer-info">
-                                            <div class="reviewer-avatar">MK</div>
-                                            <div class="reviewer-name">Merve K.</div>
-                                        </div>
-                                        <div class="review-rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="review-date">3 Mayıs 2023</div>
-                                    <div class="review-content">
-                                        <p>Poster çok güzel ama kargo biraz geç geldi. Yine de ürünün kalitesi beklediğimden daha iyi. Tarantino hayranları için mükemmel bir hediye.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="review-item">
-                                    <div class="review-header">
-                                        <div class="reviewer-info">
-                                            <div class="reviewer-avatar">CB</div>
-                                            <div class="reviewer-name">Can B.</div>
-                                        </div>
-                                        <div class="review-rating">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star-half-alt"></i>
-                                        </div>
-                                    </div>
-                                    <div class="review-date">22 Nisan 2023</div>
-                                    <div class="review-content">
-                                        <p>Film koleksiyonuma mükemmel bir ekleme oldu. Minimalist tasarımı çok beğendim. Kağıt kalitesi de oldukça iyi. Diğer film posterlerini de almayı düşünüyorum.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="load-more-reviews">
-                                <button class="btn btn-secondary">Daha Fazla Göster</button>
-                            </div>
-                            
-                            <div class="write-review">
-                                <h3>Değerlendirme Yazın</h3>
-                                <form class="review-form">
-                                    <div class="form-group">
-                                        <label>Puanınız</label>
-                                        <div class="rating-selector">
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="review-title">Başlık</label>
-                                        <input type="text" id="review-title" required>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="review-content">Değerlendirmeniz</label>
-                                        <textarea id="review-content" rows="5" required></textarea>
-                                    </div>
-                                    
-                                    <button type="submit" class="btn btn-primary">Gönder</button>
-                                </form>
                             </div>
                         </div>
+
+                        <div class="review-form-container">
+                            <h4>Değerlendirme Yap</h4>
+                            <form class="review-form">
+                                <div class="form-group">
+                                    <label>Puanınız:</label>
+                                    <div class="rating-select">
+                                        <i class="far fa-star" data-rating="1"></i>
+                                        <i class="far fa-star" data-rating="2"></i>
+                                        <i class="far fa-star" data-rating="3"></i>
+                                        <i class="far fa-star" data-rating="4"></i>
+                                        <i class="far fa-star" data-rating="5"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="review-name">Adınız:</label>
+                                    <input type="text" id="review-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="review-email">E-posta:</label>
+                                    <input type="email" id="review-email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="review-text">Yorumunuz:</label>
+                                    <textarea id="review-text" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Değerlendirme Gönder</button>
+                            </form>
+                        </div>
                     </div>
-                    
-                    <div class="tab-panel" id="shipping">
-                        <div class="tab-content fade-in-up">
-                            <h3>Kargo Bilgileri</h3>
-                            <p>Siparişleriniz, ödeme onayından sonra 1-2 iş günü içinde hazırlanıp kargoya verilir. Kargo süresi, bulunduğunuz bölgeye göre 1-3 iş günü arasında değişebilir.</p>
-                            <p>Türkiye'nin her yerine kargo gönderimi yapılmaktadır. 250 TL ve üzeri alışverişlerinizde kargo ücretsizdir.</p>
-                            
-                            <h3>İade Politikası</h3>
-                            <p>Ürünlerimiz, teslim tarihinden itibaren 30 gün içinde iade edilebilir. İade edilecek ürünlerin orijinal ambalajında ve kullanılmamış durumda olması gerekmektedir.</p>
-                            <p>İade işlemi için müşteri hizmetlerimizle iletişime geçmeniz yeterlidir. İade kargo ücreti müşteriye aittir.</p>
-                            
-                            <h3>Değişim</h3>
-                            <p>Ürün değişimi için müşteri hizmetlerimizle iletişime geçebilirsiniz. Değişim işlemleri, ürünün teslim tarihinden itibaren 30 gün içinde yapılabilir.</p>
+
+                    <div class="tab-pane" id="shipping">
+                        <h3>Kargo ve İade Bilgileri</h3>
+                        <div class="shipping-info">
+                            <h4>Kargo Bilgileri</h4>
+                            <ul>
+                                <li>Siparişler 1-3 iş günü içinde kargoya verilir.</li>
+                                <li>₺250 ve üzeri siparişlerde kargo ücretsizdir.</li>
+                                <li>₺250 altı siparişlerde kargo ücreti ₺19.90'dır.</li>
+                                <li>Teslimat süresi, bulunduğunuz bölgeye göre 1-3 iş günüdür.</li>
+                                <li>Kargo takip numarası, kargoya verildikten sonra e-posta ile gönderilir.</li>
+                            </ul>
+                        </div>
+                        <div class="return-info">
+                            <h4>İade Politikası</h4>
+                            <ul>
+                                <li>Ürünlerimiz 14 gün içinde ücretsiz iade edilebilir.</li>
+                                <li>İade edilecek ürünlerin orijinal ambalajında ve kullanılmamış olması gerekmektedir.</li>
+                                <li>Özel üretim ve kişiselleştirilmiş ürünlerde iade kabul edilmemektedir.</li>
+                                <li>İade işlemi için müşteri hizmetleri ile iletişime geçmeniz gerekmektedir.</li>
+                                <li>İade edilen ürünlerin bedeli, ürünün tarafımıza ulaşmasını takiben 7 iş günü içinde iade edilir.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
+            <!-- Benzer Ürünler -->
             <div class="related-products">
-                <h2 class="section-title fade-in">Benzer Ürünler</h2>
-                <div class="products-grid">
-                    <div class="product-card fade-in-up">
+                <div class="section-title">
+                    <h2>Benzer Ürünler</h2>
+                    <p>Bu ürünü beğendiyseniz, bunları da sevebilirsiniz</p>
+                </div>
+                <div class="product-grid">
+                    <!-- Ürün 1 -->
+                    <div class="product-card">
                         <div class="product-image">
-                            <img src="images/poster2.svg" alt="Muhammad Ali">
+                            <img src="images/collections/collection3.jpg" alt="The Godfather">
                             <div class="product-actions">
-                                <button class="btn-quick-view"><i class="fas fa-eye"></i></button>
-                                <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i></button>
-                                <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+                                <a href="#" class="add-to-favorites" data-id="7"><i class="far fa-heart"></i></a>
+                                <a href="#" class="quick-view" data-id="7"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="add-to-cart" data-id="7"><i class="fas fa-shopping-cart"></i></a>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3>Muhammad Ali</h3>
-                            <div class="product-category">Spor</div>
-                            <div class="product-price">₺199,99</div>
+                            <h3><a href="product.html?id=7">The Godfather</a></h3>
+                            <div class="product-category">Film</div>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(53)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price">₺169.90</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ürün 2 -->
+                    <div class="product-card">
+                        <div class="product-badge">Yeni</div>
+                        <div class="product-image">
+                            <img src="images/products/product5.jpg" alt="Fight Club Film Posteri">
+                            <div class="product-actions">
+                                <a href="#" class="add-to-favorites" data-id="8"><i class="far fa-heart"></i></a>
+                                <a href="#" class="quick-view" data-id="8"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="add-to-cart" data-id="8"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="product.html?id=8">Fight Club Film Posteri</a></h3>
+                            <div class="product-category">Film</div>
                             <div class="product-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
-                                <span>(38)</span>
+                                <span>(31)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price">₺159.90</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="product-card fade-in-up" data-delay="0.2">
+                    <!-- Ürün 3 -->
+                    <div class="product-card">
+                        <div class="product-badge bestseller">Çok Satan</div>
                         <div class="product-image">
-                            <img src="images/poster3.svg" alt="Nietzsche">
+                            <img src="images/products/product6.jpg" alt="Inception Film Posteri">
                             <div class="product-actions">
-                                <button class="btn-quick-view"><i class="fas fa-eye"></i></button>
-                                <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i></button>
-                                <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+                                <a href="#" class="add-to-favorites" data-id="9"><i class="far fa-heart"></i></a>
+                                <a href="#" class="quick-view" data-id="9"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="add-to-cart" data-id="9"><i class="fas fa-shopping-cart"></i></a>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3>Böyle Buyurdu Zerdüşt</h3>
-                            <div class="product-category">Felsefe</div>
-                            <div class="product-price">₺179,99</div>
+                            <h3><a href="product.html?id=9">Inception Film Posteri</a></h3>
+                            <div class="product-category">Film</div>
                             <div class="product-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star-half-alt"></i>
-                                <span>(27)</span>
+                                <span>(47)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="price">₺149.90</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="product-card fade-in-up" data-delay="0.4">
+                    <!-- Ürün 4 -->
+                    <div class="product-card">
+                        <div class="product-badge sale">İndirim</div>
                         <div class="product-image">
-                            <img src="images/poster4.svg" alt="Osmanlı İmparatorluğu Haritası">
+                            <img src="images/products/product7.jpg" alt="The Shining Film Posteri">
                             <div class="product-actions">
-                                <button class="btn-quick-view"><i class="fas fa-eye"></i></button>
-                                <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i></button>
-                                <button class="btn-wishlist"><i class="far fa-heart"></i></button>
+                                <a href="#" class="add-to-favorites" data-id="10"><i class="far fa-heart"></i></a>
+                                <a href="#" class="quick-view" data-id="10"><i class="fas fa-eye"></i></a>
+                                <a href="#" class="add-to-cart" data-id="10"><i class="fas fa-shopping-cart"></i></a>
                             </div>
                         </div>
                         <div class="product-info">
-                            <h3>Osmanlı İmparatorluğu Haritası</h3>
-                            <div class="product-category">Tarih</div>
-                            <div class="product-price">₺229,99</div>
+                            <h3><a href="product.html?id=10">The Shining Film Posteri</a></h3>
+                            <div class="product-category">Film</div>
                             <div class="product-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span>(45)</span>
+                                <i class="far fa-star"></i>
+                                <span>(29)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="old-price">₺179.90</span>
+                                <span class="price">₺139.90</span>
                             </div>
                         </div>
                     </div>
@@ -474,155 +495,273 @@
         </div>
     </section>
 
-    <!-- Recently Viewed -->
-    <section class="recently-viewed-section">
-        <div class="container">
-            <h2 class="section-title fade-in">Son Görüntülenenler</h2>
-            <div class="products-slider fade-in-up">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/poster3.svg" alt="Nietzsche">
-                        <div class="product-actions">
-                            <button class="btn-quick-view"><i class="fas fa-eye"></i></button>
-                            <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i></button>
-                            <button class="btn-wishlist"><i class="far fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Böyle Buyurdu Zerdüşt</h3>
-                        <div class="product-category">Felsefe</div>
-                        <div class="product-price">₺179,99</div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/poster2.svg" alt="Muhammad Ali">
-                        <div class="product-actions">
-                            <button class="btn-quick-view"><i class="fas fa-eye"></i></button>
-                            <button class="btn-add-to-cart"><i class="fas fa-shopping-cart"></i></button>
-                            <button class="btn-wishlist"><i class="far fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Muhammad Ali</h3>
-                        <div class="product-category">Spor</div>
-                        <div class="product-price">₺199,99</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter-section" style="background-image: url('images/newsletter-bg.svg');">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2 class="fade-in">Yeniliklerden Haberdar Olun</h2>
-                <p class="fade-in-up">Yeni posterler, özel teklifler ve indirimler hakkında bilgi almak için abone olun.</p>
-                <form class="newsletter-form fade-in-up">
-                    <input type="email" placeholder="E-posta adresiniz" required>
-                    <button type="submit" class="btn btn-primary">Abone Ol</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Footer Bölümü -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/logo.svg" alt="Poster Sanatı Logo">
-                    <p>Premium poster koleksiyonu</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-links-column">
-                        <h3>Sayfalar</h3>
-                        <ul>
-                            <li><a href="index.html">Ana Sayfa</a></li>
-                            <li><a href="index.html#categories">Kategoriler</a></li>
-                            <li><a href="index.html#favorites">Serdar Hoca'nın Favorileri</a></li>
-                            <li><a href="about.html">Hakkımızda</a></li>
-                            <li><a href="contact.html">İletişim</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-column">
-                        <h3>Kategoriler</h3>
-                        <ul>
-                            <li><a href="category.html?category=film">Film</a></li>
-                            <li><a href="category.html?category=spor">Spor</a></li>
-                            <li><a href="category.html?category=felsefe">Felsefe</a></li>
-                            <li><a href="category.html?category=tarih">Tarih</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-links-column">
-                        <h3>Yardım</h3>
-                        <ul>
-                            <li><a href="faq.html">Sıkça Sorulan Sorular</a></li>
-                            <li><a href="shipping.html">Kargo Bilgileri</a></li>
-                            <li><a href="returns.html">İade Politikası</a></li>
-                            <li><a href="privacy.html">Gizlilik Politikası</a></li>
-                        </ul>
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">Poster Sanatı</div>
+                    <p>Duvarlarınızı sanatla buluşturan, kaliteli ve özgün posterler sunan online mağazanız.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
-                <div class="footer-social">
-                    <h3>Bizi Takip Edin</h3>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
-                    </div>
+                <div class="footer-column">
+                    <h3>Hızlı Erişim</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="category.html">Ürünler</a></li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kategoriler</h3>
+                    <ul>
+                        <li><a href="category.html?category=film">Film</a></li>
+                        <li><a href="category.html?category=felsefe">Felsefe</a></li>
+                        <li><a href="category.html?category=tarih">Tarih</a></li>
+                        <li><a href="category.html?category=spor">Spor</a></li>
+                        <li><a href="category.html?category=sanat">Sanat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Müşteri Hizmetleri</h3>
+                    <ul>
+                        <li><a href="#">Sipariş Takibi</a></li>
+                        <li><a href="#">İade ve Değişim</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                        <li><a href="#">Kullanım Koşulları</a></li>
+                        <li><a href="#">SSS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>İletişim</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Poster Sokak No:42, Kadıköy/İstanbul</li>
+                        <li><i class="fas fa-phone"></i> +90 (216) 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> info@postersanati.com</li>
+                        <li><i class="fas fa-clock"></i> Pazartesi-Cuma: 09:00-18:00</li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Poster Sanatı. Tüm hakları saklıdır.</p>
+                <div class="copyright">
+                    &copy; 2023 Poster Sanatı. Tüm hakları saklıdır.
+                </div>
+                <div class="payment-methods">
+                    <img src="images/payment-methods.png" alt="Ödeme Yöntemleri">
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Search Overlay -->
-    <div class="search-overlay">
-        <div class="search-close"><img src="images/close-icon.png" alt="Kapat"></div>
-        <div class="container">
-            <form class="search-form">
-                <input type="text" placeholder="Ne arıyorsunuz?">
-                <button type="submit"><img src="images/search-icon.svg" alt="Ara"></button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Cart Sidebar -->
+    <!-- Sepet Kenar Çubuğu -->
     <div class="cart-sidebar">
         <div class="cart-header">
-            <h3>Sepetiniz</h3>
-            <button class="cart-close"><img src="images/close-icon.png" alt="Kapat"></button>
+            <h3>Sepetim</h3>
+            <a href="#" class="cart-close"><i class="fas fa-times"></i></a>
         </div>
-        <div class="cart-items">
-            <div class="empty-cart-message">Sepetiniz boş.</div>
+        <div class="cart-body">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Sepetiniz boş</p>
+                <a href="category.html" class="btn btn-primary">Alışverişe Başla</a>
+            </div>
+            <div class="cart-items">
+                <!-- Sepet öğeleri JavaScript ile eklenecek -->
+            </div>
         </div>
         <div class="cart-footer">
             <div class="cart-total">
                 <span>Toplam:</span>
                 <span class="total-amount">₺0.00</span>
             </div>
-            <a href="checkout.html" class="btn btn-primary btn-checkout">Ödemeye Geç</a>
+            <div class="cart-buttons">
+                <a href="cart.html" class="btn btn-outline">Sepeti Görüntüle</a>
+                <a href="checkout.html" class="btn btn-primary">Ödemeye Geç</a>
+            </div>
         </div>
     </div>
 
-    <!-- Lightbox -->
-    <div class="lightbox">
-        <div class="lightbox-close"><img src="images/close-icon.png" alt="Kapat"></div>
-        <div class="lightbox-content">
-            <img src="" alt="">
+    <!-- Hızlı Görünüm Modal -->
+    <div class="quick-view-modal">
+        <div class="quick-view-content">
+            <a href="#" class="quick-view-close"><i class="fas fa-times"></i></a>
+            <div class="quick-view-body">
+                <!-- İçerik JavaScript ile eklenecek -->
+            </div>
         </div>
     </div>
 
     <!-- Overlay -->
     <div class="overlay"></div>
 
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
-    <script src="js/product.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ürün Galerisi
+            const mainImage = document.getElementById('main-image');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    const imageUrl = this.getAttribute('data-image');
+                    mainImage.src = imageUrl;
+                    
+                    // Aktif thumbnail'i güncelle
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Boyut Seçenekleri
+            const sizeOptions = document.querySelectorAll('.size-option');
+            
+            sizeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    sizeOptions.forEach(o => o.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Çerçeve Seçenekleri
+            const frameOptions = document.querySelectorAll('.frame-option');
+            
+            frameOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    frameOptions.forEach(o => o.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Miktar Artırma/Azaltma
+            const decreaseBtn = document.querySelector('.decrease');
+            const increaseBtn = document.querySelector('.increase');
+            const quantityInput = document.querySelector('.quantity-input');
+            
+            decreaseBtn.addEventListener('click', function() {
+                let value = parseInt(quantityInput.value);
+                if (value > 1) {
+                    quantityInput.value = value - 1;
+                }
+            });
+            
+            increaseBtn.addEventListener('click', function() {
+                let value = parseInt(quantityInput.value);
+                const maxStock = parseInt(quantityInput.getAttribute('max'));
+                if (value < maxStock) {
+                    quantityInput.value = value + 1;
+                }
+            });
+            
+            // Ürün Sekmeleri
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Aktif sekme butonunu güncelle
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Aktif sekme içeriğini güncelle
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Değerlendirme Yıldızları
+            const ratingStars = document.querySelectorAll('.rating-select i');
+            
+            ratingStars.forEach(star => {
+                star.addEventListener('mouseover', function() {
+                    const rating = parseInt(this.getAttribute('data-rating'));
+                    
+                    ratingStars.forEach((s, index) => {
+                        if (index < rating) {
+                            s.className = 'fas fa-star';
+                        } else {
+                            s.className = 'far fa-star';
+                        }
+                    });
+                });
+                
+                star.addEventListener('click', function() {
+                    const rating = parseInt(this.getAttribute('data-rating'));
+                    
+                    ratingStars.forEach((s, index) => {
+                        if (index < rating) {
+                            s.className = 'fas fa-star';
+                        } else {
+                            s.className = 'far fa-star';
+                        }
+                    });
+                    
+                    // Seçilen değerlendirmeyi bir form alanına ekleyebilirsiniz
+                    const ratingInput = document.createElement('input');
+                    ratingInput.type = 'hidden';
+                    ratingInput.name = 'rating';
+                    ratingInput.value = rating;
+                    
+                    const existingInput = document.querySelector('input[name="rating"]');
+                    if (existingInput) {
+                        existingInput.value = rating;
+                    } else {
+                        document.querySelector('.review-form').appendChild(ratingInput);
+                    }
+                });
+                
+                star.addEventListener('mouseout', function() {
+                    const existingInput = document.querySelector('input[name="rating"]');
+                    const selectedRating = existingInput ? parseInt(existingInput.value) : 0;
+                    
+                    ratingStars.forEach((s, index) => {
+                        if (index < selectedRating) {
+                            s.className = 'fas fa-star';
+                        } else {
+                            s.className = 'far fa-star';
+                        }
+                    });
+                });
+            });
+            
+            // Değerlendirme Formu Gönderimi
+            const reviewForm = document.querySelector('.review-form');
+            
+            if (reviewForm) {
+                reviewForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Form verilerini al
+                    const name = document.getElementById('review-name').value;
+                    const email = document.getElementById('review-email').value;
+                    const text = document.getElementById('review-text').value;
+                    const ratingInput = document.querySelector('input[name="rating"]');
+                    const rating = ratingInput ? ratingInput.value : 0;
+                    
+                    if (!rating || rating === '0') {
+                        alert('Lütfen bir değerlendirme puanı seçin.');
+                        return;
+                    }
+                    
+                    // Normalde burada bir API'ye gönderilir, ancak şimdilik sadece bir bildirim gösterelim
+                    alert('Değerlendirmeniz için teşekkür ederiz! Onaylandıktan sonra yayınlanacaktır.');
+                    
+                    // Formu sıfırla
+                    reviewForm.reset();
+                    ratingStars.forEach(s => s.className = 'far fa-star');
+                    if (ratingInput) ratingInput.value = 0;
+                });
+            }
+        });
+    </script>
 </body>
 </html>

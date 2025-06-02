@@ -3,312 +3,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poster Sanatı | Premium Poster Koleksiyonu</title>
+    <title>Poster Sanatı - Sanatsal Posterler</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/cart-sidebar.css">
-    <link rel="stylesheet" href="css/notifications.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- Added support for SVG icons -->
-    <style>
-        .fas.fa-shopping-cart {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            background-image: url('images/cart-icon.svg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            font-size: 0;
-        }
-        .fas.fa-times {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            background-image: url('images/close-icon.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            font-size: 0;
-        }
-    </style>
 </head>
 <body>
+    <!-- Header Bölümü -->
     <header class="header">
         <div class="container">
-            <div class="header-inner">
+            <div class="header-wrapper">
                 <div class="logo">
-                    <a href="index.html">Poster<span>Sanatı</span></a>
+                    <a href="index.html">Poster Sanatı</a>
                 </div>
-                <nav class="main-nav">
+                <nav class="nav-menu">
                     <ul>
-                        <li><a href="#">Ana Sayfa</a></li>
-                        <li><a href="#categories">Kategoriler</a></li>
-                        <li><a href="#favorites">Serdar Hoca'nın Favorileri</a></li>
-                        <li><a href="#">Hakkımızda</a></li>
-                        <li><a href="#">İletişim</a></li>
+                        <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                        <li class="dropdown">
+                            <a href="#">Kategoriler</a>
+                            <div class="dropdown-content">
+                                <a href="category.html?category=film">Film</a>
+                                <a href="category.html?category=felsefe">Felsefe</a>
+                                <a href="category.html?category=tarih">Tarih</a>
+                                <a href="category.html?category=spor">Spor</a>
+                                <a href="category.html?category=sanat">Sanat</a>
+                            </div>
+                        </li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
                     </ul>
                 </nav>
-                <div class="header-actions">
-                    <button class="search-toggle"><img src="images/search-icon.svg" alt="Ara"></button>
-                    <div class="cart">
-                        <a href="#" class="cart-icon"><img src="images/cart-icon.svg" alt="Sepet"><span class="cart-count">0</span></a>
-                    </div>
-                    <button class="mobile-menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
+                <div class="header-icons">
+                    <a href="#" class="search-toggle"><i class="fas fa-search"></i></a>
+                    <a href="#" class="favorites-toggle"><i class="fas fa-heart"></i> <span class="count">0</span></a>
+                    <a href="#" class="cart-toggle"><i class="fas fa-shopping-cart"></i> <span class="count">0</span></a>
+                    <a href="#" class="mobile-menu-toggle"><i class="fas fa-bars"></i></a>
                 </div>
+            </div>
+        </div>
+        <!-- Arama Formu -->
+        <div class="search-form">
+            <div class="container">
+                <form action="#" method="get">
+                    <input type="text" name="search" placeholder="Ne aramıştınız?">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
             </div>
         </div>
     </header>
 
-    <div class="search-overlay">
+    <!-- Hero Bölümü -->
+    <section class="hero">
         <div class="container">
-            <form class="search-form">
-                <input type="text" placeholder="Ne arıyorsunuz?">
-                <button type="submit"><img src="images/search-icon.svg" alt="Ara"></button>
-            </form>
-            <button class="search-close"><img src="images/close-icon.png" alt="Kapat"></button>
-        </div>
-    </div>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
             <div class="hero-content">
-                <h1 class="animate-on-scroll">Duvarda sanat, yürekte ilham.</h1>
-                <p class="animate-on-scroll">Premium poster koleksiyonumuzla yaşam alanlarınızı dönüştürün.</p>
-                <a href="#categories" class="btn btn-primary animate-on-scroll">Keşfedin</a>
+                <h1>Duvarlarınızı Sanatla Buluşturun</h1>
+                <p>Özenle seçilmiş koleksiyonumuzla yaşam alanlarınıza karakter katın</p>
+                <div class="hero-buttons">
+                    <a href="category.html" class="btn btn-primary">Koleksiyonu Keşfet</a>
+                    <a href="#featured" class="btn btn-secondary">Öne Çıkanlar</a>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Categories Section -->
-        <section class="categories" id="categories">
-            <div class="container">
-                <h2 class="section-title">Kategoriler</h2>
-                <div class="categories-grid">
-                    <div class="category-card" data-category="film">
+    <!-- Kategoriler Bölümü -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kategoriler</h2>
+                <p>İlgi alanınıza göre posterler keşfedin</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <a href="category.html?category=film">
                         <div class="category-image">
-                            <img src="images/film-category.svg" alt="Film Posterleri">
+                            <img src="images/categories/film.jpg" alt="Film Posterleri">
                         </div>
                         <h3>Film</h3>
-                    </div>
-                    <div class="category-card" data-category="spor">
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="category.html?category=felsefe">
                         <div class="category-image">
-                            <img src="images/spor-category.svg" alt="Spor Posterleri">
-                        </div>
-                        <h3>Spor</h3>
-                    </div>
-                    <div class="category-card" data-category="felsefe">
-                        <div class="category-image">
-                            <img src="images/felsefe-category.svg" alt="Felsefe Posterleri">
+                            <img src="images/categories/felsefe.jpg" alt="Felsefe Posterleri">
                         </div>
                         <h3>Felsefe</h3>
-                    </div>
-                    <div class="category-card" data-category="tarih">
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="category.html?category=tarih">
                         <div class="category-image">
-                            <img src="images/tarih-category.svg" alt="Tarih Posterleri">
+                            <img src="images/categories/tarih.jpg" alt="Tarih Posterleri">
                         </div>
                         <h3>Tarih</h3>
-                    </div>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="category.html?category=spor">
+                        <div class="category-image">
+                            <img src="images/categories/spor.jpg" alt="Spor Posterleri">
+                        </div>
+                        <h3>Spor</h3>
+                    </a>
+                </div>
+                <div class="category-card">
+                    <a href="category.html?category=sanat">
+                        <div class="category-image">
+                            <img src="images/categories/sanat.jpg" alt="Sanat Posterleri">
+                        </div>
+                        <h3>Sanat</h3>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Featured Products -->
-        <section class="featured-products">
-            <div class="container">
-                <h2 class="section-title">Öne Çıkan Posterler</h2>
-                <div class="products-grid">
-                    <!-- Product Card 1 -->
-                    <div class="product-card">
-                        <div class="product-badge new">Yeni</div>
-                        <div class="product-image">
-                            <img src="images/poster1.svg" alt="Premium Poster">
-                            <div class="product-actions">
-                                <button class="btn-zoom">Büyüt</button>
-                                <button class="btn-add-to-cart">Sepete Ekle</button>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Pulp Fiction</h3>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <span>(24)</span>
-                            </div>
-                            <div class="product-price">₺249.99</div>
-                        </div>
-                    </div>
-
-                    <!-- Product Card 2 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/poster2.svg" alt="Premium Poster">
-                            <div class="product-actions">
-                                <button class="btn-zoom">Büyüt</button>
-                                <button class="btn-add-to-cart">Sepete Ekle</button>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Muhammed Ali</h3>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span>(42)</span>
-                            </div>
-                            <div class="product-price">₺299.99</div>
-                        </div>
-                    </div>
-
-                    <!-- Product Card 3 -->
-                    <div class="product-card">
-                        <div class="product-badge sold-out">Tükendi</div>
-                        <div class="product-image">
-                            <img src="images/poster3.svg" alt="Premium Poster">
-                            <div class="product-actions">
-                                <button class="btn-zoom">Büyüt</button>
-                                <button class="btn-add-to-cart" disabled>Sepete Ekle</button>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Nietzsche - Böyle Buyurdu Zerdüşt</h3>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span>(37)</span>
-                            </div>
-                            <div class="product-price">₺279.99</div>
-                        </div>
-                    </div>
-
-                    <!-- Product Card 4 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/poster4.svg" alt="Premium Poster">
-                            <div class="product-actions">
-                                <button class="btn-zoom">Büyüt</button>
-                                <button class="btn-add-to-cart">Sepete Ekle</button>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <h3>Osmanlı İmparatorluğu Haritası</h3>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                <span>(19)</span>
-                            </div>
-                            <div class="product-price">₺329.99</div>
-                        </div>
-                    </div>
-                </div>
+    <!-- Öne Çıkan Ürünler -->
+    <section class="featured" id="featured">
+        <div class="container">
+            <div class="section-title">
+                <h2>Öne Çıkan Posterler</h2>
+                <p>En çok beğenilen ve tercih edilen posterlerimiz</p>
             </div>
-        </section>
-
-        <!-- Serdar Hoca's Favorites -->
-        <section class="favorites" id="favorites">
-            <div class="container">
-                <h2 class="section-title">Serdar Hoca'nın Favorileri</h2>
-                <div class="favorites-intro">
-                    <div class="favorites-image">
-                        <img src="images/serdar-hoca.png" alt="Serdar Hoca">
+            <div class="product-grid">
+                <!-- Ürün 1 -->
+                <div class="product-card">
+                    <div class="product-badge">Yeni</div>
+                    <div class="product-image">
+                        <img src="images/products/product1.jpg" alt="Ürün 1">
+                        <div class="product-actions">
+                            <a href="#" class="add-to-favorites" data-id="1"><i class="fas fa-heart"></i></a>
+                            <a href="#" class="quick-view" data-id="1"><i class="fas fa-eye"></i></a>
+                            <a href="#" class="add-to-cart" data-id="1"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
                     </div>
-                    <div class="favorites-text">
-                        <p>"Sanat, hayatın yansıması değil, hayatın ta kendisidir. Bu seçkide, benim için özel anlam taşıyan ve her birine derin bir hikaye sığdırdığım posterleri sizlerle paylaşıyorum."</p>
-                        <span class="signature">- Serdar Hoca</span>
+                    <div class="product-info">
+                        <h3><a href="product.html?id=1">Pulp Fiction Film Posteri</a></h3>
+                        <div class="product-category">Film</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(24)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">₺149.90</span>
+                        </div>
                     </div>
                 </div>
-                <div class="favorites-grid">
-                    <div class="favorite-card">
-                        <div class="favorite-image">
-                            <img src="images/favorite1.png" alt="Serdar Hoca'nın Favorisi">
-                        </div>
-                        <div class="favorite-content">
-                            <h3>Yüzüklerin Efendisi</h3>
-                            <p>Tolkien'in eşsiz dünyasını yansıtan bu poster, fantastik edebiyatın başyapıtını duvarlarınıza taşıyor.</p>
-                            <div class="favorite-price">₺349.99</div>
-                            <button class="btn-add-to-cart">Sepete Ekle</button>
-                        </div>
-                    </div>
-                    <div class="favorite-card">
-                        <div class="favorite-image">
-                            <img src="images/favorite2.png" alt="Serdar Hoca'nın Favorisi">
-                        </div>
-                        <div class="favorite-content">
-                            <h3>Albert Camus - Sisifos Söyleni</h3>
-                            <p>Absürdizmin en güçlü temsilcilerinden Camus'un felsefi düşüncelerini yansıtan minimalist tasarım.</p>
-                            <div class="favorite-price">₺299.99</div>
-                            <button class="btn-add-to-cart">Sepete Ekle</button>
+                <!-- Ürün 2 -->
+                <div class="product-card">
+                    <div class="product-badge bestseller">Çok Satan</div>
+                    <div class="product-image">
+                        <img src="images/products/product2.jpg" alt="Ürün 2">
+                        <div class="product-actions">
+                            <a href="#" class="add-to-favorites" data-id="2"><i class="fas fa-heart"></i></a>
+                            <a href="#" class="quick-view" data-id="2"><i class="fas fa-eye"></i></a>
+                            <a href="#" class="add-to-cart" data-id="2"><i class="fas fa-shopping-cart"></i></a>
                         </div>
                     </div>
-                    <div class="favorite-card">
-                        <div class="favorite-image">
-                            <img src="images/favorite3.png" alt="Serdar Hoca'nın Favorisi">
+                    <div class="product-info">
+                        <h3><a href="product.html?id=2">Sokrates Felsefe Posteri</a></h3>
+                        <div class="product-category">Felsefe</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(42)</span>
                         </div>
-                        <div class="favorite-content">
-                            <h3>Fatih Sultan Mehmet</h3>
-                            <p>İstanbul'un fethinin mimarı, genç padişahın ihtişamını yansıtan tarihi bir portre.</p>
-                            <div class="favorite-price">₺379.99</div>
-                            <button class="btn-add-to-cart">Sepete Ekle</button>
+                        <div class="product-price">
+                            <span class="price">₺129.90</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ürün 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/products/product3.jpg" alt="Ürün 3">
+                        <div class="product-actions">
+                            <a href="#" class="add-to-favorites" data-id="3"><i class="fas fa-heart"></i></a>
+                            <a href="#" class="quick-view" data-id="3"><i class="fas fa-eye"></i></a>
+                            <a href="#" class="add-to-cart" data-id="3"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product.html?id=3">Osmanlı İmparatorluğu Haritası</a></h3>
+                        <div class="product-category">Tarih</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(18)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">₺179.90</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ürün 4 -->
+                <div class="product-card">
+                    <div class="product-badge sale">İndirim</div>
+                    <div class="product-image">
+                        <img src="images/products/product4.jpg" alt="Ürün 4">
+                        <div class="product-actions">
+                            <a href="#" class="add-to-favorites" data-id="4"><i class="fas fa-heart"></i></a>
+                            <a href="#" class="quick-view" data-id="4"><i class="fas fa-eye"></i></a>
+                            <a href="#" class="add-to-cart" data-id="4"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3><a href="product.html?id=4">Kobe Bryant Basketbol Posteri</a></h3>
+                        <div class="product-category">Spor</div>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(36)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="old-price">₺199.90</span>
+                            <span class="price">₺159.90</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="view-more">
+                <a href="category.html" class="btn btn-outline">Tüm Ürünleri Gör</a>
+            </div>
+        </div>
+    </section>
 
-        <!-- Newsletter Section -->
-        <section class="newsletter">
-            <div class="container">
+    <!-- Serdar Hoca'nın Favorileri -->
+    <section class="special-collection">
+        <div class="container">
+            <div class="section-title">
+                <h2>Serdar Hoca'nın Favorileri</h2>
+                <p>Özel olarak seçilmiş koleksiyon</p>
+            </div>
+            <div class="collection-grid">
+                <!-- Koleksiyon Ürün 1 -->
+                <div class="collection-item">
+                    <div class="collection-image">
+                        <img src="images/collections/collection1.jpg" alt="Koleksiyon 1">
+                        <div class="collection-overlay">
+                            <a href="product.html?id=5" class="btn btn-light">İncele</a>
+                        </div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Nietzsche - Güç İstenci</h3>
+                        <p>Felsefe Koleksiyonu</p>
+                    </div>
+                </div>
+                <!-- Koleksiyon Ürün 2 -->
+                <div class="collection-item large">
+                    <div class="collection-image">
+                        <img src="images/collections/collection2.jpg" alt="Koleksiyon 2">
+                        <div class="collection-overlay">
+                            <a href="product.html?id=6" class="btn btn-light">İncele</a>
+                        </div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Fatih Sultan Mehmet Portresi</h3>
+                        <p>Tarih Koleksiyonu</p>
+                    </div>
+                </div>
+                <!-- Koleksiyon Ürün 3 -->
+                <div class="collection-item">
+                    <div class="collection-image">
+                        <img src="images/collections/collection3.jpg" alt="Koleksiyon 3">
+                        <div class="collection-overlay">
+                            <a href="product.html?id=7" class="btn btn-light">İncele</a>
+                        </div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>The Godfather</h3>
+                        <p>Film Koleksiyonu</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Haber Bülteni -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-wrapper">
                 <div class="newsletter-content">
-                    <h2>Yeni Koleksiyonlardan Haberdar Olun</h2>
-                    <p>En yeni posterler ve özel indirimler için bültenimize abone olun.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="E-posta adresiniz" required>
-                        <button type="submit" class="btn btn-primary">Abone Ol</button>
+                    <h2>Haber Bültenimize Abone Olun</h2>
+                    <p>Yeni ürünler, indirimler ve özel teklifler hakkında bilgi alın</p>
+                </div>
+                <div class="newsletter-form">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="E-posta adresiniz" required>
+                            <button type="submit" class="btn btn-primary">Abone Ol</button>
+                        </div>
                     </form>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Footer Bölümü -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-top">
                 <div class="footer-column">
-                    <div class="logo footer-logo">
-                        <a href="index.html">Poster<span>Sanatı</span></a>
-                    </div>
-                    <p>Premium poster koleksiyonumuzla yaşam alanlarınızı sanatla buluşturun.</p>
+                    <div class="footer-logo">Poster Sanatı</div>
+                    <p>Duvarlarınızı sanatla buluşturan, kaliteli ve özgün posterler sunan online mağazanız.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-pinterest-p"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Hızlı Erişim</h3>
                     <ul>
-                        <li><a href="#">Ana Sayfa</a></li>
-                        <li><a href="#categories">Kategoriler</a></li>
-                        <li><a href="#favorites">Serdar Hoca'nın Favorileri</a></li>
-                        <li><a href="#">Hakkımızda</a></li>
-                        <li><a href="#">İletişim</a></li>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="category.html">Ürünler</a></li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kategoriler</h3>
+                    <ul>
+                        <li><a href="category.html?category=film">Film</a></li>
+                        <li><a href="category.html?category=felsefe">Felsefe</a></li>
+                        <li><a href="category.html?category=tarih">Tarih</a></li>
+                        <li><a href="category.html?category=spor">Spor</a></li>
+                        <li><a href="category.html?category=sanat">Sanat</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -316,22 +354,25 @@
                     <ul>
                         <li><a href="#">Sipariş Takibi</a></li>
                         <li><a href="#">İade ve Değişim</a></li>
-                        <li><a href="#">Sıkça Sorulan Sorular</a></li>
                         <li><a href="#">Gizlilik Politikası</a></li>
                         <li><a href="#">Kullanım Koşulları</a></li>
+                        <li><a href="#">SSS</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>İletişim</h3>
                     <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> Bağdat Caddesi No:123, Kadıköy, İstanbul</li>
-                        <li><i class="fas fa-phone"></i> +90 (212) 456 78 90</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Poster Sokak No:42, Kadıköy/İstanbul</li>
+                        <li><i class="fas fa-phone"></i> +90 (216) 123 45 67</li>
                         <li><i class="fas fa-envelope"></i> info@postersanati.com</li>
+                        <li><i class="fas fa-clock"></i> Pazartesi-Cuma: 09:00-18:00</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 PosterSanatı. Tüm hakları saklıdır.</p>
+                <div class="copyright">
+                    &copy; 2023 Poster Sanatı. Tüm hakları saklıdır.
+                </div>
                 <div class="payment-methods">
                     <img src="images/payment-methods.png" alt="Ödeme Yöntemleri">
                 </div>
@@ -339,55 +380,48 @@
         </div>
     </footer>
 
-    <!-- Lightbox -->
-    <div class="lightbox">
-        <div class="lightbox-content">
-            <img src="" alt="Büyütülmüş Poster">
-            <button class="lightbox-close"><img src="images/close-icon.png" alt="Kapat"></button>
-        </div>
-    </div>
-
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav">
-        <button class="mobile-nav-close"><img src="images/close-icon.png" alt="Kapat"></button>
-        <nav>
-            <ul>
-                <li><a href="#"><i class="fas fa-home"></i> Ana Sayfa</a></li>
-                <li><a href="#categories"><i class="fas fa-th-large"></i> Kategoriler</a></li>
-                <li><a href="#favorites"><i class="fas fa-heart"></i> Favoriler</a></li>
-                <li><a href="#"><i class="fas fa-shopping-cart"></i> Sepet</a></li>
-                <li><a href="#"><i class="fas fa-user"></i> Hesabım</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <!-- Cart Sidebar -->
+    <!-- Sepet Kenar Çubuğu -->
     <div class="cart-sidebar">
         <div class="cart-header">
-            <h3>Alışveriş Sepeti</h3>
-            <button class="cart-close"><img src="images/close-icon.png" alt="Kapat"></button>
+            <h3>Sepetim</h3>
+            <a href="#" class="cart-close"><i class="fas fa-times"></i></a>
         </div>
-        <div class="cart-items">
-            <!-- Cart items will be dynamically added here -->
-            <div class="empty-cart-message">
+        <div class="cart-body">
+            <div class="cart-empty">
                 <i class="fas fa-shopping-cart"></i>
-                <p>Sepetinizde ürün bulunmamaktadır.</p>
-                <button class="btn btn-outline continue-shopping">Alışverişe Devam Et</button>
+                <p>Sepetiniz boş</p>
+                <a href="category.html" class="btn btn-primary">Alışverişe Başla</a>
+            </div>
+            <div class="cart-items">
+                <!-- Sepet öğeleri JavaScript ile eklenecek -->
             </div>
         </div>
         <div class="cart-footer">
             <div class="cart-total">
-                <span class="cart-total-label">Toplam:</span>
-                <span class="total-amount">0.00 TL</span>
+                <span>Toplam:</span>
+                <span class="total-amount">₺0.00</span>
             </div>
-            <button class="btn btn-primary btn-checkout">Ödemeye Geç</button>
+            <div class="cart-buttons">
+                <a href="cart.html" class="btn btn-outline">Sepeti Görüntüle</a>
+                <a href="checkout.html" class="btn btn-primary">Ödemeye Geç</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hızlı Görünüm Modal -->
+    <div class="quick-view-modal">
+        <div class="quick-view-content">
+            <a href="#" class="quick-view-close"><i class="fas fa-times"></i></a>
+            <div class="quick-view-body">
+                <!-- İçerik JavaScript ile eklenecek -->
+            </div>
         </div>
     </div>
 
     <!-- Overlay -->
     <div class="overlay"></div>
 
+    <!-- JavaScript -->
     <script src="js/main.js"></script>
-    <script src="js/cart-sidebar.js"></script>
 </body>
 </html>

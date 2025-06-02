@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poster Sanatı - Sepetim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header Bölümü -->
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a href="index.html">Poster Sanatı</a>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li class="dropdown">
+                            <a href="#">Kategoriler</a>
+                            <div class="dropdown-content">
+                                <a href="category.html?category=film">Film</a>
+                                <a href="category.html?category=felsefe">Felsefe</a>
+                                <a href="category.html?category=tarih">Tarih</a>
+                                <a href="category.html?category=spor">Spor</a>
+                                <a href="category.html?category=sanat">Sanat</a>
+                            </div>
+                        </li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <a href="#" class="search-toggle"><i class="fas fa-search"></i></a>
+                    <a href="#" class="favorites-toggle"><i class="fas fa-heart"></i> <span class="count">0</span></a>
+                    <a href="#" class="cart-toggle"><i class="fas fa-shopping-cart"></i> <span class="count">0</span></a>
+                    <a href="#" class="mobile-menu-toggle"><i class="fas fa-bars"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Arama Formu -->
+        <div class="search-form">
+            <div class="container">
+                <form action="#" method="get">
+                    <input type="text" name="search" placeholder="Ne aramıştınız?">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <a href="#" class="search-close"><i class="fas fa-times"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sepet Bölümü -->
+    <section class="cart-section">
+        <div class="container">
+            <div class="page-title">
+                <h1>Sepetim</h1>
+                <div class="breadcrumb">
+                    <a href="index.html">Ana Sayfa</a>
+                    <span>/</span>
+                    <span class="current">Sepetim</span>
+                </div>
+            </div>
+
+            <div class="checkout-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Sepet</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Teslimat</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Ödeme</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Onay</div>
+                </div>
+            </div>
+
+            <div class="cart-content">
+                <div class="cart-empty hidden">
+                    <div class="empty-cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h2>Sepetiniz Boş</h2>
+                    <p>Sepetinizde henüz ürün bulunmamaktadır.</p>
+                    <a href="category.html" class="btn btn-primary">Alışverişe Başla</a>
+                </div>
+
+                <div class="cart-items-container">
+                    <div class="cart-header">
+                        <div class="cart-header-item product-col">Ürün</div>
+                        <div class="cart-header-item price-col">Fiyat</div>
+                        <div class="cart-header-item quantity-col">Adet</div>
+                        <div class="cart-header-item total-col">Toplam</div>
+                        <div class="cart-header-item remove-col"></div>
+                    </div>
+
+                    <div class="cart-items">
+                        <!-- Örnek Sepet Öğesi 1 -->
+                        <div class="cart-item" data-id="1">
+                            <div class="cart-item-product product-col">
+                                <div class="cart-item-image">
+                                    <img src="images/products/product1.jpg" alt="Pulp Fiction Film Posteri">
+                                </div>
+                                <div class="cart-item-details">
+                                    <h3 class="cart-item-title">Pulp Fiction Film Posteri</h3>
+                                    <div class="cart-item-options">
+                                        <span>Boyut: <strong>50x70 cm</strong></span>
+                                        <span>Çerçeve: <strong>Siyah</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-item-price price-col">₺149.90</div>
+                            <div class="cart-item-quantity quantity-col">
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn decrease">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1" max="15">
+                                    <button class="quantity-btn increase">+</button>
+                                </div>
+                            </div>
+                            <div class="cart-item-total total-col">₺149.90</div>
+                            <div class="cart-item-remove remove-col">
+                                <button class="remove-item"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Örnek Sepet Öğesi 2 -->
+                        <div class="cart-item" data-id="3">
+                            <div class="cart-item-product product-col">
+                                <div class="cart-item-image">
+                                    <img src="images/products/product3.jpg" alt="Nietzsche - Felsefe Posteri">
+                                </div>
+                                <div class="cart-item-details">
+                                    <h3 class="cart-item-title">Nietzsche - Felsefe Posteri</h3>
+                                    <div class="cart-item-options">
+                                        <span>Boyut: <strong>30x40 cm</strong></span>
+                                        <span>Çerçeve: <strong>Çerçevesiz</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart-item-price price-col">₺129.90</div>
+                            <div class="cart-item-quantity quantity-col">
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn decrease">-</button>
+                                    <input type="number" class="quantity-input" value="2" min="1" max="15">
+                                    <button class="quantity-btn increase">+</button>
+                                </div>
+                            </div>
+                            <div class="cart-item-total total-col">₺259.80</div>
+                            <div class="cart-item-remove remove-col">
+                                <button class="remove-item"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cart-actions">
+                        <div class="coupon-form">
+                            <input type="text" placeholder="Kupon kodu">
+                            <button class="btn btn-outline">Kuponu Uygula</button>
+                        </div>
+                        <button class="btn btn-outline update-cart">Sepeti Güncelle</button>
+                    </div>
+                </div>
+
+                <div class="cart-summary">
+                    <h2>Sipariş Özeti</h2>
+                    <div class="summary-row">
+                        <span>Ara Toplam</span>
+                        <span class="subtotal">₺409.70</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Kargo</span>
+                        <span class="shipping">Ücretsiz</span>
+                    </div>
+                    <div class="summary-row discount hidden">
+                        <span>İndirim</span>
+                        <span class="discount-amount">-₺0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Toplam</span>
+                        <span class="total-amount">₺409.70</span>
+                    </div>
+                    <div class="cart-buttons">
+                        <a href="category.html" class="btn btn-outline">Alışverişe Devam Et</a>
+                        <a href="checkout.html" class="btn btn-primary">Ödemeye Geç</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Bölümü -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">Poster Sanatı</div>
+                    <p>Duvarlarınızı sanatla buluşturan, kaliteli ve özgün posterler sunan online mağazanız.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Hızlı Erişim</h3>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="category.html">Ürünler</a></li>
+                        <li><a href="about.html">Hakkımızda</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kategoriler</h3>
+                    <ul>
+                        <li><a href="category.html?category=film">Film</a></li>
+                        <li><a href="category.html?category=felsefe">Felsefe</a></li>
+                        <li><a href="category.html?category=tarih">Tarih</a></li>
+                        <li><a href="category.html?category=spor">Spor</a></li>
+                        <li><a href="category.html?category=sanat">Sanat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Müşteri Hizmetleri</h3>
+                    <ul>
+                        <li><a href="#">Sipariş Takibi</a></li>
+                        <li><a href="#">İade ve Değişim</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                        <li><a href="#">Kullanım Koşulları</a></li>
+                        <li><a href="#">SSS</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>İletişim</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Poster Sokak No:42, Kadıköy/İstanbul</li>
+                        <li><i class="fas fa-phone"></i> +90 (216) 123 45 67</li>
+                        <li><i class="fas fa-envelope"></i> info@postersanati.com</li>
+                        <li><i class="fas fa-clock"></i> Pazartesi-Cuma: 09:00-18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2023 Poster Sanatı. Tüm hakları saklıdır.
+                </div>
+                <div class="payment-methods">
+                    <img src="images/payment-methods.png" alt="Ödeme Yöntemleri">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sepet Kenar Çubuğu -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Sepetim</h3>
+            <a href="#" class="cart-close"><i class="fas fa-times"></i></a>
+        </div>
+        <div class="cart-body">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Sepetiniz boş</p>
+                <a href="category.html" class="btn btn-primary">Alışverişe Başla</a>
+            </div>
+            <div class="cart-items">
+                <!-- Sepet öğeleri JavaScript ile eklenecek -->
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Toplam:</span>
+                <span class="total-amount">₺0.00</span>
+            </div>
+            <div class="cart-buttons">
+                <a href="cart.html" class="btn btn-outline">Sepeti Görüntüle</a>
+                <a href="checkout.html" class="btn btn-primary">Ödemeye Geç</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hızlı Görünüm Modal -->
+    <div class="quick-view-modal">
+        <div class="quick-view-content">
+            <a href="#" class="quick-view-close"><i class="fas fa-times"></i></a>
+            <div class="quick-view-body">
+                <!-- İçerik JavaScript ile eklenecek -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sepet öğelerini localStorage'dan yükle
+            function loadCartItems() {
+                const cartItems = document.querySelector('.cart-items');
+                const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+                
+                if (cartData.length === 0) {
+                    document.querySelector('.cart-empty').classList.remove('hidden');
+                    document.querySelector('.cart-items-container').classList.add('hidden');
+                    document.querySelector('.cart-summary').classList.add('hidden');
+                } else {
+                    document.querySelector('.cart-empty').classList.add('hidden');
+                    document.querySelector('.cart-items-container').classList.remove('hidden');
+                    document.querySelector('.cart-summary').classList.remove('hidden');
+                    
+                    // Sepet öğelerini temizle
+                    cartItems.innerHTML = '';
+                    
+                    // Her bir sepet öğesi için HTML oluştur
+                    cartData.forEach(item => {
+                        const cartItemHTML = `
+                            <div class="cart-item" data-id="${item.id}">
+                                <div class="cart-item-product product-col">
+                                    <div class="cart-item-image">
+                                        <img src="${item.image}" alt="${item.title}">
+                                    </div>
+                                    <div class="cart-item-details">
+                                        <h3 class="cart-item-title">${item.title}</h3>
+                                        <div class="cart-item-options">
+                                            <span>Boyut: <strong>${item.size}</strong></span>
+                                            <span>Çerçeve: <strong>${item.frame}</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cart-item-price price-col">₺${item.price.toFixed(2)}</div>
+                                <div class="cart-item-quantity quantity-col">
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn decrease">-</button>
+                                        <input type="number" class="quantity-input" value="${item.quantity}" min="1" max="15">
+                                        <button class="quantity-btn increase">+</button>
+                                    </div>
+                                </div>
+                                <div class="cart-item-total total-col">₺${(item.price * item.quantity).toFixed(2)}</div>
+                                <div class="cart-item-remove remove-col">
+                                    <button class="remove-item"><i class="fas fa-trash-alt"></i></button>
+                                </div>
+                            </div>
+                        `;
+                        
+                        cartItems.innerHTML += cartItemHTML;
+                    });
+                    
+                    // Sepet toplamını güncelle
+                    updateCartTotals();
+                    
+                    // Miktar butonlarına olay dinleyicileri ekle
+                    addQuantityListeners();
+                    
+                    // Kaldırma butonlarına olay dinleyicileri ekle
+                    addRemoveListeners();
+                }
+            }
+            
+            // Sepet toplamlarını güncelle
+            function updateCartTotals() {
+                const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+                let subtotal = 0;
+                
+                cartData.forEach(item => {
+                    subtotal += item.price * item.quantity;
+                });
+                
+                // Kargo ücretini hesapla (250 TL üzeri ücretsiz)
+                const shipping = subtotal >= 250 ? 0 : 19.90;
+                
+                // İndirim varsa göster
+                const discount = 0; // Şimdilik indirim yok
+                
+                if (discount > 0) {
+                    document.querySelector('.discount').classList.remove('hidden');
+                    document.querySelector('.discount-amount').textContent = `-₺${discount.toFixed(2)}`;
+                } else {
+                    document.querySelector('.discount').classList.add('hidden');
+                }
+                
+                // Toplam tutarı hesapla
+                const total = subtotal + shipping - discount;
+                
+                // Değerleri güncelle
+                document.querySelector('.subtotal').textContent = `₺${subtotal.toFixed(2)}`;
+                document.querySelector('.shipping').textContent = shipping === 0 ? 'Ücretsiz' : `₺${shipping.toFixed(2)}`;
+                document.querySelector('.total-amount').textContent = `₺${total.toFixed(2)}`;
+            }
+            
+            // Miktar butonlarına olay dinleyicileri ekle
+            function addQuantityListeners() {
+                const decreaseButtons = document.querySelectorAll('.decrease');
+                const increaseButtons = document.querySelectorAll('.increase');
+                const quantityInputs = document.querySelectorAll('.quantity-input');
+                
+                decreaseButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const input = this.nextElementSibling;
+                        let value = parseInt(input.value);
+                        
+                        if (value > 1) {
+                            input.value = value - 1;
+                            updateItemQuantity(this);
+                        }
+                    });
+                });
+                
+                increaseButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const input = this.previousElementSibling;
+                        let value = parseInt(input.value);
+                        const maxStock = parseInt(input.getAttribute('max'));
+                        
+                        if (value < maxStock) {
+                            input.value = value + 1;
+                            updateItemQuantity(this);
+                        }
+                    });
+                });
+                
+                quantityInputs.forEach(input => {
+                    input.addEventListener('change', function() {
+                        updateItemQuantity(this);
+                    });
+                });
+            }
+            
+            // Öğe miktarını güncelle
+            function updateItemQuantity(element) {
+                const cartItem = element.closest('.cart-item');
+                const itemId = cartItem.getAttribute('data-id');
+                const quantity = parseInt(cartItem.querySelector('.quantity-input').value);
+                
+                // localStorage'daki sepet verilerini güncelle
+                const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+                const itemIndex = cartData.findIndex(item => item.id == itemId);
+                
+                if (itemIndex !== -1) {
+                    cartData[itemIndex].quantity = quantity;
+                    localStorage.setItem('cart', JSON.stringify(cartData));
+                    
+                    // Öğe toplamını güncelle
+                    const price = cartData[itemIndex].price;
+                    const total = price * quantity;
+                    cartItem.querySelector('.cart-item-total').textContent = `₺${total.toFixed(2)}`;
+                    
+                    // Sepet toplamlarını güncelle
+                    updateCartTotals();
+                    
+                    // Sepet sayacını güncelle
+                    updateCartCount();
+                }
+            }
+            
+            // Kaldırma butonlarına olay dinleyicileri ekle
+            function addRemoveListeners() {
+                const removeButtons = document.querySelectorAll('.remove-item');
+                
+                removeButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const cartItem = this.closest('.cart-item');
+                        const itemId = cartItem.getAttribute('data-id');
+                        
+                        // localStorage'dan öğeyi kaldır
+                        const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+                        const updatedCart = cartData.filter(item => item.id != itemId);
+                        localStorage.setItem('cart', JSON.stringify(updatedCart));
+                        
+                        // DOM'dan öğeyi kaldır
+                        cartItem.remove();
+                        
+                        // Sepet boşsa, boş sepet mesajını göster
+                        if (updatedCart.length === 0) {
+                            document.querySelector('.cart-empty').classList.remove('hidden');
+                            document.querySelector('.cart-items-container').classList.add('hidden');
+                            document.querySelector('.cart-summary').classList.add('hidden');
+                        }
+                        
+                        // Sepet toplamlarını güncelle
+                        updateCartTotals();
+                        
+                        // Sepet sayacını güncelle
+                        updateCartCount();
+                        
+                        // Bildirim göster
+                        showNotification('Ürün sepetten kaldırıldı', 'success');
+                    });
+                });
+            }
+            
+            // Sepet sayacını güncelle
+            function updateCartCount() {
+                const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+                let count = 0;
+                
+                cartData.forEach(item => {
+                    count += item.quantity;
+                });
+                
+                const countElements = document.querySelectorAll('.count');
+                countElements.forEach(element => {
+                    element.textContent = count;
+                });
+            }
+            
+            // Bildirim göster
+            function showNotification(message, type) {
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.innerHTML = `
+                    <div class="notification-content">
+                        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                        <span>${message}</span>
+                    </div>
+                    <button class="notification-close"><i class="fas fa-times"></i></button>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                // Bildirim kapatma butonuna olay dinleyicisi ekle
+                notification.querySelector('.notification-close').addEventListener('click', function() {
+                    notification.remove();
+                });
+                
+                // 3 saniye sonra otomatik kapat
+                setTimeout(() => {
+                    notification.classList.add('fade-out');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 3000);
+            }
+            
+            // Sepeti güncelle butonuna olay dinleyicisi ekle
+            const updateCartButton = document.querySelector('.update-cart');
+            if (updateCartButton) {
+                updateCartButton.addEventListener('click', function() {
+                    // Tüm miktar değişikliklerini uygula
+                    const cartItems = document.querySelectorAll('.cart-item');
+                    let updated = false;
+                    
+                    cartItems.forEach(item => {
+                        const itemId = item.getAttribute('data-id');
+                        const quantity = parseInt(item.querySelector('.quantity-input').value);
+                        
+                        const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+                        const itemIndex = cartData.findIndex(cartItem => cartItem.id == itemId);
+                        
+                        if (itemIndex !== -1 && cartData[itemIndex].quantity !== quantity) {
+                            cartData[itemIndex].quantity = quantity;
+                            updated = true;
+                        }
+                        
+                        localStorage.setItem('cart', JSON.stringify(cartData));
+                    });
+                    
+                    // Sepet toplamlarını güncelle
+                    updateCartTotals();
+                    
+                    // Sepet sayacını güncelle
+                    updateCartCount();
+                    
+                    // Bildirim göster
+                    if (updated) {
+                        showNotification('Sepet güncellendi', 'success');
+                    }
+                });
+            }
+            
+            // Kupon formu gönderimi
+            const couponForm = document.querySelector('.coupon-form');
+            if (couponForm) {
+                couponForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const couponCode = this.querySelector('input').value.trim();
+                    
+                    if (couponCode) {
+                        // Normalde burada bir API'ye istek yapılır, ancak şimdilik sadece bir bildirim gösterelim
+                        showNotification('Kupon kodu geçersiz', 'error');
+                    }
+                });
+            }
+            
+            // Sayfa yüklendiğinde sepet öğelerini yükle
+            loadCartItems();
+        });
+    </script>
+</body>
+</html>
