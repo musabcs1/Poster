@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const quickViewClose = document.querySelector('.quick-view-close');
     const addToCartBtns = document.querySelectorAll('.add-to-cart');
     const addToFavoritesBtns = document.querySelectorAll('.add-to-favorites');
+    const darkModeToggle = document.getElementById('darkModeToggle');
     
     // Sepet ve Favoriler için localStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -22,6 +23,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Sayfa yüklendiğinde sepet ve favorileri güncelle
     updateCartCount();
     updateFavoritesCount();
+    
+    // Karanlık Mod İşlevselliği
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    
+    // Sayfa yüklendiğinde karanlık mod durumunu kontrol et
+    if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+        if (darkModeToggle) {
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    }
+    
+    // Karanlık mod düğmesi tıklama olayı
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            // Simgeyi güncelle
+            if (document.body.classList.contains('dark-mode')) {
+                this.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                this.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('darkMode', 'false');
+            }
+        });
+    }
     
     // Arama Formu Göster/Gizle
     if (searchToggle) {

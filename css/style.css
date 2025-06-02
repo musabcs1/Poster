@@ -1,9 +1,9 @@
 /* ===== GENEL STILLER ===== */
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2c3e50;
+    --primary-color: #dc3545;
+    --secondary-color: #212529;
     --light-color: #f8f9fa;
-    --dark-color: #343a40;
+    --dark-color: #121212;
     --gray-color: #6c757d;
     --light-gray-color: #e9ecef;
     --success-color: #28a745;
@@ -13,6 +13,14 @@
     --border-radius: 4px;
     --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+    --bg-cream: #fdf6e9;
+    
+    /* Karanlık mod değişkenleri */
+    --dark-bg: #121212;
+    --dark-secondary-bg: #1e1e1e;
+    --dark-text: #f8f9fa;
+    --dark-border: #333;
+    --dark-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -32,6 +40,12 @@ body {
     color: var(--dark-color);
     background-color: #fff;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    color: var(--dark-text);
+    background-color: var(--dark-bg);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,6 +54,11 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
     margin-bottom: 1rem;
     color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
+    color: var(--dark-text);
 }
 
 h1 {
@@ -124,10 +143,12 @@ section {
     font-size: 1rem;
     font-weight: 500;
     text-align: center;
-    border-radius: var(--border-radius);
+    border-radius: 0;
     cursor: pointer;
     transition: var(--transition);
     border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-primary {
@@ -179,6 +200,12 @@ section {
     background-color: #fff;
     box-shadow: var(--box-shadow);
     z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-mode .header {
+    background-color: var(--dark-secondary-bg);
+    box-shadow: var(--dark-box-shadow);
 }
 
 .header-wrapper {
@@ -192,7 +219,7 @@ section {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .nav-menu ul {
@@ -213,6 +240,14 @@ section {
     font-weight: 500;
     padding: 10px 0;
     position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.dark-mode .nav-menu a {
+    color: var(--dark-text);
 }
 
 .nav-menu a:after {
@@ -270,6 +305,27 @@ section {
 .header-icons {
     display: flex;
     align-items: center;
+}
+
+/* Karanlık Mod Düğmesi */
+.dark-mode-toggle {
+    margin-right: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.dark-mode .dark-mode-toggle {
+    color: var(--dark-text);
+}
+
+.dark-mode-toggle i {
+    font-size: 1.2rem;
 }
 
 .header-icons a {
@@ -357,7 +413,7 @@ section {
 
 /* ===== HERO BÖLÜMÜ ===== */
 .hero {
-    background-image: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('../images/hero-bg.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -379,12 +435,19 @@ section {
     margin-bottom: 20px;
     color: #fff;
     animation: fadeInDown 1s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 30px;
     animation: fadeInUp 1s ease;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
 }
 
 .hero-buttons {
@@ -397,7 +460,12 @@ section {
 
 /* ===== KATEGORİLER ===== */
 .categories {
-    background-color: var(--light-color);
+    background-color: var(--bg-cream);
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode .categories {
+    background-color: var(--dark-bg);
 }
 
 .category-grid {
@@ -407,11 +475,12 @@ section {
 }
 
 .category-card {
-    background-color: #fff;
-    border-radius: var(--border-radius);
+    background-color: #000;
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--box-shadow);
     transition: var(--transition);
+    position: relative;
 }
 
 .category-card:hover {
@@ -440,6 +509,12 @@ section {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 0;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* ===== ÜRÜNLER ===== */
@@ -447,20 +522,26 @@ section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
+    margin-top: 40px;
 }
 
 .product-card {
     background-color: #fff;
-    border-radius: var(--border-radius);
+    border-radius: 0;
     overflow: hidden;
     box-shadow: var(--box-shadow);
-    transition: var(--transition);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     position: relative;
+}
+
+.dark-mode .product-card {
+    background-color: var(--dark-secondary-bg);
+    box-shadow: var(--dark-box-shadow);
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .product-badge {
@@ -485,8 +566,8 @@ section {
 
 .product-image {
     position: relative;
-    height: 250px;
     overflow: hidden;
+    height: 300px;
 }
 
 .product-image img {
@@ -536,17 +617,28 @@ section {
 
 .product-info {
     padding: 20px;
+    text-align: center;
 }
 
 .product-info h3 {
     font-size: 1.1rem;
     margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.dark-mode .product-info h3 a {
+    color: var(--dark-text);
 }
 
 .product-category {
     color: var(--gray-color);
     font-size: 0.9rem;
     margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.dark-mode .product-category {
+    color: #aaa;
 }
 
 .product-rating {
@@ -562,6 +654,10 @@ section {
 .product-price {
     display: flex;
     align-items: center;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 5px;
 }
 
 .old-price {
@@ -584,7 +680,36 @@ section {
 
 /* ===== ÖZEL KOLEKSİYON ===== */
 .special-collection {
-    background-color: var(--light-color);
+    background-color: var(--bg-cream);
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode .special-collection {
+    background-color: var(--dark-bg);
+}
+
+.collection-intro {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.collection-intro img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.collection-intro h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.collection-intro p {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .collection-grid {
@@ -661,7 +786,7 @@ section {
 
 /* ===== HABER BÜLTENİ ===== */
 .newsletter {
-    background-color: var(--primary-color);
+    background-color: var(--dark-color);
     padding: 60px 0;
     color: #fff;
 }
@@ -688,20 +813,27 @@ section {
 
 .form-group {
     display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 .form-group input {
     flex: 1;
     padding: 15px 20px;
     border: none;
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    border-radius: 0;
     font-size: 1rem;
 }
 
 .newsletter-form .btn {
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    background-color: var(--secondary-color);
+    border-radius: 0;
+    background-color: var(--primary-color);
     padding: 0 30px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .newsletter-form .btn:hover {
@@ -710,9 +842,14 @@ section {
 
 /* ===== FOOTER ===== */
 .footer {
-    background-color: var(--secondary-color);
+    background-color: var(--dark-color);
     color: #fff;
     padding-top: 80px;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode .footer {
+    background-color: #000;
 }
 
 .footer-top {
