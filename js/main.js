@@ -1,3 +1,155 @@
+// Ürün Verileri (Gerçek bir API yerine örnek veri)
+const products = [
+    {
+        id: 1,
+        title: "Yüzüklerin Efendisi film posteri",
+        category: "Film",
+        price: 149.90,
+        rating: 4.5,
+        reviewCount: 24,
+        image: "images/poster1.svg",
+        images: [
+            "images/poster1.svg",
+            "images/poster2.svg",
+            "images/poster3.svg"
+        ],
+        description: "Quentin Tarantino'nun kült filmi Pulp Fiction'ın yüksek kaliteli posteri. Evinizin duvarlarına film tutkunuzu yansıtın.",
+        sizes: ["30x40", "50x70", "70x100"],
+        frames: ["Çerçevesiz", "Siyah", "Beyaz", "Ahşap"],
+        stock: 15,
+        isNew: true,
+        isBestseller: false,
+        isOnSale: false
+    },
+    {
+        id: 2,
+        title: "Sokrates Felsefe Posteri",
+        category: "Felsefe",
+        price: 129.90,
+        rating: 5,
+        reviewCount: 42,
+        image: "images/poster2.svg",
+        images: [
+            "images/poster2.svg",
+            "images/poster3.svg",
+            "images/poster4.svg"
+        ],
+        description: "Antik Yunan filozofu Sokrates'in portresi ve ünlü sözleriyle tasarlanmış poster. Felsefe tutkunları için ideal.",
+        sizes: ["30x40", "50x70", "70x100"],
+        frames: ["Çerçevesiz", "Siyah", "Beyaz", "Ahşap"],
+        stock: 20,
+        isNew: false,
+        isBestseller: true,
+        isOnSale: false
+    },
+    {
+        id: 3,
+        title: "Osmanlı İmparatorluğu Haritası",
+        category: "Tarih",
+        price: 179.90,
+        rating: 4,
+        reviewCount: 18,
+        image: "images/poster3.svg",
+        images: [
+            "images/poster3.svg",
+            "images/poster4.svg",
+            "images/poster1.svg" // Changed from poster5.svg to an existing image
+        ],
+        description: "Osmanlı İmparatorluğu'nun en geniş sınırlarını gösteren detaylı ve estetik harita posteri. Tarih tutkunları için mükemmel bir seçim.",
+        sizes: ["30x40", "50x70", "70x100"],
+        frames: ["Çerçevesiz", "Siyah", "Beyaz", "Ahşap"],
+        stock: 8,
+        isNew: false,
+        isBestseller: false,
+        isOnSale: false
+    },
+    {
+        id: 4,
+        title: "Kobe Bryant Basketbol Posteri",
+        category: "Spor",
+        price: 159.90,
+        oldPrice: 199.90,
+        rating: 4.5,
+        reviewCount: 36,
+        image: "images/poster4.svg",
+        images: [
+            "images/poster4.svg",
+            "images/poster1.svg", // Changed from poster5.svg to an existing image
+            "images/poster2.svg"  // Changed from poster6.svg to an existing image
+        ],
+        description: "Efsanevi basketbolcu Kobe Bryant'ın unutulmaz smaç anını ölümsüzleştiren poster. Spor tutkunları için ideal bir duvar dekorasyonu.",
+        sizes: ["30x40", "50x70", "70x100"],
+        frames: ["Çerçevesiz", "Siyah", "Beyaz", "Ahşap"],
+        stock: 12,
+        isNew: false,
+        isBestseller: false,
+        isOnSale: true
+    },
+    {
+        id: 5,
+        title: "Nietzsche - Güç İstenci",
+        category: "Felsefe",
+        price: 139.90,
+        rating: 4.8,
+        reviewCount: 29,
+        image: "images/favorite1.png",
+        images: [
+            "images/favorite1.png",
+            "images/poster1.svg",
+            "images/poster2.svg"
+        ],
+        description: "Friedrich Nietzsche'nin ünlü eseri 'Güç İstenci'nden alıntılar ve filozofun portresiyle tasarlanmış özel poster.",
+        sizes: ["30x40", "50x70", "70x100"],
+        frames: ["Çerçevesiz", "Siyah", "Beyaz", "Ahşap"],
+        stock: 10,
+        isNew: false,
+        isBestseller: false,
+        isOnSale: false
+    },
+    {
+        id: 6,
+        title: "Fatih Sultan Mehmet Portresi",
+        category: "Tarih",
+        price: 189.90,
+        rating: 5,
+        reviewCount: 47,
+        image: "images/favorite2.png",
+        images: [
+            "images/favorite2.png",
+            "images/poster3.svg",
+            "images/poster4.svg"
+        ],
+        description: "Fatih Sultan Mehmet'in tarihi portresinin modern bir yorumu. Yüksek kaliteli baskı ile evinize tarih ve estetik katın.",
+        sizes: ["30x40", "50x70", "70x100"],
+        frames: ["Çerçevesiz", "Siyah", "Beyaz", "Ahşap"],
+        stock: 18,
+        isNew: true,
+        isBestseller: true,
+        isOnSale: false
+    },
+    {
+        id: 7,
+        title: "The Godfather",
+        category: "Film",
+        price: 169.90,
+        rating: 4.9,
+        reviewCount: 53,
+        image: "images/favorite3.png",
+        images: [
+            "images/favorite3.png",
+            "images/poster1.svg", // Changed from poster5.svg to an existing image
+            "images/poster2.svg"  // Changed from poster6.svg to an existing image
+        ],
+        description: "Sinema tarihinin en ikonik filmlerinden The Godfather'ın minimalist tasarımlı posteri. Film tutkunları için mükemmel bir seçim.",
+        sizes: ["30x40", "50x70", "70x100"],
+        frames: ["Çerçevesiz", "Siyah", "Beyaz", "Ahşap"],
+        stock: 14,
+        isNew: false,
+        isBestseller: true,
+        isOnSale: false
+    }
+];
+
 document.addEventListener('DOMContentLoaded', function() {
     // Değişkenler
     const searchToggle = document.querySelector('.search-toggle');
@@ -1113,88 +1265,280 @@ function renderFavorites() {
         // Diğer filtre işlevleri burada eklenebilir
     }
     
+    function getUrlParameter(name) {
+        name = name.replace(/[[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(window.location.href);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
     // Ürün detay sayfasını başlat
     function initProductPage() {
-        const params = getUrlParams();
-        const productContainer = document.querySelector('.product-container');
-        
-        if (!productContainer || !params.id) return;
-        
-        const product = getProductById(params.id);
-        
-        if (!product) {
-            productContainer.innerHTML = '<div class="alert">Ürün bulunamadı!</div>';
-            return;
+        const productId = getUrlParameter('id');
+        if (productId) {
+            const product = getProductById(productId);
+            if (product) {
+                renderProductDetails(product);
+            } else {
+                console.error('Product not found for ID:', productId);
+                // Ürün bulunamazsa kullanıcıyı bilgilendir veya ana sayfaya yönlendir
+            }
+        } else {
+            console.error('Product ID not found in URL.');
+            // Ürün ID'si yoksa kullanıcıyı bilgilendir veya ana sayfaya yönlendir
         }
-        
-        // Ürün detaylarını göster
-        renderProductDetails(product);
     }
     
     // Ürün detaylarını render et
     function renderProductDetails(product) {
-        // Bu fonksiyon ürün detay sayfası için gerektiğinde eklenebilir
-    }
-    
-    // Ürün detaylarını render et
-    function renderProductDetails(product) {
-        const mainProductImage = document.querySelector('.product-main-slider .swiper-slide img');
-        const productThumbs = document.querySelector('.product-thumbs-slider .swiper-wrapper');
-        const sizeOptionsContainer = document.getElementById('sizeOptions');
-        const frameOptionsContainer = document.getElementById('frameOptions');
+        const productDetailContainer = document.querySelector('.product-detail-container');
+        if (!productDetailContainer) return;
 
-        if (!mainProductImage || !sizeOptionsContainer || !frameOptionsContainer) return;
+        let html = `
+            <div class="product-gallery">
+                <div class="main-image-container ${product.images.length > 1 ? 'zoomable' : ''}">
+                    <img src="${product.image}" alt="${product.title}">
+                </div>
+                <div class="thumbnail-gallery">
+        `;
 
-        function updateProductImage() {
-            const selectedSizeOption = sizeOptionsContainer.querySelector('.option-value.active');
-            const selectedFrameOption = frameOptionsContainer.querySelector('.option-value.active');
+        product.images.forEach((img, index) => {
+            html += `
+                    <div class="thumbnail-item ${index === 0 ? 'active' : ''}" data-image="${img}">
+                        <img src="${img}" alt="${product.title} ${index + 1}">
+                    </div>
+            `;
+        });
 
-            let newImageSrc = '';
+        html += `
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="category">${product.category}</div>
+                <h1 class="product-title">${product.title}</h1>
+                <div class="product-rating">
+        `;
 
-            if (selectedSizeOption && selectedSizeOption.dataset.image) {
-                newImageSrc = selectedSizeOption.dataset.image;
-            } else if (selectedFrameOption && selectedFrameOption.dataset.image) {
-                newImageSrc = selectedFrameOption.dataset.image;
-            }
-
-            if (newImageSrc) {
-                mainProductImage.src = newImageSrc;
-                mainProductImage.alt = product.title + ' ' + (selectedSizeOption ? selectedSizeOption.dataset.size : '') + ' ' + (selectedFrameOption ? selectedFrameOption.dataset.frame : '');
-
-                // Update thumbnails as well if needed, or reinitialize swiper
-                // For simplicity, we'll just update the main image for now.
-                // A more robust solution would involve updating the swiper instance.
+        for (let i = 1; i <= 5; i++) {
+            if (i <= Math.floor(product.rating)) {
+                html += `<i class="fas fa-star"></i>`;
+            } else if (i - 0.5 <= product.rating) {
+                html += `<i class="fas fa-star-half-alt"></i>`;
+            } else {
+                html += `<i class="far fa-star"></i>`;
             }
         }
 
-        sizeOptionsContainer.addEventListener('click', function(e) {
-            const target = e.target.closest('.option-value.size-option');
-            if (target) {
-                sizeOptionsContainer.querySelectorAll('.option-value.size-option').forEach(option => option.classList.remove('active'));
-                target.classList.add('active');
-                updateProductImage();
+        html += `
+                    <span>(${product.reviewCount} Yorum)</span>
+                </div>
+                <div class="price">
+        `;
+
+        if (product.oldPrice) {
+            html += `<span class="old-price">₺${product.oldPrice.toFixed(2)}</span>`;
+        }
+
+        html += `
+                    <span>₺${product.price.toFixed(2)}</span>
+                </div>
+                <div class="description">
+                    <p>${product.description}</p>
+                </div>
+                <div class="product-options">
+        `;
+
+        if (product.sizes && product.sizes.length > 0) {
+            html += `
+                    <div class="option-group">
+                        <label>Boyut Seçin:</label>
+                        <div class="option-values size-options">
+            `;
+            product.sizes.forEach((size, index) => {
+                html += `<div class="option-value ${index === 0 ? 'active' : ''}" data-value="${size}">${size} cm</div>`;
+            });
+            html += `
+                        </div>
+                    </div>
+            `;
+        }
+
+        if (product.frames && product.frames.length > 0) {
+            html += `
+                    <div class="option-group">
+                        <label>Çerçeve Seçin:</label>
+                        <div class="option-values frame-options">
+            `;
+            product.frames.forEach((frame, index) => {
+                html += `<div class="option-value ${index === 0 ? 'active' : ''}" data-value="${frame}">${frame}</div>`;
+            });
+            html += `
+                        </div>
+                    </div>
+            `;
+        }
+
+        html += `
+                    <div class="quantity-selector">
+                        <button class="quantity-btn decrease"><i class="fas fa-minus"></i></button>
+                        <input type="number" class="quantity-input" value="1" min="1" max="${product.stock}">
+                        <button class="quantity-btn increase"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <button class="btn btn-primary add-to-cart-product-page" data-id="${product.id}">Sepete Ekle</button>
+                    <button class="btn btn-outline add-to-favorites-product-page ${favorites.includes(parseInt(product.id)) ? 'active' : ''}" data-id="${product.id}">
+                        <i class="${favorites.includes(parseInt(product.id)) ? 'fas' : 'far'} fa-heart"></i> Favorilere Ekle
+                    </button>
+                </div>
+                <div class="product-meta">
+                    <p><span class="meta-label">Stok Durumu:</span> <span class="meta-value ${product.stock > 0 ? 'in-stock' : 'out-of-stock'}">${product.stock > 0 ? 'Stokta (' + product.stock + ')' : 'Stokta Yok'}</span></p>
+                    <p><span class="meta-label">Kargo:</span> <span class="meta-value">Ücretsiz Kargo (₺250 ve üzeri siparişlerde)</span></p>
+                </div>
+            </div>
+        `;
+
+        productDetailContainer.innerHTML = html;
+
+        // Ürün galerisi işlevselliği
+        const mainImageContainer = productDetailContainer.querySelector('.main-image-container');
+        const mainImage = mainImageContainer.querySelector('img');
+        const thumbnails = productDetailContainer.querySelectorAll('.thumbnail-item');
+
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', function() {
+                const imageUrl = this.getAttribute('data-image');
+                mainImage.src = imageUrl;
+                thumbnails.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                mainImageContainer.classList.remove('zoomed'); // Zoom'u sıfırla
+            });
+        });
+
+        // Resim zoom işlevselliği
+        if (mainImageContainer.classList.contains('zoomable')) {
+            mainImageContainer.addEventListener('click', function() {
+                this.classList.toggle('zoomed');
+            });
+        }
+
+        // Boyut ve Çerçeve seçenekleri
+        const sizeOptions = productDetailContainer.querySelectorAll('.size-options .option-value');
+        const frameOptions = productDetailContainer.querySelectorAll('.frame-options .option-value');
+
+        sizeOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                sizeOptions.forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        frameOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                frameOptions.forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Miktar seçici
+        const quantityInput = productDetailContainer.querySelector('.quantity-input');
+        const decreaseBtn = productDetailContainer.querySelector('.quantity-btn.decrease');
+        const increaseBtn = productDetailContainer.querySelector('.quantity-btn.increase');
+
+        decreaseBtn.addEventListener('click', () => {
+            let value = parseInt(quantityInput.value);
+            if (value > 1) {
+                quantityInput.value = value - 1;
             }
         });
 
-        frameOptionsContainer.addEventListener('click', function(e) {
-            const target = e.target.closest('.option-value.frame-option');
-            if (target) {
-                frameOptionsContainer.querySelectorAll('.option-value.frame-option').forEach(option => option.classList.remove('active'));
-                target.classList.add('active');
-                updateProductImage();
+        increaseBtn.addEventListener('click', () => {
+            let value = parseInt(quantityInput.value);
+            if (value < product.stock) {
+                quantityInput.value = value + 1;
             }
         });
 
-        // Initial image update on page load
-        updateProductImage();
+        // Sepete Ekle butonu
+        const addToCartProductPageBtn = productDetailContainer.querySelector('.add-to-cart-product-page');
+        addToCartProductPageBtn.addEventListener('click', function() {
+            const productId = this.getAttribute('data-id');
+            const quantity = parseInt(quantityInput.value);
+            const selectedSize = productDetailContainer.querySelector('.size-options .option-value.active')?.getAttribute('data-value');
+            const selectedFrame = productDetailContainer.querySelector('.frame-options .option-value.active')?.getAttribute('data-value');
+            addToCart(productId, quantity, selectedSize, selectedFrame);
+        });
+
+        // Favorilere Ekle butonu
+        const addToFavoritesProductPageBtn = productDetailContainer.querySelector('.add-to-favorites-product-page');
+        addToFavoritesProductPageBtn.addEventListener('click', function() {
+            const productId = this.getAttribute('data-id');
+            toggleFavorite(productId);
+            updateFavoriteButton(this, productId);
+        });
+
+        // Tab işlevselliği
+        const tabNavItems = document.querySelectorAll('.tab-nav-item');
+        const tabContentItems = document.querySelectorAll('.tab-content-item');
+
+        tabNavItems.forEach(item => {
+            item.addEventListener('click', function() {
+                tabNavItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+
+                const target = this.getAttribute('data-tab-target');
+                tabContentItems.forEach(content => {
+                    content.classList.remove('active');
+                    if (content.id === target) {
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // İlk tab'ı varsayılan olarak aktif yap
+        if (tabNavItems.length > 0) {
+            tabNavItems[0].click();
+        }
+
+        // Yorum gönderme formu
+        const reviewForm = document.querySelector('.add-review-form');
+        if (reviewForm) {
+            reviewForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Yorum gönderme mantığı buraya eklenecek
+                showNotification('Yorumunuz gönderildi!');
+                this.reset();
+            });
+        }
+
+        // Yıldız derecelendirme
+        const ratingStars = document.querySelectorAll('.add-review-form .rating-input i');
+        ratingStars.forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = parseInt(this.getAttribute('data-rating'));
+                ratingStars.forEach(s => {
+                    if (parseInt(s.getAttribute('data-rating')) <= rating) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+            });
+        });
     }
 
     // Sayfa yüklendiğinde ilgili sayfanın başlatma fonksiyonunu çağır
     const currentPath = window.location.pathname;
-    
+
     if (currentPath.includes('category.html')) {
         initCategoryPage();
     } else if (currentPath.includes('product.html')) {
         initProductPage();
     }
+
+    // Sayfa yüklendiğinde tüm favori butonlarını güncelle
+    updateAllFavoriteButtons();
 });
